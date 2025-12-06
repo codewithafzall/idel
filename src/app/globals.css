@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer utilities {
+   .bg-blue { background-color: #29367D; }  .text-blue { color: #29367D; };
+   .bg-yellow { background-color: #D9AB3D; }  .text-yellow { color: #D9AB3D; };
+
+   .flex-center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+}
+
+@layer base {
+  body {
+    font-family: 'Avenir', sans-serif;
+  }
+
+  nav{
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  button{
+    cursor: pointer;
+  }
+}
+
+.hero{
+  background: url(../app/images/banner.webp) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+h1{
+  font-size: 70px;
+  line-height: 60px;
+  font-weight: 800;
+}
+
+h2{
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 800;
+}
+
+p{
+  font-size: 20px;
+}
