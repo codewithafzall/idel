@@ -12,11 +12,11 @@ const Products = () => {
     return (
         <section>
 
-            <div className='max-w-7xl mx-auto bg-blue rounded-xl py-12 px-10 mt-14'>
+            <div className='container bg-blue rounded-xl py-12 px-10 mt-14'>
                 <p className='uppercase text-white flex gap-x-4 justify-center font-bold'><span><Image src={whiteLine} alt='vector' /></span> Our Products</p>
-                <h2 className='text-white text-center mt-7'>Premium Lift & Slide Luxury <br />Door Solutions</h2>
+                <h2 className='text-white text-center mx-auto mt-4 lg:mt-7 sm:w-1/2'>Premium Lift & Slide Luxury Door Solutions</h2>
 
-                <div className='text-white flex justify-center items-center gap-x-8 mt-16'>
+                <div className='text-white grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8 mt-8 lg:mt-16'>
                     <div>
                         <Image src={product1} width={430} height={570} alt='Minimal' className='rounded-lg' />
                         <p className='text-center mt-5'>Minimal (Slimline earlier)</p>
@@ -32,7 +32,7 @@ const Products = () => {
                 </div>
             </div>
 
-            <div className='max-w-7xl flex mx-auto justify-between items-end gap-x-24 my-14 px-10'>
+            <div className='container flex justify-between items-end gap-x-24 mt-20 mb-14'>
                 <div className='w-8/12'>
                     <p className='uppercase flex gap-x-4 font-bold text-blue'><span><Image src={blueLine} alt='vector' /></span>About Us</p>
                     <h2 className='mt-3'>Crafting High-Performance <br />Aluminium Doors & Windows</h2>
