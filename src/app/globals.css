@@ -1,14 +1,35 @@
 @import "tailwindcss";
 
 @layer utilities {
-   .bg-blue { background-color: #29367D; }  .text-blue { color: #29367D; };
-   .bg-yellow { background-color: #D9AB3D; }  .text-yellow { color: #D9AB3D; };
+  .bg-blue {
+    background-color: #29367D;
+  }
 
-   .flex-center {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
+  .text-blue {
+    color: #29367D;
+  }
+
+  ;
+
+  .bg-yellow {
+    background-color: #D9AB3D;
+  }
+
+  .text-yellow {
+    color: #D9AB3D;
+  }
+
+  ;
+
+  .bg-sky {
+    background-color: #F0F7F8;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @layer base {
@@ -16,34 +37,83 @@
     font-family: 'Avenir', sans-serif;
   }
 
-  nav{
+  nav {
     font-family: 'Bricolage Grotesque', sans-serif;
   }
 
-  button{
+  button {
     cursor: pointer;
   }
 }
 
-.hero{
+.hero {
   background: url(../app/images/banner.webp) no-repeat center center;
   background-size: cover;
   height: 100vh;
   width: 100%;
 }
 
-h1{
-  font-size: 70px;
-  line-height: 60px;
+h1 {
   font-weight: 800;
+  font-size: clamp(2rem, 5vw, 4.375rem);
+  line-height: clamp(2.5rem, 5.6vw, 3.75rem);
 }
 
-h2{
-  font-size: 50px;
-  line-height: 55px;
+h2 {
   font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 3.125rem);
+  line-height: clamp(2.25rem, 4.5vw, 3.4375rem);
 }
 
-p{
-  font-size: 20px;
+p {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+
+.swiper-pagination-bullet-active {
+  background-color: #29367D !important;
+}
+
+.form-input {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  width: 100%;
+  color: #fff;
+  ;
+}
+
+.form-input:focus {
+  border-color: inherit !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.footer {
+  background: url(../app/images/footer-bg.webp);
+  width: 100%;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width:1024px) and (max-width:1300px) {
+  .container {
+    max-width: 100%;
+    padding-left:  3rem;
+    padding-right:  3rem;
+  }
+}
+
+@media (min-width:600px) and (max-width:1023px) {
+  .container {
+    max-width: 100%;
+    padding-left:  1.5rem;
+    padding-right:  1.5rem;
+  }
 }

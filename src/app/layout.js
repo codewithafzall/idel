@@ -1,7 +1,11 @@
 import localFont from "next/font/local";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const avenir = localFont({
   src: [
