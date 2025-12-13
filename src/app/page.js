@@ -15,6 +15,10 @@ const page = () => {
        <Products/>
        <Stories/>
        <Achievement/>
+       <Process/>
+       <ProjectsSwiper/>
+       <Testimonials/>
+       <Form/>
     </div>
   )
 }
