@@ -10,7 +10,7 @@ import Form from './components/Form'
 
 const page = () => {
   return (
-    <div>
+    <main>
        <Banner/>
        <Products/>
        <Stories/>
@@ -19,7 +19,7 @@ const page = () => {
        <ProjectsSwiper/>
        <Testimonials/>
        <Form/>
-    </div>
+    </main>
   )
 }
 

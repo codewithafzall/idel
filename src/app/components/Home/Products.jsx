@@ -13,7 +13,7 @@ const Products = () => {
         <section>
 
             <div className='container bg-blue rounded-xl py-12 px-10 mt-14'>
-                <p className='uppercase text-white flex gap-x-4 justify-center font-bold'><span><Image src={whiteLine} alt='vector' /></span> Our Products</p>
+                <p className='uppercase text-white flex-center gap-x-4 font-bold'><span><Image src={whiteLine} alt='vector' /></span> Our Products</p>
                 <h2 className='text-white text-center mx-auto mt-4 lg:mt-7 sm:w-1/2'>Premium Lift & Slide Luxury Door Solutions</h2>
 
                 <div className='text-white grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8 mt-8 lg:mt-16'>
@@ -34,10 +34,10 @@ const Products = () => {
 
             <div className='container flex justify-between items-end gap-x-24 mt-20 mb-14'>
                 <div className='w-8/12'>
-                    <p className='uppercase flex gap-x-4 font-bold text-blue'><span><Image src={blueLine} alt='vector' /></span>About Us</p>
+                    <p className='uppercase flex items-center gap-x-4 font-bold text-blue'><span><Image src={blueLine} alt='vector' /></span>About Us</p>
                     <h2 className='mt-3'>Crafting High-Performance <br />Aluminium Doors & Windows</h2>
                     <p className='leading-7 mt-2 mb-7'>The company is backed by over 25 years of industry expertise, with deep experience in facade and fenestration fabrication and installation across Western India. At Intelligent Design Lancet, we take on complex fenestration challenges and deliver complete turnkey solutions, including premium doors and windows.</p>
-                    <Image src={home1} width={700} height={319} alt='' className='w-full h-[300px]'/>
+                    <Image src={home1} width={700} height={319} alt='' className='w-full h-75'/>
                 </div>
                 <div className='w-4/12 h-auto'>
                     <Image src={home2} alt='' className='w-full'/>

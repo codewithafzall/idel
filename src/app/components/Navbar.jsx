@@ -6,9 +6,9 @@ import Logo from "../images/logo.png";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Projects", href: "/projects" },
+  { label: "Products", href: "/product" },
   { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
+  { label: "Projects", href: "/projects" },
   { label: "Clients", href: "/clients" },
   { label: "Contact Us", href: "/contact", isCta: true },
 ];
@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <header className="relative w-full">
       <nav className="absolute top-0 left-0 right-0 pt-7 w-full">
-        <div className="container mx-auto flex items-center justify-between px-4">
+        <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="shrink-0" onClick={() => setOpen(false)}>
             <Image src={Logo} alt="IDEL Logo" width={110} height={55} priority />
@@ -49,7 +49,7 @@ export default function Navbar() {
 
           {/* Desktop ( > 850px ) */}
           <ul className="hidden min-[851px]:flex gap-x-6 uppercase text-white items-center">
-            <NavLinks onNavigate={() => {}} />
+            <NavLinks onNavigate={() => { }} />
           </ul>
 
           {/* Hamburger ( <= 850px ) */}
@@ -62,19 +62,16 @@ export default function Navbar() {
           >
             <span className="relative block w-6 h-5">
               <span
-                className={`absolute left-0 top-0 h-0.5 w-6 bg-white transition-transform duration-200 ${
-                  open ? "translate-y-2 rotate-45" : ""
-                }`}
+                className={`absolute left-0 top-0 h-0.5 w-6 bg-white transition-transform duration-200 ${open ? "translate-y-2 rotate-45" : ""
+                  }`}
               />
               <span
-                className={`absolute left-0 top-2 h-0.5 w-6 bg-white transition-opacity duration-200 ${
-                  open ? "opacity-0" : "opacity-100"
-                }`}
+                className={`absolute left-0 top-2 h-0.5 w-6 bg-white transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"
+                  }`}
               />
               <span
-                className={`absolute left-0 top-4 h-0.5 w-6 bg-white transition-transform duration-200 ${
-                  open ? "-translate-y-2 -rotate-45" : ""
-                }`}
+                className={`absolute left-0 top-4 h-0.5 w-6 bg-white transition-transform duration-200 ${open ? "-translate-y-2 -rotate-45" : ""
+                  }`}
               />
             </span>
           </button>
