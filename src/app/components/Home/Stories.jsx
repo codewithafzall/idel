@@ -18,7 +18,7 @@ const Stories = () => {
     return (
         <section className='bg-sky pt-16 pb-14'>
             <div className='container'>
-                <p className='uppercase flex gap-x-4 font-bold text-blue justify-center'><span><Image src={blueLine} alt='vector' /></span>Our Services</p>
+                <p className='uppercase flex-center gap-x-4 font-bold text-blue'><span><Image src={blueLine} alt='vector' /></span>Our Services</p>
                 <h2 className='text-center mt-4'>Creating Engaging Stories <br />That Attract Educate</h2>
             </div>
 

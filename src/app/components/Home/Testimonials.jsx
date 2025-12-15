@@ -44,7 +44,7 @@ const Testimonials = () => {
       <div className="container">
         <div className="flex justify-between items-start flex-col md:flex-row">
           <div>
-            <p className="uppercase flex gap-x-4 font-bold text-blue">
+            <p className="uppercase flex items-center gap-x-4 font-bold text-blue">
               <span>
                 <Image src={blueLine} alt="vector" />
               </span>

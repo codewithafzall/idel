@@ -32,7 +32,7 @@ export default function ProjectsSwiper() {
     return (
         <section className="pt-14 pb-10 relative">
             <div>
-                <p className="uppercase flex gap-x-4 font-bold text-blue justify-center">
+                <p className="uppercase flex-center gap-x-4 font-bold text-blue">
                     <span>
                         <Image src={blueLine} alt="vector" />
                     </span>
