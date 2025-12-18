@@ -103,7 +103,6 @@ p {
 .product-hero {
   background: url(./images/product-banner.webp);
   width: 100%;
-  ;
   background-size: cover;
   background-position: center;
 }
@@ -111,7 +110,19 @@ p {
 .service-hero {
   background: url(./images/service-banner.webp);
   width: 100%;
-  ;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-hero {
+  background: url(./images/project-banner.webp);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.service-hero {
+  background: url(./images/service-banner.webp);
+  width: 100%;
   background-size: cover;
   background-position: center;
 }
