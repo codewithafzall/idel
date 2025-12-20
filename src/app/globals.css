@@ -78,7 +78,20 @@ p {
   font-size: 16px;
   width: 100%;
   color: #fff;
-  ;
+}
+
+.contact-form-input {
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  width: 100%;
+  color: #000000;
+  margin: 4px;
+}
+
+.contact-form-input::placeholder{
+  color: #919191;
 }
 
 .form-input:focus {
@@ -122,6 +135,18 @@ p {
 }
 .service-hero {
   background: url(./images/service-banner.webp);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.clients-hero {
+  background: url(./images/clients-banner.webp);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.contact-hero {
+  background: url(./images/contact-banner.webp);
   width: 100%;
   background-size: cover;
   background-position: center;
