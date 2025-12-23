@@ -151,6 +151,12 @@ p {
   background-size: cover;
   background-position: center;
 }
+.about-hero {
+  background: url(./images/about-banner.webp);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
 
 .marquee-track {
   width: max-content;
