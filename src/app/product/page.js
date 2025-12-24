@@ -59,7 +59,7 @@ const page = () => {
             {/* Products */}
             {products.map((product) => (
                 <div key={product.id}>
-                    <div className='bg-sky container relative flex justify-between items-center px-16 pt-16 pb-40'>
+                    <div className='bg-sky container relative flex justify-between items-center px-16 pt-16 pb-40 rounded-3xl'>
                         <div className='w-1/2'>
                             <h2 className='!font-thin'>{product.title}</h2>
                             <p className='mt-4'>{product.description}</p>

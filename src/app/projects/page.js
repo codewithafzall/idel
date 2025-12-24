@@ -12,6 +12,7 @@ import sequoia from '../images/sequoia.webp';
 import karjat from '../images/karjat.webp';
 import cartier from '../images/cartier.webp';
 import celebrity from '../images/celebrity.webp';
+import click from '../images/click.png';
 
 const page = () => {
 
@@ -53,9 +54,12 @@ const page = () => {
                 <div className='mt-14 grid grid-cols-3 place-content-between gap-7'>
                     {projects.map((item) => {
                         return (
-                            <div className='overflow-hidden' key={item.id}>
-                                <Image src={item.image} className='hover:scale-105 duration-500 transition-transform' alt={item.text} />
-                                <p className='mt-3'>{item.text}</p>
+                            <div className="overflow-hidden" key={item.id}>
+                                <div className="relative group cursor-pointer">
+                                    <Image src={item.image} alt={item.text} className="transition-transform duration-500 group-hover:scale-105" />
+                                    <Image src={click} alt="click icon" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"/>
+                                </div>
+                                <p className="mt-3">{item.text}</p>
                             </div>
                         )
                     })}
