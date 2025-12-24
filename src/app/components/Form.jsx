@@ -16,7 +16,7 @@ const Form = () => {
                         <input type='tel' placeholder='Phone Number' className='form-input' />
                         <textarea placeholder='Your Message' className='form-input h-32'></textarea>
                     </div>
-                    <button className='bg-yellow rounded-lg uppercase w-full py-3 mt-6 text-white'>Send Message</button>
+                    <button className='bg-[#3D7ED9] rounded-lg uppercase w-full py-3 mt-6 text-white'>Send Message</button>
                 </form>
 
             </div>

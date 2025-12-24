@@ -27,7 +27,7 @@ const page = () => {
                 <div className='container flex mt-14 gap-x-14'>
                     <div className='bg-white w-4/12 rounded-2xl'>
                         <div className='flex flex-col gap-y-2 border-b-2 border-gray-200 py-8 pl-10'>
-                            <Image src={visit} className='w-12 h-12' alt='map-icon' />
+                            <Image src={visit} className='w-12 h-14' alt='map-icon' />
                             <small className='text-2xl font-semibold'>Visit Us</small>
                             <small className='text-lg'>M/s. Indecomal Exports LLP. Ram House 4 - Gaiwadi Industrial Estate, Goregaon West, Mumbai - 400 104</small>
                         </div>
@@ -37,7 +37,7 @@ const page = () => {
                             <p>+91 98192 47835</p>
                         </div>
                         <div className='flex flex-col gap-y-2 py-8 pl-10'>
-                            <Image src={mail} className='w-12 h-12' alt='map-icon' />
+                            <Image src={mail} className='w-14 h-10' alt='map-icon' />
                             <small className='text-2xl font-semibold'>Mail Us</small>
                             <p>info@idelindia.com</p>
                         </div>

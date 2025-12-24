@@ -23,7 +23,7 @@ const Process = () => {
                         <p className='uppercase flex gap-x-4 font-bold text-blue'><span><Image src={blueLine} alt='vector' /></span>Our Process</p>
                         <h2 className='mt-3'>Precision-Driven Process <br />for Every Project</h2>
                     </div>
-                    <p className='leading-7 mt-2 mb-7'>Our team helps you make confident decisions by<br /> offering clear guidance, expert evaluation, and<br /> tailored recommendations for your space.</p>
+                    <p className='leading-7 mt-2 mb-7 text-right'>Our team helps you make confident decisions by<br /> offering clear guidance, expert evaluation, and<br /> tailored recommendations for your space.</p>
                 </div>
                 
                 <div className='grid grid-cols-4 gap-x-5 mt-14'>

@@ -48,4 +48,3 @@ const Products = () => {
 }
 
 export default Products
-6
