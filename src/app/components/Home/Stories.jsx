@@ -9,10 +9,10 @@ import Story4 from "../../images/story-4.webp";
 const Stories = () => {
 
     const stories = [
-        { id: 1, image: Story1, title: "Design Support" },
-        { id: 2, image: Story2, title: "Site Survey" },
-        { id: 3, image: Story3, title: "Installation" },
-        { id: 4, image: Story4, title: "Tech Consultancy" },
+        { id: 1, image: Story1, title: "Design Support", text: "We create modern, functional, and visually refined designs tailored to your space and requirements." },
+        { id: 2, image: Story2, title: "Site Survey", text: "Every detail is verified - measurements, materials, and technical specifications to guarantee flawless execution." },
+        { id: 3, image: Story3, title: "Installation", text: "Our trained team ensures smooth on-site installation with clean execution and zero compromises on quality." },
+        { id: 4, image: Story4, title: "Tech Consultancy", text: "From material selection to layout decisions, our specialists ensure you make the right choices for your project." },
     ];
 
     return (
@@ -27,7 +27,7 @@ const Stories = () => {
                     return (
                         <div key={story.id} className='relative'>
                             <Image src={story.image} alt={story.title} className='z-10' />
-                            <p className='absolute bottom-9 left-4 z-20 !text-2xl text-white font-semibold'>{story.title}</p>
+                            <small className='absolute bottom-9 left-4 z-20 text-2xl text-white font-semibold'>{story.title}</small>
                         </div>
                     )
                 })}
