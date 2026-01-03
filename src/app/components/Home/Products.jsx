@@ -41,7 +41,7 @@ const Products = () => {
                     {/* PRODUCT 2 */}
                     <div className="flex flex-col items-center">
                         <div className="group relative overflow-hidden rounded-lg">
-                            <Image src={product2} width={430} height={570} alt="Geeta Series" className="rounded-lg object-cover hover:scale-120 duration-1000" />
+                            <Image src={product2} width={430} height={570} alt="Geeta Series" className="rounded-lg object-cover group-hover:scale-120 duration-1000" />
 
                             <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transform scale-0 origin-center transition-transform duration-800 ease-in-out group-hover:scale-100">
                                 <p className="text-black mt-3">Reliable and lightweight aluminium solutions built for long-lasting everyday performance.</p>

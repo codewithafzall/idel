@@ -43,7 +43,7 @@
 }
 
 .hero {
-  background: url(../app/images/banner.webp);
+  background: url(../app/images/banner.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;

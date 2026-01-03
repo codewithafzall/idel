@@ -55,12 +55,13 @@ const page = () => {
                     {projects.map((item) => {
                         return (
                             <div className="overflow-hidden" key={item.id}>
-                                <div className="relative group cursor-pointer">
-                                    <Image src={item.image} alt={item.text} className="transition-transform duration-500 group-hover:scale-105" />
-                                    <Image src={click} alt="click icon" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"/>
+                                <div className="relative group cursor-pointer aspect-9/10 overflow-hidden rounded-lg">
+                                    <Image src={item.image} alt={item.text} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <Image src={click} alt="click icon" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-10" />
                                 </div>
                                 <p className="mt-3">{item.text}</p>
                             </div>
+
                         )
                     })}
                 </div>

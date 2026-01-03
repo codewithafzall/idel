@@ -14,6 +14,7 @@ import ua from '../images/ua.webp';
 import cda from '../images/cda.webp';
 import mission from '../images/mission.webp';
 import comma from '../images/comma.png';
+import location from '../images/location-icon.png';
 import Image from 'next/image';
 
 const page = () => {
@@ -27,9 +28,9 @@ const page = () => {
     ];
 
     const projects = [
-        {id: 1, img: about1,},
-        {id: 2, img: about2,},
-        {id: 3, img: about3,}
+        { id: 1, img: about1, client: "Client: NICMAR", location: "BALEWADI, PUNE", architect: "NILABH NAGAR" },
+        { id: 2, img: about2, client: "Client: JYOTHIKA & SURIYA", location: "ECR, CHENNAI", architect: "LOC DESIGN HOUSE" },
+        { id: 3, img: about3, client: "Client: KARAN JOHAR", location: "KHAR", architect: "NAVED PATEL" }
     ]
 
     return (
@@ -104,9 +105,17 @@ const page = () => {
                 ))}
             </div>
 
-            <Image src={aboutFixed} className='w-full' alt='showcasing window design' />
+            <div className="sticky top-0 z-20">
+                <Image
+                    src={aboutFixed}
+                    alt="showcasing window design"
+                    className="w-full h-full object-cover"
+                    priority
+                />
+            </div>
 
-            <div className='container relative -mt-85'>
+
+            <div className='container relative -mt-85 z-30'>
                 <div className="flex justify-between items-center flex-col md:flex-row">
                     <div>
                         <p className="uppercase flex items-center gap-x-4 font-bold text-white">
@@ -123,7 +132,7 @@ const page = () => {
                     </p>
                 </div>
 
-                <div className='bg-white w-full mt-16 shadow-md'>
+                <div className='bg-white w-full mt-16 shadow-xl'>
                     <div className='grid grid-cols-3 border-[#D2DCDC] border-b'>
                         <h3 className='text-center text-2xl py-5 font-semibold text-white bg-blue'>Our Mission</h3>
                         <h3 className='text-center text-2xl py-5 font-semibold text-black'>Our Vision</h3>
@@ -148,29 +157,36 @@ const page = () => {
                 </div>
             </div>
 
-            <div className='ml-[calc((100vw-1293px)/2)] max-w-full bg-blue flex items-center mt-14'>
-              <Image src={kapil} alt='Kapil Owner of Idel India' className='w-[35%]'/>
-              <div className='text-white ml-[10%]'>
-                 <small className='text-lg'>Meet the Founder</small>
-                 <h3 className='my-7 text-3xl'><span className='block mb-4'><Image src={comma} alt="comma"/></span>We don't just close gaps<br/> in walls. We open new<br/> possibilities in design.</h3>
-                 <h3 className='uppercase text-xl'>Mr. Kapil Jhunjhunwala</h3>
-                 <small className='text-sm mt-2'>Founder, IDEL</small>
-              </div>
-            </div>
-
-            <div className='container mt-20'>
-                <h2>Our Amazing Projects</h2>
-                <div className='flex justify-between items-center mt-5'>
-                    <p>This collection of past projects highlights the versatility and<br/> precision that we bring to the job. No matter what your vision may<br/> be, we’ll make it happen!</p>
-                    <button className='border-2 border-[#29367D] text-blue py-3 px-10 rounded-lg'>View All Projects</button>
+            <div className='w-full bg-white relative z-50 pt-14'>
+                <div className='ml-[calc((100vw-1293px)/2)] max-w-full bg-blue flex items-center mt-14'>
+                    <Image src={kapil} alt='Kapil Owner of Idel India' className='w-[35%]' />
+                    <div className='text-white ml-[10%]'>
+                        <small className='text-lg'>Meet the Founder</small>
+                        <h3 className='my-7 text-3xl'><span className='block mb-4'><Image src={comma} alt="comma" /></span>We don't just close gaps<br /> in walls. We open new<br /> possibilities in design.</h3>
+                        <h3 className='uppercase text-xl'>Mr. Kapil Jhunjhunwala</h3>
+                        <small className='text-sm mt-2'>Founder, IDEL</small>
+                    </div>
                 </div>
 
-                <div className='grid grid-cols-3 gap-x-10 pt-6 pb-20'>
-                    {projects.map((item)=>{
-                        return(
-                            <Image key={item.id} src={item.img} alt='projects'/>
-                        )
-                    })}
+                <div className='container mt-20'>
+                    <h2>Our Amazing Projects</h2>
+                    <div className='flex justify-between items-center mt-5'>
+                        <p>This collection of past projects highlights the versatility and<br /> precision that we bring to the job. No matter what your vision may<br /> be, we’ll make it happen!</p>
+                        <button className='border-2 border-[#29367D] text-blue py-3 px-10 rounded-lg'>View All Projects</button>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-x-10 pt-6 pb-20">
+                        {projects.map((item) => (
+                            <div key={item.id} className="group relative overflow-hidden rounded-lg">
+                                <Image src={item.img} alt="projects" className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-105" />
+                                <div className="absolute rounded-lg inset-x-0 -bottom-full bg-blue-900/90 text-white group-hover:bottom-0 transition-all duration-700 ease-out py-10 pl-10">
+                                    <small className="text-2xl font-semibold">{item.client}</small>
+                                    <div className="text-lg uppercase tracking-wide my-4 flex items-center gap-x-1"><Image className='w-6 h-6' alt='location icon' src={location}/> {item.location}</div>
+                                    <small className="text-xl">{item.architect}</small>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 

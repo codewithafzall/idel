@@ -72,7 +72,7 @@ const page = () => {
                             <Image
                                 width={422}
                                 height={422}
-                                className='aspect-square'
+                                className='aspect-square hover:scale-110 transition-transform duration-700'
                                 src={product.productImage}
                                 alt={product.title}
                             />
