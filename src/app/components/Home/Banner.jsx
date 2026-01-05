@@ -22,7 +22,7 @@ const Banner = () => {
                 scrollTrigger: {
                     trigger: hero,
                     start: 'top top',
-                    end: '+=100', 
+                    end: '+=200', 
                     scrub: true,
                     pin: true,        
                     anticipatePin: 1,

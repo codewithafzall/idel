@@ -11,7 +11,7 @@ const Stories = () => {
     const stories = [
         { id: 1, image: Story1, title: "Design Support", text: "Functional, aesthetic, and space-optimised aluminium system design." },
         { id: 2, image: Story2, title: "Site Survey", text: " On-site measurements and environment analysis for optimal fit." },
-        { id: 3, image: Story3, title: "Installation", text: "Executed by trained professionals to ensure flawless integration." },
+        { id: 3, image: Story3, title: "Installation", text: "Executed by trained professionals to ensure flawless integration and lasting performance." },
         { id: 4, image: Story4, title: "Tech Consultancy", text: "Product recommendations, compatibility checks & value engineering." },
     ];
 
@@ -34,12 +34,12 @@ const Stories = () => {
                         <Image src={story.image} alt={story.title} className="z-10" />
 
                         {/* TITLE (NO BG INITIALLY) */}
-                        <h3 className="absolute bottom-9 left-4 z-20 text-2xl text-white font-semibold transition-all duration-900 group-hover:bottom-35">
+                        <h3 className="absolute bottom-8 left-4 z-20 text-2xl text-white font-semibold transition-all duration-900 group-hover:bottom-35">
                             {story.title}
                         </h3>
 
                         {/* HOVER PANEL */}
-                        <div className="absolute left-0 right-0 bottom-0 bg-blue px-4 pb-5 pt-14 opacity-0 translate-y-6 transition-all duration-900 group-hover:opacity-100 group-hover:translate-y-0">
+                        <div className="absolute left-0 right-0 bottom-0 bg-blue px-4 pb-5 pt-24 opacity-0 translate-y-6 transition-all duration-900 group-hover:opacity-100 group-hover:translate-y-0">
 
                             <small className="text-lg text-white">
                                 {story.text}
