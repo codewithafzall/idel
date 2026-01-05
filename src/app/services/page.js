@@ -22,29 +22,33 @@ const page = () => {
         {
             id: 1,
             title: 'Design Support',
+            subtitle:"Where function meets finesse.",
             description:
-                'We create modern, functional, and visually refined designs tailored to your space and requirements.',
+                'We design modern, efficient, and visually refined aluminium systems tailored to your space, specs, and style.',
             number: '01',
         },
         {
             id: 2,
             title: 'Fabrication Excellence',
+            subtitle:"Precision that performs.",
             description:
-                'Precision manufacturing using high-quality aluminium systems to ensure strength, durability, and accuracy.',
+                'Manufacturing with high-grade aluminium profiles using best-in-class equipment to ensure lasting strength and alignment.',
             number: '02',
         },
         {
             id: 3,
             title: 'Installation Services',
+            subtitle:"On-site execution, done right.",
             description:
-                'Expert installation executed with technical accuracy, ensuring smooth performance and perfect alignment.',
+                'Our expert teams install with accuracy and care — aligning perfectly with project timelines, tolerances, and technical requirements.',
             number: '03',
         },
         {
             id: 4,
             title: 'After-Sales Support',
+            subtitle:"Support that stays.",
             description:
-                'Dedicated post-installation support to maintain long-term performance and customer satisfaction.',
+                'We offer post-installation servicing and maintenance exclusively for IDEL-installed systems — ensuring long-term performance and client satisfaction.',
             number: '04',
         },
     ];
@@ -87,8 +91,8 @@ const page = () => {
             <div className='service-hero text-white'>
                 <div className='container pt-44 pb-32'>
                     <h2>
-                        Precision-Driven Services <br />
-                        Tailored to Your Needs
+                        Precision in Every Detail.  <br />
+                        Crafted for Performance.
                     </h2>
                 </div>
             </div>
@@ -136,11 +140,11 @@ const page = () => {
                             Our Services
                         </p>
                         <h2 className='mt-3'>
-                            Creating Engaging Stories <br />
-                            That Attract Educate
+                            End-to-End Expertise, <br />
+                            Built Around You
                         </h2>
                         <p className='leading-7 mt-4 mb-7 w-10/12'>
-                            We help you shape your project with design-led solutions that enhance aesthetics while maintaining practical efficiency and long-term reliability.
+                           We partner with you across every stage, shaping spaces with technical insight, aesthetic sensibility, and hands-on execution.
                         </p>
                     </div>
 
@@ -166,7 +170,7 @@ const page = () => {
                                     </div>
 
                                     <div className='text-white'>
-                                        <small className='text-4xl'>{service.title}</small>
+                                        <small className='text-4xl block'>{service.title}</small>
                                         <p className='leading-7 mt-4'>{service.description}</p>
                                     </div>
                                 </div>

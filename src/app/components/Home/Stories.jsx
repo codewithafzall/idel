@@ -9,10 +9,10 @@ import Story4 from "../../images/story-4.webp";
 const Stories = () => {
 
     const stories = [
-        { id: 1, image: Story1, title: "Design Support", text: "We create modern, functional, and visually refined designs tailored to your space and requirements." },
-        { id: 2, image: Story2, title: "Site Survey", text: "Every detail is verified - measurements, materials, and technical specifications to guarantee flawless execution." },
-        { id: 3, image: Story3, title: "Installation", text: "Our trained team ensures smooth on-site installation with clean execution and zero compromises on quality." },
-        { id: 4, image: Story4, title: "Tech Consultancy", text: "From material selection to layout decisions, our specialists ensure you make the right choices for your project." },
+        { id: 1, image: Story1, title: "Design Support", text: "Functional, aesthetic, and space-optimised aluminium system design." },
+        { id: 2, image: Story2, title: "Site Survey", text: " On-site measurements and environment analysis for optimal fit." },
+        { id: 3, image: Story3, title: "Installation", text: "Executed by trained professionals to ensure flawless integration." },
+        { id: 4, image: Story4, title: "Tech Consultancy", text: "Product recommendations, compatibility checks & value engineering." },
     ];
 
     return (
@@ -22,7 +22,7 @@ const Stories = () => {
                     <span><Image src={blueLine} alt="vector" /></span>Our Services
                 </p>
                 <h2 className="text-center mt-4">
-                    Creating Engaging Stories <br />That Attract Educate
+                    End-to-End Services, <br/>Built Around You
                 </h2>
             </div>
 

@@ -9,10 +9,10 @@ import support from "../../images/support.webp";
 const Process = () => {
 
     const process = [
-        { id: 1, image: consult, title: '1. Consult', desc: 'We understand your requirements and help you choose the right products with expert guidance.' },
-        { id: 2, image: customize, title: '2. Customize', desc: 'Tailor-made solutions designed to match your space, style, and technical needs.' },
-        { id: 3, image: build, title: '3. Build', desc: 'Precision fabrication with high-quality materials to ensure performance and durability.' },
-        { id: 4, image: support, title: '4. Support', desc: 'End-to-end assistance with smooth installation, after-service, and long-term maintenance.' },
+        { id: 1, image: consult, title: 'Consult', desc: 'We understand your needs and recommend the best-fit system.' },
+        { id: 2, image: customize, title: 'Customize', desc: 'Tailor-made designs engineered to your space, use and budget.' },
+        { id: 3, image: build, title: 'Build', desc: 'Precision fabrication with strict QC and industry benchmarks.' },
+        { id: 4, image: support, title: 'Support', desc: 'Smooth on-site execution, after-sales and AMC guidance.' },
     ];
 
     return (
@@ -24,13 +24,11 @@ const Process = () => {
                             <span><Image src={blueLine} alt="vector" /></span>Our Process
                         </p>
                         <h2 className="mt-3">
-                            Precision-Driven Process <br />for Every Project
+                            A Seamless Journey <br /> from Concept to Completion.
                         </h2>
                     </div>
                     <p className="leading-7 mt-2 mb-7 text-right">
-                        Our team helps you make confident decisions by<br />
-                        offering clear guidance, expert evaluation, and<br />
-                        tailored recommendations for your space.
+                        Our team ensures clarity, efficiency, and confidence<br/> at every stage of your project, from product<br/> selection to post-installation support.
                     </p>
                 </div>
 

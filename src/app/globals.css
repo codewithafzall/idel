@@ -39,6 +39,12 @@
 
   button {
     cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  button:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -46,6 +52,7 @@
   background: url(../app/images/banner.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
 }
@@ -90,7 +97,7 @@ p {
   margin: 4px;
 }
 
-.contact-form-input::placeholder{
+.contact-form-input::placeholder {
   color: #919191;
 }
 
@@ -133,24 +140,28 @@ p {
   background-size: cover;
   background-position: center;
 }
+
 .service-hero {
   background: url(./images/service-banner.webp);
   width: 100%;
   background-size: cover;
   background-position: center;
 }
+
 .clients-hero {
   background: url(./images/clients-banner.webp);
   width: 100%;
   background-size: cover;
   background-position: center;
 }
+
 .contact-hero {
   background: url(./images/contact-banner.webp);
   width: 100%;
   background-size: cover;
   background-position: center;
 }
+
 .about-hero {
   background: url(./images/about-banner.webp);
   width: 100%;

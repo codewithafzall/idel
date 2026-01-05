@@ -10,7 +10,7 @@ const page = () => {
         <main>
             <div className='contact-hero text-white'>
                 <div className='container pt-44 pb-32'>
-                    <h2>Let’s Build Something <br />Exceptional Together</h2>
+                    <h2>Let’s Frame <br />What’s Next, Together.</h2>
                 </div>
             </div>
 

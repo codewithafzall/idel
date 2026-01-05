@@ -12,22 +12,22 @@ import Form from '../components/Form';
 const products = [
     {
         id: 1,
-        title: 'Slimline Systems',
-        description: 'Our Slimline Systems offer sleek, ultra-slim aluminium profiles that maximize visibility and bring a modern, minimal look to any space.',
+        title: 'Minimal Series',
+        description: 'Our Minimal Series offers ultra-slim aluminium profiles engineered to maximise visibility and deliver clean, modern aesthetics. Perfect for spaces where design minimalism meets structural performance, combining slim interlocks with robust load-bearing capabilities.',
         productImage: Slimline,
         infoImage: SlimlineInfo,
     },
     {
         id: 2,
         title: 'Geeta Series',
-        description: 'The Geeta Series offers strong, reliable aluminium profiles designed for long-lasting performance in residential and commercial spaces.',
+        description: 'The Geeta Series features robust aluminium profiles built for long-lasting performance in both residential and commercial applications. With multiple variants optimised for different use cases, the series offers a perfect balance between strength, efficiency, and versatile design.',
         productImage: Geeta,
         infoImage: GeetaInfo,
     },
     {
         id: 3,
-        title: 'Aluk (Rotoi earlier)',
-        description: 'The Geeta Series offers strong, reliable aluminium profiles designed for long-lasting performance in residential and commercial spaces.',
+        title: 'Aluk Series',
+        description: 'The AluK Series blends global design intelligence with local execution. These systems are ideal for premium residential and commercial applications that demand performance, aesthetics, and reliability. Engineered for structural integrity and seamless operation, this series caters to elevated architectural needs.',
         productImage: Aluk,
         infoImage: AlukInfo,
     },

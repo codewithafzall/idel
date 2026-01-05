@@ -42,7 +42,7 @@ const Testimonials = () => {
   return (
     <section className="bg-sky py-20">
       <div className="container">
-        <div className="flex justify-between items-start flex-col md:flex-row">
+        <div className="flex justify-between items-center flex-col md:flex-row">
           <div>
             <p className="uppercase flex items-center gap-x-4 font-bold text-blue">
               <span>
@@ -50,13 +50,11 @@ const Testimonials = () => {
               </span>
               Testimonials
             </p>
-            <h2 className="mt-3">Our Customers Say</h2>
+            <h2 className="mt-3">What Our Clients Say</h2>
           </div>
 
-          <p className="leading-7 mt-4 md:mt-0">
-            We guide you toward the most effective solutions <br />
-            for your space with expert insights and<br />
-            transparent recommendations.
+          <p className="leading-7 mt-4 md:mt-0 text-right">
+            Real feedback from architects, developers,<br/> and homeowners who trust IDEL for their<br/> premium aluminium system needs.
           </p>
         </div>
 
@@ -65,7 +63,7 @@ const Testimonials = () => {
           spaceBetween={30}
           autoplay={{
             delay: 2500,
-            disableOnInteraction: false, 
+            disableOnInteraction: false,
           }}
           className="mt-12"
           modules={[Pagination, Autoplay]}

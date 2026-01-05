@@ -36,7 +36,7 @@ const page = () => {
         <main>
             <div className='project-hero text-white'>
                 <div className='container pt-44 pb-32'>
-                    <h2>Delivering Excellence <br />Through Every Project</h2>
+                    <h2>Precision in Every Pane. <br />Purpose in Every Project.</h2>
                 </div>
             </div>
             <div className='container py-14'>

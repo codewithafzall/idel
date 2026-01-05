@@ -53,7 +53,7 @@ const page = () => {
         <main>
             <div className='clients-hero text-white'>
                 <div className='container pt-44 pb-32'>
-                    <h2>Trusted by Leading  <br />Architects & Developers</h2>
+                    <h2>Our Work.  <br />Their Trust.</h2>
                 </div>
             </div>
             <div className='py-14 bg-sky'>

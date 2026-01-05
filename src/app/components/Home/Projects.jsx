@@ -31,16 +31,18 @@ export default function ProjectsSwiper() {
 
     return (
         <section className="pt-14 pb-10 relative">
-            <div>
-                <p className="uppercase flex-center gap-x-4 font-bold text-blue">
-                    <span>
-                        <Image src={blueLine} alt="vector" />
-                    </span>
-                    Our Services
+            <div className="container flex justify-between items-center">
+                <div>
+                    <p className="uppercase flex gap-x-4 font-bold text-blue">
+                        <span><Image src={blueLine} alt="vector" /></span>Our Projects
+                    </p>
+                    <h2 className="mt-3">
+                        Creating Engaging Stories <br /> That Attract Educate
+                    </h2>
+                </div>
+                <p className="leading-7 mt-2 mb-7 text-right">
+                    Showcasing some of our most iconic residential<br/> and commercial installations engineered<br/> for performance, delivered with precision.
                 </p>
-                <h2 className="text-center mt-4">
-                    Creating Engaging Stories <br /> That Attract Educate
-                </h2>
             </div>
 
             <div className="w-full px-5 md:px-20 mt-14 relative">

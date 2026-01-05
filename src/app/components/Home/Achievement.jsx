@@ -42,10 +42,10 @@ const Achievement = () => {
                 );
             };
 
-            animateCounter(yearsRef.current, 15);
+            animateCounter(yearsRef.current, 25, "+");
             animateCounter(architectsRef.current, 10, "+");
             animateCounter(projectsRef.current, 200, "+");
-            animateCounter(feedbackRef.current, 18, "%");
+            animateCounter(feedbackRef.current, 95, "%");
 
         }, sectionRef);
 
@@ -61,10 +61,10 @@ const Achievement = () => {
                         <span><Image src={blueLine} alt="vector" /></span>Our Achievement
                     </p>
                     <h2 className="mt-3">
-                        Proven Excellence in <br />Fenestration & Design
+                        Trusted by India’s <br/>Leading Architects & Builders.
                     </h2>
                     <p className="leading-7 mt-2 mb-7">
-                        We deliver high-quality fenestration solutions backed by decades of industry expertise. Our work reflects precision, innovation, and a commitment to client satisfaction.
+                        From boutique bungalows to large-scale developments, we deliver lasting value, innovation, and peace of mind through expert fenestration solutions.
                     </p>
                 </div>
 
@@ -77,7 +77,7 @@ const Achievement = () => {
                         </div>
                         <div className="border-dashed border-t border-[#b1b1b1] p-4">
                             <h2 ref={architectsRef}>0+</h2>
-                            <p>Leading Architects &<br /> Developers Served</p>
+                            <p>Architect & <br/>Developer Partnerships</p>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@ const Achievement = () => {
                         </div>
                         <div className="border-dashed border-t border-[#b1b1b1] p-4">
                             <h2 ref={feedbackRef}>0%</h2>
-                            <p>Positive Feedback Rate<br /> Across Projects</p>
+                            <p>Client <br/>Satisfaction Rate</p>
                         </div>
                     </div>
 
