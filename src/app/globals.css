@@ -48,13 +48,35 @@
   }
 }
 
-.hero {
-  background: url(../app/images/banner.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+/* Recommended global hardening (prevents “grey” body showing through) */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: #ffffff; /* match your desired behind-hero color */
+}
+
+.heroWrap {
+  position: relative;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform: scale(1);
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 h1 {

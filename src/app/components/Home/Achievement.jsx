@@ -4,7 +4,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import blueLine from "../../images/blue-line.svg";
 import sketch from "../../images/sketch.webp";
-import PartnerLogo from "../../images/partner-logo.webp";
+import logo1 from "../../images/design-story.webp";
+import logo2 from "../../images/kdah.webp"
+import logo3 from "../../images/malik.webp"
+import logo4 from "../../images/runwal.webp"
+import logo5 from "../../images/studio.webp"
 import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +20,7 @@ const Achievement = () => {
     const architectsRef = useRef(null);
     const projectsRef = useRef(null);
     const feedbackRef = useRef(null);
-    const logos = [PartnerLogo, PartnerLogo, PartnerLogo, PartnerLogo]
+    const logos = [logo1, logo2, logo3, logo4, logo5]
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -119,7 +123,7 @@ const Achievement = () => {
                                 key={index}
                                 src={item}
                                 alt="partner-logo"
-                                className="shrink-0"
+                                className="shrink-0 w-40"
                             />
                         ))}
                     </div>

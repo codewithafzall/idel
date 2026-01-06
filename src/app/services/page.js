@@ -1,13 +1,14 @@
 'use client';
-
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-
 import blueLine from "../images/blue-line.svg";
 import service from "../images/service.webp";
 import line from '../images/line.webp';
-import logo from '../images/partner-logo.webp';
-
+import logo1 from "../images/design-story.webp";
+import logo2 from "../images/kdah.webp"
+import logo3 from "../images/malik.webp"
+import logo4 from "../images/runwal.webp"
+import logo5 from "../images/studio.webp"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Form from '../components/Form';
@@ -16,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
 
-    const logos = [logo, logo, logo, logo, logo, logo];
+    const logos = [logo1, logo2, logo3, logo4, logo5];
 
     const services = [
         {
@@ -125,7 +126,7 @@ const page = () => {
                             key={index}
                             src={item}
                             alt="partner-logo"
-                            className="shrink-0"
+                            className="shrink-0 w-40"
                         />
                     ))}
                 </div>

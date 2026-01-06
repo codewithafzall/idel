@@ -10,7 +10,7 @@ import home2 from "../../images/home-2.png";
 
 const Products = () => {
     return (
-        <section>
+        <section className='relative z-20'>
 
             <div className="container bg-blue rounded-xl py-12 px-10 mt-14">
                 <p className="uppercase text-white flex-center gap-x-4 font-bold">

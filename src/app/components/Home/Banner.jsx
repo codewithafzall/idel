@@ -1,57 +1,73 @@
 'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Banner = () => {
+export default function Banner() {
+  const heroRef = useRef(null);
 
-    const heroRef = useRef(null);
+  useLayoutEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
 
-    useEffect(() => {
-        const hero = heroRef.current;
+    const bg = hero.querySelector('.heroBg');
 
-        gsap.fromTo(
-            hero,
-            { backgroundSize: '100%' },
-            {
-                backgroundSize: '108%',
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: hero,
-                    start: 'top top',
-                    end: '+=200', 
-                    scrub: true,
-                    pin: true,        
-                    anticipatePin: 1,
-                },
-            }
-        );
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        bg,
+        { scale: 1 },
+        {
+          scale: 1.08,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: hero,
+            start: 'top top',
+            end: '+=200',
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
 
-        return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
-        };
-    }, []);
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+    }, hero);
 
-    return (
-        <div ref={heroRef} className="hero relative z-10">
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30"></div>
+    return () => ctx.revert();
+  }, []);
 
-            <div className="container relative text-white top-1/2 -translate-y-1/2">
-                <h1 className="uppercase">Where Design</h1>
-                <h1 className="uppercase mt-2">Meets Precision</h1>
-                <p className="w-1/2 leading-6 mt-3">
-                    Experience next-generation aluminium systems, engineered for longevity, luxury, and unmatched performance.
-                </p>
-                <button className="bg-[#1267de] rounded-lg uppercase px-9 py-3 mt-6">
-                    Enquire Now
-                </button>
-            </div>
-        </div>
-    );
-};
+  return (
+    <section ref={heroRef} className="heroWrap relative z-10" suppressHydrationWarning>
+      <div className="heroBg">
+        <video
+          className="heroVideo"
+          src="/banner.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+      </div>
 
-export default Banner;
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/10" />
+
+      {/* Content */}
+      <div className="container relative text-white top-1/2 -translate-y-1/2">
+        <h1 className="uppercase">Where Design</h1>
+        <h1 className="uppercase mt-2">Meets Precision</h1>
+        <p className="w-1/2 leading-6 mt-3">
+          Experience next-generation aluminium systems, engineered for longevity,
+          luxury, and unmatched performance.
+        </p>
+        <button className="bg-[#90b9f4] rounded-lg uppercase px-9 py-3 mt-6 text-black">
+          Enquire Now
+        </button>
+      </div>
+    </section>
+  );
+}

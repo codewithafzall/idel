@@ -1,7 +1,12 @@
 import React from 'react';
 import blueLine from "../images/blue-line.svg";
 import Image from 'next/image';
-import home from '../images/home.png';
+import home from '../images/home.png'
+import Building from '../images/Building.svg';
+import Residence from '../images/Residence.svg';
+import Clinic from '../images/Clinic.svg';
+import Bungalow from '../images/Bungalow.svg';
+import Duplex from '../images/Duplex.svg';
 import location from '../images/location.webp';
 
 const page = () => {
@@ -48,6 +53,7 @@ const page = () => {
         { id: 40, type: "Amenity Hall", name: "Runwal", location: "Nepeansea Road, Mumbai" }
     ];
 
+    const typeIcons = {Building, Residence, Clinic, Bungalow, Duplex,};
 
     return (
         <main>
@@ -72,7 +78,7 @@ const page = () => {
                         return (
                             <div key={client.id} className='bg-white rounded-xl border border-gray-300 flex flex-col justify-center w-96 h-40'>
                                 <div className='flex flex-col ml-20'>
-                                    <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'><span><Image src={home} className='w-5 h-5' alt="home icon" /></span>{client.type}</p>
+                                    <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'><span><Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" /></span>{client.type}</p>
                                     <p className='my-2'>Client: <span className='font-semibold'>{client.name}</span></p>
                                     <small className='flex items-center text-gray-400 gap-x-2'><span><Image src={location} className='' alt="home icon" /></span>{client.location}</small>
                                 </div>
