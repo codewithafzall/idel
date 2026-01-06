@@ -15,11 +15,11 @@ const Footer = () => {
                 <div className='flex flex-col mx-auto'>
                     <p>Quick Links</p>
                     <ul className='space-y-6 mt-7'>
-                        <li>HOME</li>
-                        <li>ABOUT US</li>
-                        <li>PROJECTS</li>
-                        <li>SERVICES</li>
-                        <li>CLIENTS</li>
+                        <li><a href='/'>HOME</a></li>
+                        <li><a href='/about'>ABOUT US</a></li>
+                        <li><a href='/projects'>PROJECTS</a></li>
+                        <li><a href='/services'>SERVICES</a></li>
+                        <li><a href='/clients'>CLIENTS</a></li>
                     </ul>
                 </div>
                 <div className='flex flex-col ml-10'>

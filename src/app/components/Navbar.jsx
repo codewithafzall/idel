@@ -100,7 +100,7 @@ export default function Navbar() {
 
             {/* Active underline */}
             <span
-              className="absolute bottom-[-6px] h-[2px] bg-white transition-all duration-300 ease-out"
+              className="absolute -bottom-1.5 h-0.5 bg-white transition-all duration-300 ease-out"
               style={{
                 width: `${lineStyle.width}px`,
                 transform: `translateX(${lineStyle.left}px)`,

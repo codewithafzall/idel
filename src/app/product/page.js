@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import blueLine from "../images/blue-line.svg";
 import Slimline from '../images/slimline-product.webp';
-import SlimlineInfo from '../images/slimline-info.webp';
+import SlimlineInfo from '../images/minimal-info.png';
 import Geeta from '../images/geeta-product.webp';
-import GeetaInfo from '../images/geeta-info.webp';
+import GeetaInfo from '../images/geeta-info.png';
 import Aluk from '../images/aluk-product.webp';
-import AlukInfo from '../images/aluk-info.webp';
+import AlukInfo from '../images/aluk-info.png';
 import Form from '../components/Form';
 
 const products = [

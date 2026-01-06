@@ -19,7 +19,7 @@ export default function Banner() {
         bg,
         { scale: 1 },
         {
-          scale: 1.08,
+          scale: 1.1,
           ease: 'none',
           scrollTrigger: {
             trigger: hero,
@@ -64,7 +64,7 @@ export default function Banner() {
           Experience next-generation aluminium systems, engineered for longevity,
           luxury, and unmatched performance.
         </p>
-        <button className="bg-[#90b9f4] rounded-lg uppercase px-9 py-3 mt-6 text-black">
+        <button className="bg-[#4B5AAA] rounded-lg uppercase px-9 py-3 mt-6">
           Enquire Now
         </button>
       </div>

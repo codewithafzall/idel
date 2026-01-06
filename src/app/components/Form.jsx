@@ -29,7 +29,7 @@ const Form = () => {
                         <textarea placeholder="Your Message" className="form-input h-32"></textarea>
                     </div>
 
-                    <button className="bg-[#90b9f4] rounded-lg uppercase w-full py-3 mt-6 text-white">
+                    <button className="bg-[#4B5AAA] rounded-lg uppercase w-full py-3 mt-6 text-white">
                         Send Message
                     </button>
                 </form>
