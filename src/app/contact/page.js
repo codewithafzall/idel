@@ -28,7 +28,7 @@ const page = () => {
                     <div className='bg-white w-4/12 rounded-2xl'>
                         <div className='flex flex-col gap-y-2 border-b-2 border-gray-200 py-8 pl-10'>
                             <Image src={visit} className='w-12 h-14' alt='map-icon' />
-                            <small className='text-2xl font-semibold'>Visit Us</small>
+                            <small className='text-2xl font-semibold'>Registered Office</small>
                             <small className='text-lg'>M/s. Indecomal Exports LLP. Ram House 4 - Gaiwadi Industrial Estate, Goregaon West, Mumbai - 400 104</small>
                         </div>
                         <div className='flex flex-col gap-y-2 border-b-2 border-gray-200 py-8 pl-10'>

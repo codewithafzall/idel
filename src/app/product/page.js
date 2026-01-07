@@ -12,17 +12,10 @@ import Form from '../components/Form';
 const products = [
     {
         id: 1,
-        title: 'Minimal Series',
+        title: 'Minimal System',
         description: 'Our Minimal Series offers ultra-slim aluminium profiles engineered to maximise visibility and deliver clean, modern aesthetics. Perfect for spaces where design minimalism meets structural performance, combining slim interlocks with robust load-bearing capabilities.',
         productImage: Slimline,
         infoImage: SlimlineInfo,
-    },
-    {
-        id: 2,
-        title: 'Geeta Series',
-        description: 'The Geeta Series features robust aluminium profiles built for long-lasting performance in both residential and commercial applications. With multiple variants optimised for different use cases, the series offers a perfect balance between strength, efficiency, and versatile design.',
-        productImage: Geeta,
-        infoImage: GeetaInfo,
     },
     {
         id: 3,
@@ -30,6 +23,13 @@ const products = [
         description: 'The AluK Series blends global design intelligence with local execution. These systems are ideal for premium residential and commercial applications that demand performance, aesthetics, and reliability. Engineered for structural integrity and seamless operation, this series caters to elevated architectural needs.',
         productImage: Aluk,
         infoImage: AlukInfo,
+    },
+    {
+        id: 2,
+        title: 'Geeta Series',
+        description: 'The Geeta Series features robust aluminium profiles built for long-lasting performance in both residential and commercial applications. With multiple variants optimised for different use cases, the series offers a perfect balance between strength, efficiency, and versatile design.',
+        productImage: Geeta,
+        infoImage: GeetaInfo,
     },
 ];
 
@@ -58,14 +58,14 @@ const page = () => {
 
             {/* Products */}
             {products.map((product) => (
-                <div key={product.id}>
-                    <div className='bg-sky container relative flex justify-between items-center px-16 pt-16 pb-40 rounded-3xl'>
+                <div key={product.id} id={`product-${product.id}`}>
+                    <div className='bg-sky container relative flex justify-between items-center px-16 pt-16 pb-40 rounded-3xl scroll-mt-8'>
                         <div className='w-1/2'>
-                            <h2 className='!font-thin'>{product.title}</h2>
+                            <h2 className='font-thin!'>{product.title}</h2>
                             <p className='mt-4'>{product.description}</p>
-                            <button className='border-2 text-blue border-[#29367D] bg-transparent rounded-md px-6 py-2 mt-7 font-semibold'>
+                            {/* <button className='border-2 text-blue border-[#29367D] bg-transparent rounded-md px-6 py-2 mt-7 font-semibold'>
                                 Download Brochure
-                            </button>
+                            </button> */}
                         </div>
 
                         <div className='w-1/2 flex-center'>
@@ -93,7 +93,7 @@ const page = () => {
                 </div>
             ))}
 
-            <Form/>
+            <Form />
         </main>
     );
 };

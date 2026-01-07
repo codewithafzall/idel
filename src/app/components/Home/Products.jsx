@@ -7,6 +7,7 @@ import product2 from "../../images/geeta.webp";
 import product3 from "../../images/aluk.webp";
 import home1 from "../../images/home-1.png";
 import home2 from "../../images/home-2.png";
+import Link from 'next/link';
 
 const Products = () => {
     return (
@@ -32,39 +33,47 @@ const Products = () => {
 
                             <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transform scale-0 origin-center transition-transform duration-800 ease-in-out group-hover:scale-100">
                                 <p className="text-black mt-3"> Sleek, unobtrusive profiles that maximise views and light. Built for modern, minimal architecture.</p>
-                                <button className="mt-6 bg-transparent text-blue border border-blue font-semibold px-6 py-3 rounded-xl transition">View the Project</button>
+                                <Link href="/product#product-1">
+                                    <button className="mt-6 bg-transparent text-blue border border-blue font-semibold px-6 py-3 rounded-xl transition">
+                                        View the Product
+                                    </button>
+                                </Link>
                             </div>
                         </div>
 
-                        <p className="text-center mt-5">Minimal</p>
+                        <p className="text-center mt-5">Minimal System</p>
                     </div>
 
                     {/* PRODUCT 2 */}
                     <div className="flex flex-col items-center">
                         <div className="group relative overflow-hidden rounded-lg">
-                            <Image src={product2} width={430} height={570} alt="Geeta Series" className="rounded-lg object-cover group-hover:scale-120 duration-1000" />
+                            <Image src={product2} width={430} height={570} alt="Aluk" className="rounded-lg object-cover hover:scale-120 duration-1000" />
 
                             <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transform scale-0 origin-center transition-transform duration-800 ease-in-out group-hover:scale-100">
-                                <p className="text-black mt-3"> Versatile and lightweight, ideal for everyday performance. Balancing strength with affordability.</p>
-                                <button className="mt-6 bg-transparent text-blue border border-blue font-semibold px-6 py-3 rounded-xl transition">View the Project</button>
+                                <p className="text-black mt-3"> European-engineered, heavy-duty systems for long-span durability. Ideal for large-scale residential and commercial facades.</p>
+                                <Link href="/product#product-3">
+                                    <button className="mt-6 bg-transparent text-blue border border-blue font-semibold px-6 py-3 rounded-xl transition">View the Product</button>
+                                </Link>
                             </div>
                         </div>
 
-                        <p className="text-center mt-5">Geeta Series</p>
+                        <p className="text-center mt-5">Aluk Series</p>
                     </div>
 
                     {/* PRODUCT 3 */}
                     <div className="flex flex-col items-center">
                         <div className="group relative overflow-hidden rounded-lg">
-                            <Image src={product3} width={430} height={570} alt="Aluk" className="rounded-lg object-cover hover:scale-120 duration-1000" />
+                            <Image src={product3} width={430} height={570} alt="Geeta Series" className="rounded-lg object-cover group-hover:scale-120 duration-1000" />
 
                             <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transform scale-0 origin-center transition-transform duration-800 ease-in-out group-hover:scale-100">
-                                <p className="text-black mt-3"> European-engineered, heavy-duty systems for long-span durability. Ideal for large-scale residential and commercial facades.</p>
-                                <button className="mt-6 bg-transparent text-blue border border-blue font-semibold px-6 py-3 rounded-xl transition">View the Project</button>
+                                <p className="text-black mt-3"> Versatile and lightweight, ideal for everyday performance. Balancing strength with affordability.</p>
+                                <Link href="/product#product-2">
+                                    <button className="mt-6 bg-transparent text-blue border border-blue font-semibold px-6 py-3 rounded-xl transition">View the Product</button>
+                                </Link>
                             </div>
                         </div>
 
-                        <p className="text-center mt-5">Aluk</p>
+                        <p className="text-center mt-5">Geeta Series</p>
                     </div>
 
                 </div>
@@ -74,7 +83,7 @@ const Products = () => {
             <div className='container flex justify-between items-end gap-x-24 mt-20 mb-14'>
                 <div className='w-8/12'>
                     <p className='uppercase flex items-center gap-x-4 font-bold text-blue'><span><Image src={blueLine} alt='vector' /></span>About Us</p>
-                    <h2 className='mt-3'>Over Two Decades of <br/> Aluminium Expertise.</h2>
+                    <h2 className='mt-3'>Over Two Decades of <br /> Aluminium Expertise.</h2>
                     <p className='leading-7 mt-2 mb-7'>With 25+ years of hands-on fabrication and installation experience, IDEL is trusted by leading developers and architects across India. We specialise in delivering fully integrated turnkey systems,  from design and consultation to installation and long-term support.</p>
                     <Image src={home1} width={700} height={319} alt='' className='w-full h-75' />
                 </div>

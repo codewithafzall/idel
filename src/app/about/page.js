@@ -201,7 +201,7 @@ const page = () => {
 
                             <ul className="flex flex-col gap-y-2 mt-4">
                                 {data.points.map((point, index) => (
-                                    <li key={index}>🔹 {point}</li>
+                                    <li key={index}>• {point}</li>
                                 ))}
                             </ul>
                         </div>

@@ -12,11 +12,12 @@ import Project3 from "../../images/project-3.webp";
 import Project4 from "../../images/project-4.webp";
 import Project5 from "../../images/project-5.webp";
 import Project6 from "../../images/project-6.webp";
+import { useRouter } from "next/navigation";
 
 const images = [
     { src: Project1, title: "Bungalow by Ar. Soumya Raja at Aamby Valley" },
     { src: Project2, title: "Residential Building at Bandra" },
-    { src: Project3, title: "Aum Realtors at Santacruz" },
+    { src: Project3, title: "NICMAR" },
     { src: Project4, title: "Aum Realtors at Santacruz" },
     { src: Project5, title: "Aum Realtors at Santacruz" },
     { src: Project6, title: "Aum Realtors at Santacruz" },
@@ -28,6 +29,11 @@ export default function ProjectsSwiper() {
     const [isEnd, setIsEnd] = useState(false);
 
     const swiperRef = useRef(null);
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push("/projects");
+    };
 
     return (
         <section className="pt-14 pb-10 relative">
@@ -41,7 +47,7 @@ export default function ProjectsSwiper() {
                     </h2>
                 </div>
                 <p className="leading-7 mt-2 mb-7 text-right">
-                    Showcasing some of our most iconic residential<br/> and commercial installations engineered<br/> for performance, delivered with precision.
+                    Showcasing some of our most iconic residential<br /> and commercial installations engineered<br /> for performance, delivered with precision.
                 </p>
             </div>
 
@@ -84,6 +90,7 @@ export default function ProjectsSwiper() {
                                     className="relative rounded-xl overflow-hidden cursor-pointer"
                                     onMouseEnter={() => setActive(idx)}
                                     onMouseLeave={() => setActive(0)}
+                                    onClick={handleClick}
                                 >
                                     <div
                                         className="w-full h-[450px] md:h-[550px] bg-black flex items-center justify-center"

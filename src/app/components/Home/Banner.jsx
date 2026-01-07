@@ -64,7 +64,7 @@ export default function Banner() {
           Experience next-generation aluminium systems, engineered for longevity,
           luxury, and unmatched performance.
         </p>
-        <button className="bg-[#4B5AAA] rounded-lg uppercase px-9 py-3 mt-6">
+        <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
           Enquire Now
         </button>
       </div>

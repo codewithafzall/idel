@@ -25,28 +25,38 @@ const Footer = () => {
                 <div className='flex flex-col ml-10'>
                     <p>Products</p>
                     <ul className='space-y-6 mt-7'>
-                        <li>SLEEK SYSTEM</li>
-                        <li>GEETA</li>
-                        <li>ROTOI</li>
+                        <li><a href='/product#product-1'>MINIMAL SYSTEM</a></li>
+                        <li><a href='/product#product-3'>ALUK SERIES</a></li>
+                        <li><a href='/product#product-2'>GEETA SERIES</a></li>
                     </ul>
                 </div>
                 <div>
                     <p>Contact Us</p>
-                    <h3 className='text-3xl mt-7'>+91 9819247835</h3>
+                    <h3 className="text-3xl mt-7">
+                        <a
+                            href="tel:+919819247835"
+                        >
+                            +91 9819247835
+                        </a>
+                    </h3>
                     <p className='mt-7 mb-4'>Location</p>
-                    <small className='text-lg'>M/S Indecomal Exports LLP.<br />Ram House 4 - Gaiwadi Industrial Estate, Goregaon West,<br /> Mumbai 400104</small>
+                    <small className='text-lg'>M/S Indecomal Exports LLP.<br />Ram House Plot no 4 <br /> Gaiwadi Industrial Estate, <br />Goregaon West, Mumbai 400104</small>
                     <p className='mt-6'>Email</p>
-                    <p className='mt-2'>info@idelindia.com</p>
+                    <p className="mt-2">
+                        <a
+                            href="mailto:info@idelindia.com"
+                        >
+                            info@idelindia.com
+                        </a>
+                    </p>
                 </div>
             </div>
             <div className='border-t border-slate-500 container flex justify-between items-center text-white mt-7 pt-5'>
                 <div className='flex items-center space-x-5'>
-                  <Image src={facebook} alt="facebook"/>
-                  <Image src={instagram} alt="instagram"/>
-                  <Image src={linkedin} alt="linkedin"/>
+                    <a href='https://instagram.com/idelindia/' target='_blank'><Image src={instagram} alt="instagram" /></a>
                 </div>
                 <small>Privacy Policy</small>
-                <small>© 2025 idelIndia. All Rights Reserved. Powered By Ministry Of Marketing</small>
+                <small>© 2026 idelIndia. All Rights Reserved.</small>
             </div>
         </section>
     )
