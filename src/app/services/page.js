@@ -9,6 +9,7 @@ import logo2 from "../images/kdah.webp"
 import logo3 from "../images/malik.webp"
 import logo4 from "../images/runwal.webp"
 import logo5 from "../images/studio.webp"
+import logo6 from "../images/draw.webp"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Form from '../components/Form';
@@ -17,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
 
-    const logos = [logo1, logo2, logo3, logo4, logo5];
+     const logos = [logo1, logo2, logo5, logo3, logo6, logo4];
 
     const services = [
         {
