@@ -26,12 +26,12 @@ const Products = () => {
         if (!section || !card) return;
 
         const ctx = gsap.context(() => {
-            // Set a solid baseline so the animation is deterministic
+            
             gsap.set(card, {
                 maxWidth: "80rem", 
                 width: "100%",
                 borderRadius: "1rem",
-                marginTop: "6rem", // matches mt-24 initially
+                marginTop: "6rem",
                 transformOrigin: "center top",
                 scaleX: 1,
                 scaleY: 1,
