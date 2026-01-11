@@ -15,7 +15,7 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const Achievement = () => {
-    
+
     const sectionRef = useRef(null);
     const yearsRef = useRef(null);
     const architectsRef = useRef(null);
@@ -58,7 +58,7 @@ const Achievement = () => {
     }, []);
 
     return (
-        <section className="relative" ref={sectionRef}>
+        <section className="relative mt-7 sm:mt-0" ref={sectionRef}>
             <div className="container flex flex-col md:flex-row items-center gap-x-2 pt-20 pb-10">
 
                 <div className="md:w-1/2">
@@ -66,7 +66,7 @@ const Achievement = () => {
                         <span><Image src={blueLine} alt="vector" /></span>Our Achievement
                     </p>
                     <h2 className="mt-3">
-                        Trusted by India’s <br/>Leading Architects & Builders.
+                        Trusted by India’s <br />Leading Architects & Builders.
                     </h2>
                     <p className="leading-7 mt-2 mb-7">
                         From boutique bungalows to large-scale developments, we deliver lasting value, innovation, and peace of mind through expert fenestration solutions.
@@ -82,18 +82,19 @@ const Achievement = () => {
                         </div>
                         <div className="border-dashed border-t border-[#b1b1b1] p-4">
                             <h2 ref={architectsRef}>0+</h2>
-                            <p>Architect & <br/>Developer Partnerships</p>
+                            <p>Architect & <br />Developer Partnerships</p>
                         </div>
                     </div>
 
                     <div>
                         <div className="p-4">
                             <h2 ref={projectsRef}>0+</h2>
-                            <p>Projects Successfully<br /> Delivered</p>
+                            <p className='hidden sm:block'>Projects Successfully<br /> Delivered</p>
+                            <p className='block sm:hidden'>Projects Successfully Delivered</p>
                         </div>
                         <div className="border-dashed border-t border-[#b1b1b1] p-4">
                             <h2 ref={feedbackRef}>0%</h2>
-                            <p>Client <br/>Satisfaction Rate</p>
+                            <p>Client <br />Satisfaction Rate</p>
                         </div>
                     </div>
 
@@ -108,23 +109,23 @@ const Achievement = () => {
                 loop
                 muted
                 playsInline
-                className="w-full h-96 sm:h-80 lg:h-120 xl:h-140 object-cover"
+                className="w-full h-80 sm:h-80 lg:h-120 xl:h-140 object-cover mt-7 sm:mt-0"
             />
 
-            <div className="container pt-14 pb-10">
+            <div className="container mt-7 sm:mt-0 sm:pt-14 sm:pb-10">
                 <p className="uppercase flex-center gap-x-4 font-bold text-blue">
                     <span><Image src={blueLine} alt="vector" /></span>Our Clients
                 </p>
                 <h2 className="text-center mt-3">Trusted by the Best</h2>
 
-                <div className="container overflow-hidden my-20">
-                    <div className="flex items-center gap-x-20 animate-[marquee_20s_linear_infinite]">
+                <div className="overflow-hidden my-6 sm:my-20">
+                    <div className="flex w-max items-center gap-x-10 sm:gap-x-20 animate-[marquee_20s_linear_infinite]">
                         {[...logos, ...logos].map((item, index) => (
                             <Image
                                 key={index}
                                 src={item}
                                 alt="partner-logo"
-                                className="shrink-0 w-40"
+                                className="shrink-0 w-28 sm:w-40"
                             />
                         ))}
                     </div>

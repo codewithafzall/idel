@@ -57,7 +57,7 @@ const page = () => {
 
     return (
         <main>
-            <div className='clients-hero text-white'>
+            <div className='clients-hero pt-40 text-white'>
                 <div className='container pt-44 pb-32'>
                     <h2>Our Work.  <br />Their Trust.</h2>
                 </div>
@@ -73,11 +73,11 @@ const page = () => {
                     Trusted Nationwide
                 </h2>
 
-                <div className='container grid grid-cols-3 place-items-center gap-6 pt-14'>
+                <div className='container grid grid-cols-1 sm:grid-cols-3 place-items-center gap-3 sm:gap-6 mt-8 sm:mt-14'>
                     {clients.map((client) => {
                         return (
-                            <div key={client.id} className='bg-white rounded-xl border border-gray-300 flex flex-col justify-center w-96 h-40'>
-                                <div className='flex flex-col ml-20'>
+                            <div key={client.id} className='bg-white rounded-xl border border-gray-300 flex flex-col justify-center w-80 sm:w-96 h-40'>
+                                <div className='flex flex-col ml-10 sm:ml-20'>
                                     <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'><span><Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" /></span>{client.type}</p>
                                     <p className='my-2'>Client: <span className='font-semibold'>{client.name}</span></p>
                                     <small className='flex items-center text-gray-400 gap-x-2'><span><Image src={location} className='' alt="home icon" /></span>{client.location}</small>

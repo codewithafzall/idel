@@ -18,13 +18,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
 
-     const logos = [logo1, logo2, logo5, logo3, logo6, logo4];
+    const logos = [logo1, logo2, logo5, logo3, logo6, logo4];
 
     const services = [
         {
             id: 1,
             title: 'Design Support',
-            subtitle:"Where function meets finesse.",
+            subtitle: "Where function meets finesse.",
             description:
                 'We design modern, efficient, and visually refined aluminium systems tailored to your space, specs, and style.',
             number: '01',
@@ -32,7 +32,7 @@ const page = () => {
         {
             id: 2,
             title: 'Fabrication Excellence',
-            subtitle:"Precision that performs.",
+            subtitle: "Precision that performs.",
             description:
                 'Manufacturing with high-grade aluminium profiles using best-in-class equipment to ensure lasting strength and alignment.',
             number: '02',
@@ -40,7 +40,7 @@ const page = () => {
         {
             id: 3,
             title: 'Installation Services',
-            subtitle:"On-site execution, done right.",
+            subtitle: "On-site execution, done right.",
             description:
                 'Our expert teams install with accuracy and care — aligning perfectly with project timelines, tolerances, and technical requirements.',
             number: '03',
@@ -48,7 +48,7 @@ const page = () => {
         {
             id: 4,
             title: 'After-Sales Support',
-            subtitle:"Support that stays.",
+            subtitle: "Support that stays.",
             description:
                 'We offer post-installation servicing and maintenance exclusively for IDEL-installed systems — ensuring long-term performance and client satisfaction.',
             number: '04',
@@ -66,20 +66,29 @@ const page = () => {
 
         if (!sky || !outer || !inner) return;
 
-        const totalScroll =
-            inner.scrollHeight - outer.clientHeight;
+        ScrollTrigger.matchMedia({
+            // Desktop only
+            "(min-width: 768px)": () => {
+                const totalScroll =
+                    inner.scrollHeight - outer.clientHeight;
 
-        gsap.to(inner, {
-            y: -totalScroll,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: sky,
-                start: 'top top',
-                end: () => `+=${inner.scrollHeight}`,
-                pin: true,
-                scrub: true,
-                anticipatePin: 1,
+                gsap.to(inner, {
+                    y: -totalScroll,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: sky,
+                        start: 'top top',
+                        end: () => `+=${inner.scrollHeight}`,
+                        pin: true,
+                        scrub: true,
+                        anticipatePin: 1,
+                    },
+                });
             },
+
+            "(max-width: 767px)": () => {
+                gsap.set(inner, { clearProps: "all" });
+            }
         });
 
         return () => {
@@ -87,10 +96,11 @@ const page = () => {
         };
     }, []);
 
+
     return (
         <main>
 
-            <div className='service-hero text-white'>
+            <div className='service-hero pt-40 sm:pt-0 text-white'>
                 <div className='container pt-44 pb-32'>
                     <h2>
                         Precision in Every Detail.  <br />
@@ -99,14 +109,18 @@ const page = () => {
                 </div>
             </div>
 
-            <div className='container flex justify-between items-center gap-x-24 mt-20 mb-14'>
-                <div className='w-7/12'>
+            <div className='container flex flex-col sm:flex-row justify-between items-center gap-x-24 mt-7 sm:mt-20 sm:mb-14'>
+                <div className='sm:w-7/12'>
                     <p className='uppercase flex items-center gap-x-4 font-bold text-blue'>
                         <span><Image src={blueLine} alt='vector' /></span>
                         Why IDEL
                     </p>
-                    <h2 className='mt-3'>
+                    <h2 className='mt-3 hidden sm:block'>
                         Crafting High-Performance <br />
+                        Aluminium Doors & Windows
+                    </h2>
+                    <h2 className='mt-3 sm:hidden'>
+                        Crafting High-Performance
                         Aluminium Doors & Windows
                     </h2>
                     <p className='leading-7 mt-2 mb-7'>
@@ -115,28 +129,28 @@ const page = () => {
                         From minimal slimline systems to custom-engineered profiles, we handle complex fenestration challenges with confidence.
                     </p>
                 </div>
-                <div className='w-5/12'>
+                <div className='sm:w-5/12'>
                     <Image src={service} alt='service' className='w-full' />
                 </div>
             </div>
 
-            <div className="container overflow-hidden my-20">
-                <div className="flex items-center gap-x-20 animate-[marquee_20s_linear_infinite]">
+            <div className="container overflow-hidden my-8 sm:my-20">
+                <div className="flex w-max items-center gap-x-10 sm:gap-x-20 animate-[marquee_20s_linear_infinite]">
                     {[...logos, ...logos].map((item, index) => (
                         <Image
                             key={index}
                             src={item}
                             alt="partner-logo"
-                            className="shrink-0 w-40"
+                            className="shrink-0 w-28 sm:w-40"
                         />
                     ))}
                 </div>
             </div>
 
-            <div ref={skyRef} className='bg-sky py-20 overflow-hidden'>
-                <div className='container flex justify-between items-start gap-x-24'>
+            <div ref={skyRef} className='bg-sky py-10 sm:py-20 overflow-hidden'>
+                <div className='container flex flex-col sm:flex-row justify-between items-start gap-x-24'>
 
-                    <div className='w-[55%]'>
+                    <div className='sm:w-[55%]'>
                         <p className='uppercase flex items-center gap-x-4 font-bold text-blue'>
                             <span><Image src={blueLine} alt='vector' /></span>
                             Our Services
@@ -146,23 +160,22 @@ const page = () => {
                             Built Around You
                         </h2>
                         <p className='leading-7 mt-4 mb-7 w-10/12'>
-                           We partner with you across every stage, shaping spaces with technical insight, aesthetic sensibility, and hands-on execution.
+                            We partner with you across every stage, shaping spaces with technical insight, aesthetic sensibility, and hands-on execution.
                         </p>
                     </div>
 
-                    <div ref={cardsOuterRef} className='w-[45%] h-160 overflow-hidden'>
+                    <div ref={cardsOuterRef} className='sm:w-[45%] sm:h-160 overflow-hidden'>
                         <div ref={cardsInnerRef}>
                             {services.map((service, index) => (
                                 <div
                                     key={service.id}
-                                    className={`bg-blue h-72 rounded-2xl px-6 py-8 flex flex-col justify-between ${
-                                        index !== 0 ? 'mt-10' : ''
-                                    }`}
+                                    className={`bg-blue h-64 sm:h-72 rounded-2xl px-3 sm:px-6 py-8 flex flex-col justify-between ${index !== 0 ? 'mt-10' : ''
+                                        }`}
                                 >
                                     <div className='flex-center text-white gap-x-4 w-full'>
                                         <small className='text-lg'>Services</small>
                                         <Image
-                                            className='h-0.5 flex-1 object-cover max-w-87'
+                                            className='h-0.5 flex-1 object-cover max-w-45 sm:max-w-87'
                                             src={line}
                                             alt='line'
                                         />
@@ -172,7 +185,7 @@ const page = () => {
                                     </div>
 
                                     <div className='text-white'>
-                                        <small className='text-4xl block'>{service.title}</small>
+                                        <small className='text-2xl sm:text-4xl block'>{service.title}</small>
                                         <p className='leading-7 mt-4'>{service.description}</p>
                                     </div>
                                 </div>
@@ -182,7 +195,7 @@ const page = () => {
 
                 </div>
             </div>
-            <Form/>
+            <Form />
         </main>
     );
 };

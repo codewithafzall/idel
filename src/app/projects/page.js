@@ -137,7 +137,7 @@ const page = () => {
 
     return (
         <main>
-            <div className="project-hero text-white">
+            <div className="project-hero pt-40 text-white">
                 <div className="container pt-44 pb-32">
                     <h2>
                         Precision in Every Pane. <br />
@@ -147,7 +147,7 @@ const page = () => {
             </div>
 
             <div className="container py-14">
-                <p className="uppercase flex gap-x-4 font-bold text-blue items-center">
+                <p className="uppercase flex mt-7 sm:mt-0 gap-x-4 font-bold text-blue items-center">
                     <Image src={blueLine} alt="vector" />
                     Featured Products
                 </p>
@@ -173,7 +173,7 @@ const page = () => {
                                 <Image
                                     src={click}
                                     alt="click"
-                                    className="absolute top-1/2 left-1/2 w-14 h-14 -translate-x-1/2 -translate-y-1/2 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-10"
+                                    className="absolute bottom-3 right-3 w-8 h-8 opacity-100 scale-100 z-10 sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-14 sm:h-14 sm:opacity-0 sm:scale-90 sm:group-hover:opacity-100 sm:group-hover:scale-100 sm:transition-all sm:duration-300"
                                 />
                             </div>
 

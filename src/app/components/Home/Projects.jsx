@@ -37,7 +37,7 @@ export default function ProjectsSwiper() {
 
     return (
         <section className="pt-14 pb-10 relative">
-            <div className="container flex justify-between items-center">
+            <div className="container flex flex-col sm:flex-row justify-between items-center">
                 <div>
                     <p className="uppercase flex gap-x-4 font-bold text-blue">
                         <span><Image src={blueLine} alt="vector" /></span>Our Projects
@@ -46,12 +46,15 @@ export default function ProjectsSwiper() {
                         Creating Engaging Stories <br /> That Attract Educate
                     </h2>
                 </div>
-                <p className="leading-7 mt-2 mb-7 text-right">
+                <p className="leading-7 mt-2 mb-7 sm:text-right hidden sm:block">
+                    Showcasing some of our most iconic residential<br /> and commercial installations engineered<br /> for performance, delivered with precision.
+                </p>
+                <p className="leading-7 mt-2 mb-7 sm:hidden">
                     Showcasing some of our most iconic residential<br /> and commercial installations engineered<br /> for performance, delivered with precision.
                 </p>
             </div>
 
-            <div className="w-full px-5 md:px-20 mt-14 relative">
+            <div className="w-full px-5 md:px-20 mt-7 sm:mt-14 relative">
                 <Swiper
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={(swiper) => {
@@ -93,7 +96,7 @@ export default function ProjectsSwiper() {
                                     onClick={handleClick}
                                 >
                                     <div
-                                        className="w-full h-[450px] md:h-[550px] bg-black flex items-center justify-center"
+                                        className="w-full h-112.5 md:h-137.5 bg-black flex items-center justify-center"
                                         style={{
                                             transition: "transform 300ms ease",
                                             transform: active === idx ? "scale(1.02)" : "scale(1)",

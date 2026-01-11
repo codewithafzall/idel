@@ -130,7 +130,7 @@ export default function Navbar() {
     <header className="relative z-50 w-full">
       <nav
         className={[
-          "fixed top-0 left-0 right-0 w-full",
+          "fixed top-0 left-0 right-0 w-full px-1 sm:px-0",
           "transition-transform duration-300 ease-out",
           hidden ? "-translate-y-full" : "translate-y-0",
           navClass,
@@ -196,8 +196,8 @@ export default function Navbar() {
           {/* Mobile */}
           <div className="min-[851px]:hidden">
             {open && (
-              <div className="container mx-auto mt-4 px-4 relative z-20 pb-4">
-                <div className="rounded-2xl border border-white/20 bg-black/60 backdrop-blur-md p-4">
+              <div className="w-full mt-2 relative z-20 pb-4">
+                <div className="rounded-2xl w-full border border-white/20 bg-black/60 backdrop-blur-md p-4">
                   <ul className="uppercase text-white flex flex-col gap-4">
                     <NavLinks
                       onNavigate={() => setOpen(false)}

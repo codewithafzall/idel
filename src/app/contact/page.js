@@ -8,7 +8,7 @@ import mail from '../images/mail.png';
 const page = () => {
     return (
         <main>
-            <div className='contact-hero text-white'>
+            <div className='contact-hero pt-40 text-white'>
                 <div className='container pt-44 pb-32'>
                     <h2>Let’s Frame <br />What’s Next, Together.</h2>
                 </div>
@@ -24,32 +24,44 @@ const page = () => {
                 <h2 className='text-center mt-4'>
                     Have Any Questions?
                 </h2>
-                <div className='container flex mt-14 gap-x-14'>
-                    <div className='bg-white w-4/12 rounded-2xl'>
-                        <div className='flex flex-col gap-y-2 border-b-2 border-gray-200 py-8 pl-10'>
-                            <Image src={visit} className='w-12 h-14' alt='map-icon' />
-                            <small className='text-2xl font-semibold'>Registered Office</small>
-                            <small className='text-lg'>M/s. Indecomal Exports LLP. Ram House 4 - Gaiwadi Industrial Estate, Goregaon West, Mumbai - 400 104</small>
+                <div className='container flex flex-col sm:flex-row mt-14 gap-x-14'>
+                    <div className='bg-white sm:w-4/12 rounded-2xl'>
+                        <div className='flex flex-col gap-y-2 sm:border-b-2 border-gray-200 py-8 px-5 sm:px-0 sm:pl-10'>
+                            <Image src={visit} className='w-12 h-14 mx-auto sm:mx-0' alt='map-icon' />
+                            <small className='text-xl text-center sm:text-left sm:text-2xl font-semibold'>Registered Office</small>
+                            <small className='text-lg text-center sm:text-left'>M/s. Indecomal Exports LLP. Ram House 4 - Gaiwadi Industrial Estate, Goregaon West, Mumbai - 400 104</small>
                         </div>
-                        <div className='flex flex-col gap-y-2 border-b-2 border-gray-200 py-8 pl-10'>
+                        <div className='hidden sm:flex flex-col gap-y-2 sm:border-b-2 border-gray-200 py-8 pl-10'>
                             <Image src={call} className='w-12 h-12' alt='map-icon' />
                             <small className='text-2xl font-semibold'>Call Us</small>
                             <p>+91 98192 47835</p>
                         </div>
-                        <div className='flex flex-col gap-y-2 py-8 pl-10'>
+                        <div className='hidden sm:flex flex-col gap-y-2 py-8 pl-10'>
                             <Image src={mail} className='w-14 h-10' alt='map-icon' />
                             <small className='text-2xl font-semibold'>Mail Us</small>
                             <p>info@idelindia.com</p>
                         </div>
+                        <div className='sm:hidden flex items-end justify-center'>
+                            <div className='flex flex-col gap-y-2 sm:border-b-2 border-gray-200 py-8'>
+                                <Image src={call} className='w-12 h-12 mx-auto' alt='map-icon' />
+                                <small className='text-xl font-semibold mt-2 text-center'>Call Us</small>
+                                <p>+91 98192 47835</p>
+                            </div>
+                            <div className='flex flex-col gap-y-2 py-8 pl-10'>
+                                <Image src={mail} className='w-14 h-10 mx-auto' alt='map-icon' />
+                                <small className='text-xl font-semibold mt-2 text-center'>Mail Us</small>
+                                <p>info@idelindia.com</p>
+                            </div>
+                        </div>
                     </div>
-                    <form className='bg-white w-8/12 rounded-2xl p-10'>
+                    <form className='bg-white sm:w-8/12 rounded-2xl mt-5 sm:mt-0 p-5 sm:p-10'>
 
                         <label className='text-lg font-semibold'>Name</label>
-                        <div className='flex gap-x-8'>
+                        <div className='flex gap-x-3 sm:gap-x-8'>
                             <input type='text' placeholder='First Name' className='contact-form-input' />
                             <input type='text' placeholder='Last Name' className='contact-form-input' />
                         </div>
-                        <div className='flex gap-x-8 mt-4'>
+                        <div className='flex gap-x-3 sm:gap-x-8 mt-4'>
                             <div className='w-full'>
                                 <label className='text-lg font-semibold'>Email</label>
                                 <input type='email' placeholder='Your Email' className='contact-form-input' />
@@ -66,13 +78,13 @@ const page = () => {
                         <label className='text-lg font-semibold mt-4 inline-block'>Message</label>
                         <textarea placeholder='Let us know about your project' className='contact-form-input h-32'></textarea>
 
-                        <button type='submit' className='bg-blue rounded-md text-white w-[35%] mt-4 py-4'>SUBMIT MESSAGE</button>
+                        <button type='submit' className='bg-blue rounded-md text-white w-full sm:w-[35%] mt-4 py-4'>SUBMIT MESSAGE</button>
                     </form>
                 </div>
                 <div className='container mt-10'>
-                <iframe
-                className='w-full h-96'
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.5050008719854!2d72.84318814473467!3d19.17146467119438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b955555555%3A0xebcc25028218126e!2sIDEL%20India!5e0!3m2!1sen!2sin!4v1766252606456!5m2!1sen!2sin"></iframe>
+                    <iframe
+                        className='w-full h-96'
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.5050008719854!2d72.84318814473467!3d19.17146467119438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b955555555%3A0xebcc25028218126e!2sIDEL%20India!5e0!3m2!1sen!2sin!4v1766252606456!5m2!1sen!2sin"></iframe>
                 </div>
             </div>
         </main>

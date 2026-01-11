@@ -1,18 +1,16 @@
 import React from 'react';
-import facebook from "../images/facebook.png";
-import linkedin from "../images/linkedin.png";
 import instagram from "../images/instagram.png";
 import Image from 'next/image';
 
 const Footer = () => {
     return (
-        <section className='footer pt-20 pb-14'>
-            <div className='grid grid-cols-4 container text-white'>
+        <section className='footer mt-7 sm:mt-0 pt-20 pb-14'>
+            <div className='grid grid-cols-1 gap-y-7 sm:grid-cols-4 container text-white'>
                 <div>
                     <h3 className='text-5xl'>IDEL India</h3>
                     <p className='mt-7'>25+ years of expertise in facades and fenestration. Skilled in delivering turnkey solutions.</p>
                 </div>
-                <div className='flex flex-col mx-auto'>
+                <div className='hidden sm:flex flex-col sm:mx-auto'>
                     <p>Quick Links</p>
                     <ul className='space-y-6 mt-7'>
                         <li><a href='/'>HOME</a></li>
@@ -22,13 +20,33 @@ const Footer = () => {
                         <li><a href='/clients'>CLIENTS</a></li>
                     </ul>
                 </div>
-                <div className='flex flex-col ml-10'>
+                <div className='hidden sm:flex flex-col sm:ml-10'>
                     <p>Products</p>
                     <ul className='space-y-6 mt-7'>
                         <li><a href='/product#product-1'>MINIMAL SYSTEM</a></li>
                         <li><a href='/product#product-3'>ALUK SERIES</a></li>
                         <li><a href='/product#product-2'>GEETA SERIES</a></li>
                     </ul>
+                </div>
+                <div className='sm:hidden flex gap-x-16'>
+                    <div className='flex flex-col sm:mx-auto'>
+                        <p>Quick Links</p>
+                        <ul className='space-y-6 mt-7'>
+                            <li><a href='/'>HOME</a></li>
+                            <li><a href='/about'>ABOUT US</a></li>
+                            <li><a href='/projects'>PROJECTS</a></li>
+                            <li><a href='/services'>SERVICES</a></li>
+                            <li><a href='/clients'>CLIENTS</a></li>
+                        </ul>
+                    </div>
+                    <div className='flex flex-col sm:ml-10'>
+                        <p>Products</p>
+                        <ul className='space-y-6 mt-7'>
+                            <li><a href='/product#product-1'>MINIMAL SYSTEM</a></li>
+                            <li><a href='/product#product-3'>ALUK SERIES</a></li>
+                            <li><a href='/product#product-2'>GEETA SERIES</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
                     <p>Contact Us</p>
@@ -52,11 +70,11 @@ const Footer = () => {
                 </div>
             </div>
             <div className='border-t border-slate-500 container flex justify-between items-center text-white mt-7 pt-5'>
-                <div className='flex items-center space-x-5'>
+                <div className='flex items-center gap-x-5 mt-3 sm:mt-0'>
                     <a href='https://instagram.com/idelindia/' target='_blank'><Image src={instagram} alt="instagram" /></a>
                 </div>
-                <small>Privacy Policy</small>
-                <small>© 2026 idelIndia. All Rights Reserved.</small>
+                <small className='block mt-2 sm:mt-0'>Privacy Policy</small>
+                <small className='block mt-2 sm:mt-0'>© 2026 idelIndia. All Rights Reserved.</small>
             </div>
         </section>
     )

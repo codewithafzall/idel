@@ -40,7 +40,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="bg-sky py-20">
+    <section className="bg-sky py-10 sm:py-20">
       <div className="container">
         <div className="flex justify-between items-center flex-col md:flex-row">
           <div>
@@ -53,7 +53,10 @@ const Testimonials = () => {
             <h2 className="mt-3">What Our Clients Say</h2>
           </div>
 
-          <p className="leading-7 mt-4 md:mt-0 text-right">
+          <p className="leading-7 mt-4 md:mt-0 text-right hidden sm:block">
+            Real feedback from architects, developers,<br/> and homeowners who trust IDEL for their<br/> premium aluminium system needs.
+          </p>
+          <p className="leading-7 mt-4 md:mt-0 sm:hidden">
             Real feedback from architects, developers,<br/> and homeowners who trust IDEL for their<br/> premium aluminium system needs.
           </p>
         </div>
@@ -65,7 +68,7 @@ const Testimonials = () => {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          className="mt-12"
+          className="mt-7 sm:mt-12"
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
           breakpoints={{

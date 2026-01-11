@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,16 +19,23 @@ gsap.registerPlugin(ScrollTrigger);
 const Products = () => {
     const sectionRef = useRef(null);
     const cardRef = useRef(null);
+    const [activeCard, setActiveCard] = useState(null);
+    const isMobile =
+        typeof window !== "undefined" &&
+        window.matchMedia("(max-width: 767px)").matches;
 
     useLayoutEffect(() => {
         const section = sectionRef.current;
         const card = cardRef.current;
         if (!section || !card) return;
 
+        // ✅ Disable animation on mobile
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        if (isMobile) return;
+
         const ctx = gsap.context(() => {
-            
             gsap.set(card, {
-                maxWidth: "80rem", 
+                maxWidth: "80rem",
                 width: "100%",
                 borderRadius: "1rem",
                 marginTop: "6rem",
@@ -62,7 +69,7 @@ const Products = () => {
             {/* EXPANDING CARD */}
             <div
                 ref={cardRef}
-                className="mx-auto bg-blue rounded-xl py-12 px-10 overflow-hidden"
+                className="mx-auto bg-blue rounded-xl py-12 px-4 sm:px-10 overflow-hidden"
             >
                 <p className="uppercase text-white flex-center gap-x-4 font-bold">
                     <span>
@@ -71,8 +78,12 @@ const Products = () => {
                     Our Products
                 </p>
 
-                <h2 className="text-white text-center mx-auto mt-4 lg:mt-7">
-                    Crafted Aluminium Systems,<br/> Designed to Endure
+                <h2 className="text-white hidden sm:block text-center mx-auto mt-4 lg:mt-7">
+                    Crafted Aluminium Systems,<br /> Designed to Endure
+                </h2>
+
+                <h2 className="text-white block sm:hidden text-center mx-auto mt-4 lg:mt-7">
+                    Crafted Aluminium Systems, Designed to Endure
                 </h2>
                 <p className="text-white mt-2 text-center">
                     Explore IDEL's advanced lift & slide solutions built for seamless living.
@@ -81,7 +92,11 @@ const Products = () => {
                 <div className="text-white grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8 mt-8 lg:mt-16">
                     {/* PRODUCT 1 */}
                     <div className="flex flex-col items-center">
-                        <div className="group relative overflow-hidden rounded-lg">
+                        <div onClick={() => {
+                            if (isMobile) {
+                                setActiveCard(activeCard === 1 ? null : 1);
+                            }
+                        }} className="group relative overflow-hidden rounded-lg">
                             <Image
                                 src={product1}
                                 width={430}
@@ -90,7 +105,13 @@ const Products = () => {
                                 className="rounded-lg object-cover group-hover:scale-110 duration-1000"
                             />
 
-                            <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 scale-0 transition-transform duration-700 group-hover:scale-100">
+                            <div
+                                className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
+                                ${isMobile && activeCard === 1 ? "scale-100" : "scale-0"}
+                                sm:group-hover:scale-100
+                            `}
+                            >
+
                                 <p className="text-black mt-3">
                                     Sleek, unobtrusive profiles that maximise views and light. Built for
                                     modern, minimal architecture.
@@ -108,7 +129,12 @@ const Products = () => {
 
                     {/* PRODUCT 2 */}
                     <div className="flex flex-col items-center">
-                        <div className="group relative overflow-hidden rounded-lg">
+                        <div onClick={() => {
+                            if (isMobile) {
+                                setActiveCard(activeCard === 2 ? null : 2);
+                            }
+                        }}
+                            className="group relative overflow-hidden rounded-lg">
                             <Image
                                 src={product2}
                                 width={430}
@@ -117,7 +143,13 @@ const Products = () => {
                                 className="rounded-lg object-cover group-hover:scale-110 duration-1000"
                             />
 
-                            <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 scale-0 transition-transform duration-700 group-hover:scale-100">
+                            <div
+                                className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
+                                            ${isMobile && activeCard === 2 ? "scale-100" : "scale-0"}
+                                            sm:group-hover:scale-100
+                                        `}
+                            >
+
                                 <p className="text-black mt-3">
                                     European-engineered, heavy-duty systems for long-span durability.
                                     Ideal for large-scale residential and commercial facades.
@@ -135,7 +167,11 @@ const Products = () => {
 
                     {/* PRODUCT 3 */}
                     <div className="flex flex-col items-center">
-                        <div className="group relative overflow-hidden rounded-lg">
+                        <div onClick={() => {
+                            if (isMobile) {
+                                setActiveCard(activeCard === 3 ? null : 3);
+                            }
+                        }} className="group relative overflow-hidden rounded-lg">
                             <Image
                                 src={product3}
                                 width={430}
@@ -144,7 +180,13 @@ const Products = () => {
                                 className="rounded-lg object-cover group-hover:scale-110 duration-1000"
                             />
 
-                            <div className="absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 scale-0 transition-transform duration-700 group-hover:scale-100">
+                            <div
+                                className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
+                                ${isMobile && activeCard === 3 ? "scale-100" : "scale-0"}
+                                sm:group-hover:scale-100
+                            `}
+                            >
+
                                 <p className="text-black mt-3">
                                     Versatile and lightweight, ideal for everyday performance. Balancing
                                     strength with affordability.
@@ -163,8 +205,8 @@ const Products = () => {
             </div>
 
             {/* ABOUT SECTION */}
-            <div className="container flex justify-between items-end gap-x-24 mt-40 mb-14">
-                <div className="w-8/12">
+            <div className="container flex flex-col sm:flex-row justify-between items-end gap-x-24 mt-10 sm:mt-40 mb-14">
+                <div className="w-full sm:w-8/12">
                     <p className="uppercase flex items-center gap-x-4 font-bold text-blue">
                         <span>
                             <Image src={blueLine} alt="vector" />
@@ -178,11 +220,11 @@ const Products = () => {
                         With 25+ years of hands-on fabrication and installation experience,
                         IDEL is trusted by leading developers and architects across India.
                     </p>
-                    <Image src={home1} width={700} height={319} alt="" className="w-full" />
+                    <Image src={home1} width={700} height={319} alt="" className="w-full rounded-lg" />
                 </div>
 
-                <div className="w-4/12">
-                    <Image src={home2} alt="" className="w-full" />
+                <div className="w-full sm:w-4/12">
+                    <Image src={home2} alt="" className="w-full mt-7 sm:mt-0" />
                 </div>
             </div>
         </section>

@@ -40,34 +40,64 @@ export default function Banner() {
   }, []);
 
   return (
-    <section ref={heroRef} className="heroWrap relative z-10" suppressHydrationWarning>
-      <div className="heroBg">
-        <video
-          className="heroVideo"
-          src="/banner.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
-      </div>
+    <>
+      <section ref={heroRef} className="heroWrap hidden sm:block relative z-10" suppressHydrationWarning>
+        <div className="heroBg">
+          <video
+            className="heroVideo"
+            src="/banner-desktop.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/10" />
 
-      {/* Content */}
-      <div className="container relative text-white top-1/2 -translate-y-1/2">
-        <h1 className="uppercase">Where Design</h1>
-        <h1 className="uppercase mt-2">Meets Precision</h1>
-        <p className="w-1/2 leading-6 mt-3">
-          Experience next-generation aluminium systems, engineered for longevity,
-          luxury, and unmatched performance.
-        </p>
-        <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
-          Enquire Now
-        </button>
-      </div>
-    </section>
+        {/* Content */}
+        <div className="container relative text-white top-1/2 -translate-y-1/2">
+          <h1 className="uppercase">Where Design</h1>
+          <h1 className="uppercase mt-2">Meets Precision</h1>
+          <p className="w-1/2 leading-6 mt-3">
+            Experience next-generation aluminium systems, engineered for longevity,
+            luxury, and unmatched performance.
+          </p>
+          <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
+            Enquire Now
+          </button>
+        </div>
+      </section>
+
+
+      <section className="hero block sm:hidden relative z-10">
+        <div className="h-screen">
+          <video
+            className="h-screen object-cover w-full"
+            src="/banner-mobile.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="container absolute text-white top-1/2 -translate-y-1/2">
+          <h1 className="uppercase">Where Design</h1>
+          <h1 className="uppercase mt-2">Meets Precision</h1>
+          <p className="w-1/2 leading-6 mt-3">
+            Experience next-generation aluminium systems, engineered for longevity,
+            luxury, and unmatched performance.
+          </p>
+          <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
+            Enquire Now
+          </button>
+        </div>
+      </section>
+    </>
   );
 }
