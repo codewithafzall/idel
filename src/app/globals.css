@@ -268,4 +268,12 @@ p {
     background-size: cover;
     background-position: center;
   }
+
+  .product-hero {
+    background: url(./images/product-banner.webp);
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+  }
 }

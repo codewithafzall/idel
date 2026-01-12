@@ -1,94 +1,157 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import blueLine from "../images/blue-line.svg";
-import Slimline from '../images/slimline-product.webp';
-import SlimlineInfo from '../images/minimal-info.png';
-import Geeta from '../images/geeta-product.webp';
-import GeetaInfo from '../images/geeta-info.png';
-import Aluk from '../images/aluk-product.webp';
-import AlukInfo from '../images/aluk-info.png';
-import Form from '../components/Form';
+import Slimline from "../images/slimline-product.webp";
+import Geeta from "../images/geeta-product.webp";
+import Aluk from "../images/aluk-product.webp";
+import Form from "../components/Form";
 
 const products = [
     {
         id: 1,
-        title: 'Minimal System',
-        description: 'Our Minimal Series offers ultra-slim aluminium profiles engineered to maximise visibility and deliver clean, modern aesthetics. Perfect for spaces where design minimalism meets structural performance, combining slim interlocks with robust load-bearing capabilities.',
-        productImage: Slimline,
-        infoImage: SlimlineInfo,
-    },
-    {
-        id: 3,
-        title: 'Aluk Series',
-        description: 'The AluK Series blends global design intelligence with local execution. These systems are ideal for premium residential and commercial applications that demand performance, aesthetics, and reliability. Engineered for structural integrity and seamless operation, this series caters to elevated architectural needs.',
-        productImage: Aluk,
-        infoImage: AlukInfo,
+        title: "Minimal Systems",
+        description: "Our Slimline Systems offer sleek, ultra-slim aluminium profiles that maximize visibility and bring a modern, minimal look to any space. Designed for durability, smooth performance, and elegant aesthetics, they are ideal for premium homes and contemporary architecture.",
+        categories: [
+            {
+                name: "Minimal System - ClearView LT",
+                image: Slimline,
+                specs: [
+                    { label: "Interlock Face Width", value: "15 mm" },
+                    { label: "Glass Thickness", value: "8mm -32mm" },
+                    { label: "Max. Shutter Height", value: "3.66 Mtrs / 12 Ft." },
+                    { label: "Max. Shutter Load", value: "800 kgs" },
+                    { label: "Wind Resistance", value: "1.5 KPa" },
+                ],
+            },
+            {
+                name: "Minimal System - ClearView",
+                image: Slimline,
+                reverse: true,
+                specs: [
+                    { label: "Interlock Face Width", value: "22 mm" },
+                    { label: "Glass Thickness", value: "8mm - 50mm" },
+                    { label: "Max. Shutter Height", value: "6.0 Mtrs / 20 Ft" },
+                    { label: "Max. Shutter Load", value: "1000 kgs" },
+                    { label: "Wind Resistance", value: "2.5 KPa" },
+                ],
+            },
+        ],
     },
     {
         id: 2,
-        title: 'Geeta Series',
-        description: 'The Geeta Series features robust aluminium profiles built for long-lasting performance in both residential and commercial applications. With multiple variants optimised for different use cases, the series offers a perfect balance between strength, efficiency, and versatile design.',
-        productImage: Geeta,
-        infoImage: GeetaInfo,
+        title: "Geeta Series",
+        description: "The Geeta Series offers strong, reliable aluminium profiles designed for long-lasting performance in residential and commercial spaces.",
+        categories: [
+            {
+                name: "35mm Slim Geeta Series",
+                image: Geeta,
+                specs: [
+                    { label: "Interlock Face Width", value: "32 mm" },
+                    { label: "Glass Thickness", value: "6mm - 23mm" },
+                    { label: "Max. Shutter Height", value: "2.4 Mtrs / 8 Ft." },
+                    { label: "Max. Shutter Load", value: "120 kgs" },
+                    { label: "Wind Resistance", value: "1.0 KPa" },
+                ],
+            },
+            {
+                name: "40mm Geeta Series",
+                image: Geeta,
+                reverse: true,
+                specs: [
+                    { label: "Glass Thickness", value: "6mm - 24mm" },
+                    { label: "Max. Shutter Height", value: "2.4 Mtrs / 8 Ft." },
+                    { label: "Max. Shutter Load", value: "75 kgs" },
+                ],
+            },
+            {
+                name: "27mm Slim Geeta Series",
+                image: Geeta,
+                specs: [
+                    { label: "Interlock Face Width", value: "32 mm" },
+                    { label: "Glass Thickness", value: "6mm - 18mm" },
+                    { label: "Max. Shutter Height", value: "2.1 Mtrs / 7 Ft." },
+                    { label: "Max. Shutter Load", value: "80 kgs" },
+                    { label: "Wind Resistance", value: "1.0 KPa" },
+                ],
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: "Aluk Systems",
+        description: "Placeholder description for Aluk Systems. Replace this text later.",
+        categories: [
+            {
+                name: "AluK - SC45",
+                image: Aluk,
+                specs: [
+                    { label: "Interlock Face Width", value: "33 mm" },
+                    { label: "Glass Thickness", value: "6mm, 8mm & 24mm" },
+                    { label: "Max. Shutter Height", value: "2.4 Mtrs / 8 Ft." },
+                    { label: "Max. Shutter Load", value: "120 kgs" },
+                ],
+            },
+            {
+                name: "AluK - 45V",
+                image: Aluk,
+                reverse: true,
+                specs: [
+                    { label: "Interlock Face Width", value: "XX mm" },
+                    { label: "Glass Thickness", value: "XX mm" },
+                    { label: "Max. Shutter Height", value: "XX mm" },
+                    { label: "Max. Shutter Load", value: "XX kg" },
+                ],
+            },
+        ],
     },
 ];
+
 
 const page = () => {
     return (
         <main>
             {/* Hero */}
-            <div className='product-hero text-white'>
-                <div className='container pt-44 pb-32'>
-                    <h2>Innovative Fenestration <br />Solutions Built to Last</h2>
+            <div className="product-hero pt-40 sm:pt-0 text-white">
+                <div className="container pt-44 pb-32">
+                    <h2>Innovative Fenestration <br /> Solutions Built to Last</h2>
                 </div>
             </div>
 
             {/* Heading */}
-            <div className='container py-16'>
-                <p className='uppercase flex gap-x-4 font-bold text-blue justify-center'>
-                    <span>
-                        <Image src={blueLine} alt='vector' />
-                    </span>
+            <div className="py-8 sm:py-16">
+                <p className="uppercase flex gap-x-4 font-bold text-blue justify-center">
+                    <span><Image src={blueLine} alt="vector" /></span>
                     Our Products
                 </p>
-                <h2 className='text-center mt-4'>
-                    Our Aluminium Window & <br /> Door Systems
-                </h2>
+                <h2 className="text-center mt-4">Our Aluminium Window & <br /> Door Systems</h2>
             </div>
 
             {/* Products */}
             {products.map((product) => (
-                <div key={product.id} id={`product-${product.id}`}>
-                    <div className='bg-sky container relative flex justify-between items-center px-16 pt-16 pb-40 rounded-3xl scroll-mt-8'>
-                        <div className='w-1/2'>
-                            <h2 className='font-thin!'>{product.title}</h2>
-                            <p className='mt-4'>{product.description}</p>
-                            {/* <button className='border-2 text-blue border-[#29367D] bg-transparent rounded-md px-6 py-2 mt-7 font-semibold'>
-                                Download Brochure
-                            </button> */}
-                        </div>
-
-                        <div className='w-1/2 flex-center'>
-                            <Image
-                                width={422}
-                                height={422}
-                                className='aspect-square hover:scale-110 transition-transform duration-700'
-                                src={product.productImage}
-                                alt={product.title}
-                            />
-                        </div>
-
-                        <button className='bg-white text-blue font-semibold absolute bottom-20 right-7 shadow-lg px-4 py-2 rounded-md'>
-                            View in Space
-                        </button>
+                <div key={product.id} className="bg-blue rounded-2xl container mb-20 px-0!">
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between py-10 px-6 lg:px-14 text-white gap-6">
+                        <h2 className="font-normal!">{product.title}</h2>
+                        <p className="lg:w-[45%]">{product.description}</p>
                     </div>
 
-                    <div className='container relative -top-10'>
-                        <Image
-                            src={product.infoImage}
-                            className='w-full'
-                            alt={`${product.title} information`}
-                        />
+                    <div className="bg-sky rounded-2xl">
+                        {product.categories.map((category, index) => (
+                            <div key={index} className={`flex flex-col lg:flex-row items-center justify-around py-14 gap-10 ${index === 0 ? "border-b-2 border-[#D8D8D8]" : ""} ${category.reverse ? "lg:flex-row-reverse" : ""}`}>
+                                <div className="w-full lg:w-[40%] px-6 lg:px-0">
+                                    <h3 className="text-3xl font-semibold">{category.name}</h3>
+                                    <div className="flex flex-col gap-y-4 mt-7">
+                                        {category.specs.map((spec, i) => (
+                                            <div key={i} className={`flex justify-between items-center pb-2 ${i !== category.specs.length - 1 ? "border-b-2 border-[#D8D8D8]" : ""}`}>
+                                                <small className="font-semibold text-lg">{spec.label}</small>
+                                                <small className="text-lg">{spec.value}</small>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <Image src={category.image} alt={category.name} className="w-72 lg:w-90" />
+                            </div>
+                        ))}
                     </div>
                 </div>
             ))}
