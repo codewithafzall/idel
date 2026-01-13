@@ -86,14 +86,14 @@ export default function Banner() {
         </div>
 
         {/* Content */}
-        <div className="container absolute text-white top-1/2 -translate-y-1/2">
+        <div className="container absolute text-white top-30">
           <h1 className="uppercase">Where Design</h1>
-          <h1 className="uppercase mt-2">Meets Precision</h1>
-          <p className="w-1/2 leading-6 mt-3">
+          <h1 className="uppercase">Meets Precision</h1>
+          <p className="leading-6 mt-2">
             Experience next-generation aluminium systems, engineered for longevity,
             luxury, and unmatched performance.
           </p>
-          <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
+          <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-3">
             Enquire Now
           </button>
         </div>

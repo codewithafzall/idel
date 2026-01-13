@@ -85,6 +85,45 @@ const Products = () => {
                         <p className="text-center mt-5">Minimal System</p>
                     </div>
 
+                    {/* PRODUCT 3 */}
+                    <div className="flex flex-col items-center">
+                        <div onClick={() => {
+                            if (isMobile) {
+                                setActiveCard(activeCard === 3 ? null : 3);
+                            }
+                        }} className="group relative overflow-hidden rounded-lg">
+                            <div className="bg-white px-10 py-14">
+                                <Image
+                                    src={product3}
+                                    width={430}
+                                    height={570}
+                                    alt="Geeta Series"
+                                    className="rounded-lg object-cover group-hover:scale-110 duration-1000"
+                                />
+                            </div>
+
+                            <div
+                                className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
+                                ${isMobile && activeCard === 3 ? "scale-100" : "scale-0"}
+                                sm:group-hover:scale-100
+                            `}
+                            >
+
+                                <p className="text-black mt-3">
+                                    Versatile and lightweight, ideal for everyday performance. Balancing
+                                    strength with affordability.
+                                </p>
+                                <Link href="/product#product-2">
+                                    <button className="mt-6 border border-blue text-blue font-semibold px-6 py-3 rounded-xl transition">
+                                        View the Product
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+
+                        <p className="text-center mt-5">Geeta Series</p>
+                    </div>
+
                     {/* PRODUCT 2 */}
                     <div className="flex flex-col items-center">
                         <div onClick={() => {
@@ -123,45 +162,6 @@ const Products = () => {
                         </div>
 
                         <p className="text-center mt-5">Aluk Series</p>
-                    </div>
-
-                    {/* PRODUCT 3 */}
-                    <div className="flex flex-col items-center">
-                        <div onClick={() => {
-                            if (isMobile) {
-                                setActiveCard(activeCard === 3 ? null : 3);
-                            }
-                        }} className="group relative overflow-hidden rounded-lg">
-                            <div className="bg-white px-10 py-14">
-                                <Image
-                                    src={product3}
-                                    width={430}
-                                    height={570}
-                                    alt="Geeta Series"
-                                    className="rounded-lg object-cover group-hover:scale-110 duration-1000"
-                                />
-                            </div>
-
-                            <div
-                                className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
-                                ${isMobile && activeCard === 3 ? "scale-100" : "scale-0"}
-                                sm:group-hover:scale-100
-                            `}
-                            >
-
-                                <p className="text-black mt-3">
-                                    Versatile and lightweight, ideal for everyday performance. Balancing
-                                    strength with affordability.
-                                </p>
-                                <Link href="/product#product-2">
-                                    <button className="mt-6 border border-blue text-blue font-semibold px-6 py-3 rounded-xl transition">
-                                        View the Product
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-
-                        <p className="text-center mt-5">Geeta Series</p>
                     </div>
                 </div>
             </div>
