@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
 import blueLine from "../../images/blue-line.svg";
 import arrow from "../../images/arrow.svg";
 
@@ -25,24 +26,62 @@ export default function ProjectsSwiper() {
     const [active, setActive] = useState(0);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
+
+    // ✅ widths moved to state
+    const [activeWidth, setActiveWidth] = useState(50);
+    const [inactiveWidth, setInactiveWidth] = useState(25);
+
     const swiperRef = useRef(null);
+
+    // ✅ window logic AFTER hydration
+    useEffect(() => {
+        const updateWidths = () => {
+            if (window.innerWidth < 768) {
+                setActiveWidth(80);
+                setInactiveWidth(50);
+            } else if (window.innerWidth < 1024) {
+                setActiveWidth(50);
+                setInactiveWidth(30);
+            } else {
+                setActiveWidth(50);
+                setInactiveWidth(25);
+            }
+        };
+
+        updateWidths();
+        window.addEventListener("resize", updateWidths);
+        return () => window.removeEventListener("resize", updateWidths);
+    }, []);
 
     return (
         <section className="pt-14 pb-10 relative">
             <div className="container flex flex-col sm:flex-row justify-between items-center">
                 <div>
                     <p className="uppercase flex gap-x-4 font-bold text-blue">
-                        <span><Image src={blueLine} alt="vector" /></span>Our Projects
+                        <span>
+                            <Image src={blueLine} alt="vector" />
+                        </span>
+                        Our Projects
                     </p>
                     <h2 className="mt-3">
                         Creating Engaging Stories <br /> That Attract Educate
                     </h2>
                 </div>
+
                 <p className="leading-7 mt-2 mb-7 sm:text-right hidden sm:block">
-                    Showcasing some of our most iconic residential<br /> and commercial installations engineered<br /> for performance, delivered with precision.
+                    Showcasing some of our most iconic residential
+                    <br />
+                    and commercial installations engineered
+                    <br />
+                    for performance, delivered with precision.
                 </p>
+
                 <p className="leading-7 mt-2 mb-7 sm:hidden">
-                    Showcasing some of our most iconic residential<br /> and commercial installations engineered<br /> for performance, delivered with precision.
+                    Showcasing some of our most iconic residential
+                    <br />
+                    and commercial installations engineered
+                    <br />
+                    for performance, delivered with precision.
                 </p>
             </div>
 
@@ -58,20 +97,8 @@ export default function ProjectsSwiper() {
                     className="overflow-visible"
                 >
                     {images.map((item, idx) => {
-                        let activeWidth = 50;
-                        let inactiveWidth = 25;
-
-                        if (typeof window !== "undefined") {
-                            if (window.innerWidth < 768) {
-                                activeWidth = 80;
-                                inactiveWidth = 50;
-                            } else if (window.innerWidth < 1024) {
-                                activeWidth = 50;
-                                inactiveWidth = 30;
-                            }
-                        }
-
-                        const widthPercent = active === idx ? `${activeWidth}%` : `${inactiveWidth}%`;
+                        const widthPercent =
+                            active === idx ? `${activeWidth}%` : `${inactiveWidth}%`;
 
                         return (
                             <SwiperSlide
@@ -90,7 +117,8 @@ export default function ProjectsSwiper() {
                                         className="w-full h-112.5 md:h-137.5 bg-black flex items-center justify-center"
                                         style={{
                                             transition: "transform 300ms ease",
-                                            transform: active === idx ? "scale(1.02)" : "scale(1)",
+                                            transform:
+                                                active === idx ? "scale(1.02)" : "scale(1)",
                                         }}
                                     >
                                         <Image
@@ -101,7 +129,8 @@ export default function ProjectsSwiper() {
                                     </div>
 
                                     <small
-                                        className={`absolute inline-block bottom-10 left-6 text-white z-20 text-3xl ${active === idx ? "w-4/6" : "w-5/6"} transition-ease`}
+                                        className={`absolute inline-block bottom-10 left-6 text-white z-20 text-3xl ${active === idx ? "w-4/6" : "w-5/6"
+                                            } transition-ease`}
                                     >
                                         {item.title}
                                     </small>
@@ -111,10 +140,10 @@ export default function ProjectsSwiper() {
                     })}
                 </Swiper>
             </div>
+
             <div className="flex justify-center gap-x-4 mt-5">
                 <button
                     onClick={() => swiperRef.current?.slidePrev()}
-                    className=""
                     disabled={isBeginning}
                 >
                     <Image
@@ -127,7 +156,6 @@ export default function ProjectsSwiper() {
 
                 <button
                     onClick={() => swiperRef.current?.slideNext()}
-                    className=""
                     disabled={isEnd}
                 >
                     <Image

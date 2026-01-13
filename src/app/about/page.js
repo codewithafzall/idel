@@ -192,7 +192,7 @@ const page = () => {
                     </div>
 
                     {/* CONTENT */}
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-x-16 px-4 sm:px-8 sm:py-10">
+                    <div className="flex flex-col sm:flex-row justify-between items-start gap-x-16 px-4 sm:px-8 sm:py-10">
                         <div className="sm:w-1/2">
                             <p className="leading-7 mt-5">
                                 {data.text}
