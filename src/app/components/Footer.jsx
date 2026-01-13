@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Footer = () => {
     return (
-        <section className='footer mt-7 sm:mt-0 pt-20 pb-14'>
+        <footer className='footer mt-7 sm:mt-0 pt-20 pb-14'>
             <div className='grid grid-cols-1 gap-y-7 sm:grid-cols-4 container text-white'>
                 <div>
                     <h3 className='text-5xl'>IDEL India</h3>
@@ -76,7 +76,7 @@ const Footer = () => {
                 <small className='block mt-2 sm:mt-0'>Privacy Policy</small>
                 <small className='block mt-2 sm:mt-0'>© 2026 idelIndia. All Rights Reserved.</small>
             </div>
-        </section>
+        </footer>
     )
 }
 

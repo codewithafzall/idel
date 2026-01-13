@@ -10,6 +10,7 @@ import logo3 from "../../images/malik.webp"
 import logo4 from "../../images/runwal.webp"
 import logo5 from "../../images/studio.webp"
 import logo6 from "../../images/draw.webp"
+import logo7 from "../../images/zyj.png";
 import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +22,7 @@ const Achievement = () => {
     const architectsRef = useRef(null);
     const projectsRef = useRef(null);
     const feedbackRef = useRef(null);
-    const logos = [logo1, logo2, logo5, logo3, logo6, logo4]
+    const logos = [logo1, logo2, logo5, logo3, logo6, logo4, logo7]
 
     useEffect(() => {
         const ctx = gsap.context(() => {

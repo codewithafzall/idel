@@ -33,7 +33,7 @@
     font-family: 'Avenir', sans-serif;
   }
 
-  nav {
+  nav, footer {
     font-family: 'Bricolage Grotesque', sans-serif;
   }
 
@@ -195,6 +195,12 @@ p {
 .marquee-track {
   width: max-content;
   animation: marquee 20s linear infinite;
+}
+
+.swiper-pagination{
+  position: relative;
+  bottom: 0px !important;
+  z-index: 99999 !important;
 }
 
 @keyframes marquee {

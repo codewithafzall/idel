@@ -3,6 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+/* Lightbox */
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/counter.css";
+
+/* Assets */
 import blueLine from "../images/blue-line.svg";
 import click from "../images/click.png";
 
@@ -50,183 +57,149 @@ import domb1 from "../images/dombivli-1.webp";
 import domb2 from "../images/dombivli-2.webp";
 import domb3 from "../images/dombivli-3.webp";
 
-const page = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [activeProject, setActiveProject] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+const Page = () => {
+  const [open, setOpen] = useState(false);
+  const [slides, setSlides] = useState([]);
+  const [index, setIndex] = useState(0);
 
-    const projects = [
-        {
-            id: 1,
-            title: "Ambey Valley",
-            cover: ambey1,
-            gallery: [ambey1, ambey2, ambey3],
-        },
-        {
-            id: 2,
-            title: "Del House",
-            cover: del1,
-            gallery: [del1, del2, del3],
-        },
-        {
-            id: 3,
-            title: "Dhanuka Bhawan",
-            cover: dhanuka1,
-            gallery: [dhanuka1, dhanuka2, dhanuka3],
-        },
-        {
-            id: 4,
-            title: "Dombivli Apartment",
-            cover: domb1,
-            gallery: [domb1, domb2, domb3],
-        },
-        {
-            id: 5,
-            title: "Joy Legend",
-            cover: joy1,
-            gallery: [joy1, joy2],
-        },
-        {
-            id: 6,
-            title: "Nicmar",
-            cover: nicmar1,
-            gallery: [nicmar1, nicmar2, nicmar3, nicmar4],
-        },
-        {
-            id: 7,
-            title: "Penthouse at Khar",
-            cover: pent1,
-            gallery: [pent1, pent2, pent3],
-        },
-        {
-            id: 8,
-            title: "Sequoia",
-            cover: seq1,
-            gallery: [seq1, seq2, seq3],
-        },
-        {
-            id: 9,
-            title: "Karjat",
-            cover: karjat1,
-            gallery: [karjat1, karjat2, karjat3],
-        },
-        {
-            id: 10,
-            title: "Cartier",
-            cover: cartier1,
-            gallery: [cartier1, cartier2, cartier3],
-        },
-        {
-            id: 11,
-            title: "Celebrity House at Khar",
-            cover: khar1,
-            gallery: [khar1, khar2, khar3],
-        },
-    ];
+  const projects = [
+    {
+      id: 1,
+      title: "Ambey Valley",
+      cover: ambey1,
+      gallery: [ambey1, ambey2, ambey3],
+    },
+    {
+      id: 2,
+      title: "Del House",
+      cover: del1,
+      gallery: [del1, del2, del3],
+    },
+    {
+      id: 3,
+      title: "Dhanuka Bhawan",
+      cover: dhanuka1,
+      gallery: [dhanuka1, dhanuka2, dhanuka3],
+    },
+    {
+      id: 4,
+      title: "Dombivli Apartment",
+      cover: domb1,
+      gallery: [domb1, domb2, domb3],
+    },
+    {
+      id: 5,
+      title: "Joy Legend",
+      cover: joy1,
+      gallery: [joy1, joy2],
+    },
+    {
+      id: 6,
+      title: "Nicmar",
+      cover: nicmar1,
+      gallery: [nicmar1, nicmar2, nicmar3, nicmar4],
+    },
+    {
+      id: 7,
+      title: "Penthouse at Khar",
+      cover: pent1,
+      gallery: [pent1, pent2, pent3],
+    },
+    {
+      id: 8,
+      title: "Sequoia",
+      cover: seq1,
+      gallery: [seq1, seq2, seq3],
+    },
+    {
+      id: 9,
+      title: "Karjat",
+      cover: karjat1,
+      gallery: [karjat1, karjat2, karjat3],
+    },
+    {
+      id: 10,
+      title: "Cartier",
+      cover: cartier1,
+      gallery: [cartier1, cartier2, cartier3],
+    },
+    {
+      id: 11,
+      title: "Celebrity House at Khar",
+      cover: khar1,
+      gallery: [khar1, khar2, khar3],
+    },
+  ];
 
-    const openLightbox = (project) => {
-        setActiveProject(project);
-        setCurrentIndex(0);
-        setIsOpen(true);
-    };
+  const openLightbox = (project) => {
+    setSlides(project.gallery.map((img) => ({ src: img.src })));
+    setIndex(0);
+    setOpen(true);
+  };
 
-    const closeLightbox = () => {
-        setIsOpen(false);
-        setActiveProject(null);
-    };
+  return (
+    <main>
+      {/* Hero */}
+      <div className="project-hero pt-40 text-white">
+        <div className="container pb-32">
+          <h2>
+            Precision in Every Pane. <br />
+            Purpose in Every Project.
+          </h2>
+        </div>
+      </div>
 
-    return (
-        <main>
-            <div className="project-hero pt-40 text-white">
-                <div className="container pt-44 pb-32">
-                    <h2>
-                        Precision in Every Pane. <br />
-                        Purpose in Every Project.
-                    </h2>
-                </div>
+      {/* Projects */}
+      <div className="container py-14">
+        <p className="uppercase flex mt-7 sm:mt-0 gap-x-4 font-bold text-blue items-center">
+          <Image src={blueLine} alt="vector" />
+          Featured Products
+        </p>
+
+        <h2 className="mt-4">
+          Explore The Collection <br /> of Our Projects
+        </h2>
+
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-7">
+          {projects.map((project) => (
+            <div key={project.id}>
+              <div
+                onClick={() => openLightbox(project)}
+                className="relative group cursor-pointer aspect-9/10 overflow-hidden rounded-lg"
+              >
+                <Image
+                  src={project.cover}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                <Image
+                  src={click}
+                  alt="click"
+                  className="absolute bottom-3 right-3 w-8 h-8 sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-14 sm:h-14 sm:opacity-0 sm:group-hover:opacity-100 sm:transition-all sm:duration-300"
+                />
+              </div>
+
+              <p className="mt-3">{project.title}</p>
             </div>
+          ))}
+        </div>
+      </div>
 
-            <div className="container py-14">
-                <p className="uppercase flex mt-7 sm:mt-0 gap-x-4 font-bold text-blue items-center">
-                    <Image src={blueLine} alt="vector" />
-                    Featured Products
-                </p>
-
-                <h2 className="mt-4">
-                    Explore The Collection <br /> of Our Projects
-                </h2>
-
-                <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-7">
-                    {projects.map((project) => (
-                        <div key={project.id}>
-                            <div
-                                onClick={() => openLightbox(project)}
-                                className="relative group cursor-pointer aspect-9/10 overflow-hidden rounded-lg"
-                            >
-                                <Image
-                                    src={project.cover}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-
-                                <Image
-                                    src={click}
-                                    alt="click"
-                                    className="absolute bottom-3 right-3 w-8 h-8 opacity-100 scale-100 z-10 sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-14 sm:h-14 sm:opacity-0 sm:scale-90 sm:group-hover:opacity-100 sm:group-hover:scale-100 sm:transition-all sm:duration-300"
-                                />
-                            </div>
-
-                            <p className="mt-3">{project.title}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {isOpen && activeProject && (
-                <div className="fixed inset-0 bg-[#404040] z-50 flex items-center justify-center">
-                    <button
-                        className="absolute top-6 right-6 text-white text-4xl"
-                        onClick={closeLightbox}
-                    >
-                        &times;
-                    </button>
-
-                    <button
-                        className="absolute left-6 text-white text-5xl"
-                        onClick={() =>
-                            setCurrentIndex(
-                                (currentIndex - 1 + activeProject.gallery.length) %
-                                activeProject.gallery.length
-                            )
-                        }
-                    >
-                        ‹
-                    </button>
-
-                    <div className="relative w-[90vw] max-w-5xl aspect-4/3">
-                        <Image
-                            src={activeProject.gallery[currentIndex]}
-                            alt={activeProject.title}
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-
-                    <button
-                        className="absolute right-6 text-white text-5xl"
-                        onClick={() =>
-                            setCurrentIndex(
-                                (currentIndex + 1) % activeProject.gallery.length
-                            )
-                        }
-                    >
-                        ›
-                    </button>
-                </div>
-            )}
-        </main>
-    );
+      {/* Lightbox */}
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+        index={index}
+        plugins={[Counter]}
+        styles={{
+          container: { backgroundColor: "rgba(0,0,0,0.9)" },
+        }}
+      />
+    </main>
+  );
 };
 
-export default page;
+export default Page;

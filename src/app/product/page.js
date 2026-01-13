@@ -1,9 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import blueLine from "../images/blue-line.svg";
-import Slimline from "../images/slimline-product.webp";
-import Geeta from "../images/geeta-product.webp";
-import Aluk from "../images/aluk-product.webp";
+import SC45 from "../images/SC45.png"
+import V45 from "../images/V45.png"
+import ClearView from "../images/ClearView.png"
+import ClearViewLT from "../images/ClearViewLT.png"
+import geeta27 from "../images/27mm.png"
+import geeta35 from "../images/35mm.png"
+import geeta40 from "../images/40mm.png"
 import Form from "../components/Form";
 
 const products = [
@@ -14,7 +18,7 @@ const products = [
         categories: [
             {
                 name: "Minimal System - ClearView LT",
-                image: Slimline,
+                image: ClearViewLT,
                 specs: [
                     { label: "Interlock Face Width", value: "15 mm" },
                     { label: "Glass Thickness", value: "8mm -32mm" },
@@ -25,7 +29,7 @@ const products = [
             },
             {
                 name: "Minimal System - ClearView",
-                image: Slimline,
+                image: ClearView,
                 reverse: true,
                 specs: [
                     { label: "Interlock Face Width", value: "22 mm" },
@@ -44,7 +48,7 @@ const products = [
         categories: [
             {
                 name: "35mm Slim Geeta Series",
-                image: Geeta,
+                image: geeta35,
                 specs: [
                     { label: "Interlock Face Width", value: "32 mm" },
                     { label: "Glass Thickness", value: "6mm - 23mm" },
@@ -55,7 +59,7 @@ const products = [
             },
             {
                 name: "40mm Geeta Series",
-                image: Geeta,
+                image: geeta40,
                 reverse: true,
                 specs: [
                     { label: "Glass Thickness", value: "6mm - 24mm" },
@@ -65,7 +69,7 @@ const products = [
             },
             {
                 name: "27mm Slim Geeta Series",
-                image: Geeta,
+                image: geeta27,
                 specs: [
                     { label: "Interlock Face Width", value: "32 mm" },
                     { label: "Glass Thickness", value: "6mm - 18mm" },
@@ -83,7 +87,7 @@ const products = [
         categories: [
             {
                 name: "AluK - SC45",
-                image: Aluk,
+                image: SC45,
                 specs: [
                     { label: "Interlock Face Width", value: "33 mm" },
                     { label: "Glass Thickness", value: "6mm, 8mm & 24mm" },
@@ -93,13 +97,12 @@ const products = [
             },
             {
                 name: "AluK - 45V",
-                image: Aluk,
+                image: V45,
                 reverse: true,
                 specs: [
-                    { label: "Interlock Face Width", value: "XX mm" },
-                    { label: "Glass Thickness", value: "XX mm" },
-                    { label: "Max. Shutter Height", value: "XX mm" },
-                    { label: "Max. Shutter Load", value: "XX kg" },
+                    { label: "Glass Thickness", value: "6mm- 24mm" },
+                    { label: "Max. Shutter Height", value: "2.4 Mtrs / 8 Ft." },
+                    { label: "Max. Shutter Load", value: "70 kgs" },
                 ],
             },
         ],

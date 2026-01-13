@@ -11,29 +11,21 @@ import Project2 from "../../images/project-2.webp";
 import Project3 from "../../images/project-3.webp";
 import Project4 from "../../images/project-4.webp";
 import Project5 from "../../images/project-5.webp";
-import Project6 from "../../images/project-6.webp";
-import { useRouter } from "next/navigation";
+import Project6 from "../../images/cartier-2.webp";
 
 const images = [
     { src: Project1, title: "Bungalow by Ar. Soumya Raja at Aamby Valley" },
     { src: Project2, title: "Residential Building at Bandra" },
     { src: Project3, title: "NICMAR" },
-    { src: Project4, title: "Aum Realtors at Santacruz" },
-    { src: Project5, title: "Aum Realtors at Santacruz" },
-    { src: Project6, title: "Aum Realtors at Santacruz" },
+    { src: Project5, title: "Dhanuka Bhawan" },
+    { src: Project6, title: "Cartier" },
 ];
 
 export default function ProjectsSwiper() {
     const [active, setActive] = useState(0);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
-
     const swiperRef = useRef(null);
-    const router = useRouter();
-
-    const handleClick = () => {
-        router.push("/projects");
-    };
 
     return (
         <section className="pt-14 pb-10 relative">
@@ -93,7 +85,6 @@ export default function ProjectsSwiper() {
                                     className="relative rounded-xl overflow-hidden cursor-pointer"
                                     onMouseEnter={() => setActive(idx)}
                                     onMouseLeave={() => setActive(0)}
-                                    onClick={handleClick}
                                 >
                                     <div
                                         className="w-full h-112.5 md:h-137.5 bg-black flex items-center justify-center"

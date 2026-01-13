@@ -58,7 +58,7 @@ const page = () => {
     return (
         <main>
             <div className='clients-hero pt-40 text-white'>
-                <div className='container pt-44 pb-32'>
+                <div className='container pb-32'>
                     <h2>Our Work.  <br />Their Trust.</h2>
                 </div>
             </div>

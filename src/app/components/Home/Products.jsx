@@ -1,76 +1,32 @@
 "use client";
-
 import Image from "next/image";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import whiteLine from "../../images/white-line.svg";
 import blueLine from "../../images/blue-line.svg";
-import product1 from "../../images/minimal.webp";
-import product2 from "../../images/geeta.webp";
-import product3 from "../../images/aluk.webp";
+import product1 from "../../images/ClearViewLT.png";
+import product2 from "../../images/V45.png";
+import product3 from "../../images/27mm.png";
 import home1 from "../../images/home-1.webp";
 import home2 from "../../images/home-2.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Products = () => {
-    const sectionRef = useRef(null);
-    const cardRef = useRef(null);
+
     const [activeCard, setActiveCard] = useState(null);
     const isMobile =
         typeof window !== "undefined" &&
         window.matchMedia("(max-width: 767px)").matches;
 
-    useLayoutEffect(() => {
-        const section = sectionRef.current;
-        const card = cardRef.current;
-        if (!section || !card) return;
-
-        // ✅ Disable animation on mobile
-        const isMobile = window.matchMedia("(max-width: 767px)").matches;
-        if (isMobile) return;
-
-        const ctx = gsap.context(() => {
-            gsap.set(card, {
-                maxWidth: "80rem",
-                width: "100%",
-                borderRadius: "1rem",
-                marginTop: "6rem",
-                transformOrigin: "center top",
-                scaleX: 1,
-                scaleY: 1,
-            });
-
-            gsap.to(card, {
-                maxWidth: "100vw",
-                marginTop: "0rem",
-                scaleX: 1.02,
-                scaleY: 1.12,
-                borderRadius: "0.25rem",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top bottom",
-                    end: "top center",
-                    scrub: true,
-                    invalidateOnRefresh: true,
-                },
-            });
-        }, section);
-
-        return () => ctx.revert();
-    }, []);
 
     return (
-        <section ref={sectionRef} className="relative z-20 overflow-hidden">
+        <section className="relative z-20 overflow-hidden">
             {/* EXPANDING CARD */}
-            <div
-                ref={cardRef}
-                className="mx-auto bg-blue rounded-xl py-12 px-4 sm:px-10 overflow-hidden"
-            >
+            <div className="mx-auto container bg-blue rounded-xl py-12 mt-14 px-4 sm:px-10 overflow-hidden">
                 <p className="uppercase text-white flex-center gap-x-4 font-bold">
                     <span>
                         <Image src={whiteLine} alt="vector" />
@@ -97,13 +53,15 @@ const Products = () => {
                                 setActiveCard(activeCard === 1 ? null : 1);
                             }
                         }} className="group relative overflow-hidden rounded-lg">
-                            <Image
-                                src={product1}
-                                width={430}
-                                height={570}
-                                alt="Minimal"
-                                className="rounded-lg object-cover group-hover:scale-110 duration-1000"
-                            />
+                            <div className="bg-white px-10 py-14">
+                                <Image
+                                    src={product1}
+                                    width={430}
+                                    height={570}
+                                    alt="Minimal"
+                                    className="rounded-lg object-cover group-hover:scale-110 duration-1000"
+                                />
+                            </div>
 
                             <div
                                 className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
@@ -135,13 +93,15 @@ const Products = () => {
                             }
                         }}
                             className="group relative overflow-hidden rounded-lg">
-                            <Image
-                                src={product2}
-                                width={430}
-                                height={570}
-                                alt="Aluk"
-                                className="rounded-lg object-cover group-hover:scale-110 duration-1000"
-                            />
+                            <div className="bg-white px-10 py-14">
+                                <Image
+                                    src={product2}
+                                    width={430}
+                                    height={570}
+                                    alt="Aluk"
+                                    className="rounded-lg object-cover group-hover:scale-110 duration-1000"
+                                />
+                            </div>
 
                             <div
                                 className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
@@ -172,13 +132,15 @@ const Products = () => {
                                 setActiveCard(activeCard === 3 ? null : 3);
                             }
                         }} className="group relative overflow-hidden rounded-lg">
-                            <Image
-                                src={product3}
-                                width={430}
-                                height={570}
-                                alt="Geeta Series"
-                                className="rounded-lg object-cover group-hover:scale-110 duration-1000"
-                            />
+                            <div className="bg-white px-10 py-14">
+                                <Image
+                                    src={product3}
+                                    width={430}
+                                    height={570}
+                                    alt="Geeta Series"
+                                    className="rounded-lg object-cover group-hover:scale-110 duration-1000"
+                                />
+                            </div>
 
                             <div
                                 className={`absolute inset-8 rounded-lg bg-white flex flex-col items-center justify-center text-center px-6 transition-transform duration-700
@@ -205,7 +167,7 @@ const Products = () => {
             </div>
 
             {/* ABOUT SECTION */}
-            <div className="container flex flex-col sm:flex-row justify-between items-end gap-x-24 mt-10 sm:mt-40 mb-14">
+            <div className="container flex flex-col sm:flex-row justify-between items-end gap-x-24 mt-10 sm:mt-14 mb-14">
                 <div className="w-full sm:w-8/12">
                     <p className="uppercase flex items-center gap-x-4 font-bold text-blue">
                         <span>

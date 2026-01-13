@@ -9,7 +9,7 @@ const page = () => {
     return (
         <main>
             <div className='contact-hero pt-40 text-white'>
-                <div className='container pt-44 pb-32'>
+                <div className='container pb-32'>
                     <h2>Let’s Frame <br />What’s Next, Together.</h2>
                 </div>
             </div>
@@ -57,10 +57,7 @@ const page = () => {
                     <form className='bg-white sm:w-8/12 rounded-2xl mt-5 sm:mt-0 p-5 sm:p-10'>
 
                         <label className='text-lg font-semibold'>Name</label>
-                        <div className='flex gap-x-3 sm:gap-x-8'>
-                            <input type='text' placeholder='First Name' className='contact-form-input' />
-                            <input type='text' placeholder='Last Name' className='contact-form-input' />
-                        </div>
+                            <input type='text' placeholder='Full Name' className='contact-form-input' />
                         <div className='flex gap-x-3 sm:gap-x-8 mt-4'>
                             <div className='w-full'>
                                 <label className='text-lg font-semibold'>Email</label>
@@ -73,7 +70,7 @@ const page = () => {
                         </div>
 
                         <label className='text-lg font-semibold mt-4 inline-block'>Subject</label>
-                        <input type='text' placeholder='Last Name' className='contact-form-input' />
+                        <input type='text' placeholder='Subject' className='contact-form-input' />
 
                         <label className='text-lg font-semibold mt-4 inline-block'>Message</label>
                         <textarea placeholder='Let us know about your project' className='contact-form-input h-32'></textarea>
