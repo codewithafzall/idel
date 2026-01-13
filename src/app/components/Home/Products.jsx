@@ -26,8 +26,8 @@ const Products = () => {
     return (
         <section className="relative z-20 overflow-hidden">
             {/* EXPANDING CARD */}
-            <div className="mx-auto container bg-blue rounded-xl py-12 mt-14 px-4 sm:px-10 overflow-hidden">
-                <p className="uppercase text-white flex-center gap-x-4 font-bold">
+            <div className="mx-auto container bg-blue rounded-xl mt-14 px-4 sm:px-10 overflow-hidden">
+                <p className="uppercase text-white flex-center gap-x-4 font-bold mt-14 sm:mt-0">
                     <span>
                         <Image src={whiteLine} alt="vector" />
                     </span>
@@ -161,7 +161,7 @@ const Products = () => {
                             </div>
                         </div>
 
-                        <p className="text-center mt-5">Aluk Series</p>
+                        <p className="text-center mt-5 mb-10 sm:mb-0">Aluk Series</p>
                     </div>
                 </div>
             </div>
