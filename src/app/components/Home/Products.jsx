@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import whiteLine from "../../images/white-line.svg";
 import blueLine from "../../images/blue-line.svg";
 import product1 from "../../images/ClearViewLT.png";
@@ -18,16 +17,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Products = () => {
 
     const [activeCard, setActiveCard] = useState(null);
-    const isMobile =
-        typeof window !== "undefined" &&
-        window.matchMedia("(max-width: 767px)").matches;
-
+    const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
 
     return (
         <section className="relative z-20 overflow-hidden">
             {/* EXPANDING CARD */}
             <div className="mx-auto container bg-blue rounded-xl mt-14 px-4 sm:px-10 overflow-hidden">
-                <p className="uppercase text-white flex-center gap-x-4 font-bold mt-14 sm:mt-0">
+                <p className="uppercase text-white flex-center gap-x-4 font-bold mt-14">
                     <span>
                         <Image src={whiteLine} alt="vector" />
                     </span>
@@ -45,7 +41,7 @@ const Products = () => {
                     Explore IDEL's advanced lift & slide solutions built for seamless living.
                 </p>
 
-                <div className="text-white grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8 mt-8 lg:mt-16">
+                <div className="text-white grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8 mt-8 lg:mt-16 mb-14">
                     {/* PRODUCT 1 */}
                     <div className="flex flex-col items-center">
                         <div onClick={() => {
@@ -161,7 +157,7 @@ const Products = () => {
                             </div>
                         </div>
 
-                        <p className="text-center mt-5 mb-10 sm:mb-0">Aluk Series</p>
+                        <p className="text-center mt-5">Aluk Series</p>
                     </div>
                 </div>
             </div>
