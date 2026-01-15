@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
 
-    const logos = [logo1, logo2, logo5, logo3, logo6, logo4. logo7];
+    const logos = [logo1, logo2, logo5, logo3, logo6, logo4, logo7];
 
     const services = [
         {

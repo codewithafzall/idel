@@ -32,7 +32,7 @@ const products = [
                 image: ClearView,
                 reverse: true,
                 specs: [
-                    { label: "Interlock Face Width", value: "22 mm" },
+                    { label: "Interlock Face Width", value: "20 mm" },
                     { label: "Glass Thickness", value: "8mm - 50mm" },
                     { label: "Max. Shutter Height", value: "6.0 Mtrs / 20 Ft" },
                     { label: "Max. Shutter Load", value: "1000 kgs" },
@@ -46,9 +46,21 @@ const products = [
         title: "Geeta Series",
         description: "The Geeta Series offers strong, reliable aluminium profiles designed for long-lasting performance in residential and commercial spaces.",
         categories: [
+             {
+                name: "27mm Slim Geeta Series",
+                image: geeta27,
+                specs: [
+                    { label: "Interlock Face Width", value: "32 mm" },
+                    { label: "Glass Thickness", value: "6mm - 18mm" },
+                    { label: "Max. Shutter Height", value: "2.1 Mtrs / 7 Ft." },
+                    { label: "Max. Shutter Load", value: "80 kgs" },
+                    { label: "Wind Resistance", value: "1.0 KPa" },
+                ],
+            },
             {
                 name: "35mm Slim Geeta Series",
                 image: geeta35,
+                reverse: true,
                 specs: [
                     { label: "Interlock Face Width", value: "32 mm" },
                     { label: "Glass Thickness", value: "6mm - 23mm" },
@@ -60,24 +72,12 @@ const products = [
             {
                 name: "40mm Geeta Series",
                 image: geeta40,
-                reverse: true,
                 specs: [
                     { label: "Glass Thickness", value: "6mm - 24mm" },
                     { label: "Max. Shutter Height", value: "2.4 Mtrs / 8 Ft." },
                     { label: "Max. Shutter Load", value: "75 kgs" },
                 ],
-            },
-            {
-                name: "27mm Slim Geeta Series",
-                image: geeta27,
-                specs: [
-                    { label: "Interlock Face Width", value: "32 mm" },
-                    { label: "Glass Thickness", value: "6mm - 18mm" },
-                    { label: "Max. Shutter Height", value: "2.1 Mtrs / 7 Ft." },
-                    { label: "Max. Shutter Load", value: "80 kgs" },
-                    { label: "Wind Resistance", value: "1.0 KPa" },
-                ],
-            },
+            }
         ],
     },
     {
