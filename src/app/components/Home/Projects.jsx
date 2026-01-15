@@ -26,25 +26,34 @@ export default function ProjectsSwiper() {
     const [active, setActive] = useState(0);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     // ✅ widths moved to state
     const [activeWidth, setActiveWidth] = useState(50);
     const [inactiveWidth, setInactiveWidth] = useState(25);
+    const [activeHeight, setActiveHeight] = useState(400);
+    const [inactiveHeight, setInactiveHeight] = useState(250);
 
     const swiperRef = useRef(null);
 
     // ✅ window logic AFTER hydration
     useEffect(() => {
         const updateWidths = () => {
-            if (window.innerWidth < 768) {
-                setActiveWidth(80);
-                setInactiveWidth(50);
-            } else if (window.innerWidth < 1024) {
-                setActiveWidth(50);
-                setInactiveWidth(30);
+            const width = window.innerWidth;
+            
+            if (width < 768) {
+                setIsMobile(true);
+                setActiveHeight(400);
+                setInactiveHeight(250);
             } else {
-                setActiveWidth(50);
-                setInactiveWidth(25);
+                setIsMobile(false);
+                if (width < 1024) {
+                    setActiveWidth(50);
+                    setInactiveWidth(30);
+                } else {
+                    setActiveWidth(50);
+                    setInactiveWidth(25);
+                }
             }
         };
 
@@ -52,6 +61,12 @@ export default function ProjectsSwiper() {
         window.addEventListener("resize", updateWidths);
         return () => window.removeEventListener("resize", updateWidths);
     }, []);
+
+    const handleSlideClick = (idx) => {
+        if (isMobile) {
+            setActive(active === idx ? -1 : idx);
+        }
+    };
 
     return (
         <section className="pt-14 pb-10 relative">
@@ -94,27 +109,43 @@ export default function ProjectsSwiper() {
                     }}
                     slidesPerView="auto"
                     spaceBetween={20}
-                    className="overflow-visible"
+                    direction={isMobile ? "vertical" : "horizontal"}
+                    className={isMobile ? "h-150 overflow-visible" : "overflow-visible"}
                 >
                     {images.map((item, idx) => {
-                        const widthPercent =
-                            active === idx ? `${activeWidth}%` : `${inactiveWidth}%`;
+                        const widthPercent = !isMobile && active === idx 
+                            ? `${activeWidth}%` 
+                            : !isMobile 
+                            ? `${inactiveWidth}%` 
+                            : "100%";
+                        
+                        const heightPx = isMobile && active === idx 
+                            ? `${activeHeight}px` 
+                            : isMobile 
+                            ? `${inactiveHeight}px` 
+                            : "auto";
 
                         return (
                             <SwiperSlide
                                 key={idx}
                                 style={{
                                     width: widthPercent,
-                                    transition: "width 300ms ease",
+                                    height: heightPx,
+                                    transition: isMobile 
+                                        ? "height 300ms ease" 
+                                        : "width 300ms ease",
                                 }}
                             >
                                 <div
-                                    className="relative rounded-xl overflow-hidden cursor-pointer"
-                                    onMouseEnter={() => setActive(idx)}
-                                    onMouseLeave={() => setActive(0)}
+                                    className="relative rounded-xl overflow-hidden cursor-pointer h-full"
+                                    onMouseEnter={() => !isMobile && setActive(idx)}
+                                    onMouseLeave={() => !isMobile && setActive(0)}
+                                    onClick={() => handleSlideClick(idx)}
                                 >
                                     <div
-                                        className="w-full h-112.5 md:h-137.5 bg-black flex items-center justify-center"
+                                        className={`w-full bg-black flex items-center justify-center ${
+                                            isMobile ? "h-full" : "h-112.5 md:h-137.5"
+                                        }`}
                                         style={{
                                             transition: "transform 300ms ease",
                                             transform:
@@ -129,8 +160,9 @@ export default function ProjectsSwiper() {
                                     </div>
 
                                     <small
-                                        className={`absolute inline-block bottom-10 left-6 text-white z-20 text-3xl ${active === idx ? "w-4/6" : "w-5/6"
-                                            } transition-ease`}
+                                        className={`absolute inline-block bottom-10 left-6 text-white z-20 text-3xl ${
+                                            active === idx ? "w-4/6" : "w-5/6"
+                                        } transition-ease`}
                                     >
                                         {item.title}
                                     </small>
@@ -149,8 +181,9 @@ export default function ProjectsSwiper() {
                     <Image
                         src={arrow}
                         alt="Prev"
-                        className={`w-10 rotate-180 transition ${isBeginning ? "opacity-30" : "opacity-100"
-                            }`}
+                        className={`w-10 transition ${
+                            isMobile ? "rotate-90" : "rotate-180"
+                        } ${isBeginning ? "opacity-30" : "opacity-100"}`}
                     />
                 </button>
 
@@ -161,8 +194,9 @@ export default function ProjectsSwiper() {
                     <Image
                         src={arrow}
                         alt="Next"
-                        className={`w-10 transition ${isEnd ? "opacity-30" : "opacity-100"
-                            }`}
+                        className={`w-10 transition ${
+                            isMobile ? "-rotate-90" : ""
+                        } ${isEnd ? "opacity-30" : "opacity-100"}`}
                     />
                 </button>
             </div>
