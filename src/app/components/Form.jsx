@@ -56,7 +56,7 @@ const Form = () => {
       body.append("submittedAt", new Date().toISOString());
 
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbyP6DPJymxnKw79xjvpPMOaP1blfANKRmlhBB_fL45J6muKd5tD8SyjL9bBfM6AltCVLA/exec",
+        "https://script.google.com/macros/s/AKfycbxdxk5EkrH1vX9RYd5vZIGrqbmEol6ZpJjMKvZlS9tMXYx__7apW5qm7hxHl8UnIe5Bsw/exec",
         {
           method: "POST",
           body,
