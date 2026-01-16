@@ -26,36 +26,32 @@ import nicmar2 from "../images/nicmar-2.webp";
 import nicmar3 from "../images/nicmar-3.webp";
 import nicmar4 from "../images/nicmar-4.webp";
 
-import pent1 from "../images/pent-1.webp";
-import pent2 from "../images/pent-2.webp";
-import pent3 from "../images/pent-3.webp";
-
-import karjat1 from "../images/karjat-1.webp";
-import karjat2 from "../images/karjat-2.webp";
-import karjat3 from "../images/karjat-3.webp";
-
-import cartier1 from "../images/cartier-1.webp";
-import cartier2 from "../images/cartier-2.webp";
-import cartier3 from "../images/cartier-3.webp";
-
 import dhanuka1 from "../images/dhanuka-1.webp";
 import dhanuka2 from "../images/dhanuka-2.webp";
 import dhanuka3 from "../images/dhanuka-3.webp";
 
 import khar1 from "../images/khar-1.webp";
 import khar2 from "../images/khar-2.webp";
-import khar3 from "../images/khar-3.webp";
 
 import seq1 from "../images/seq-1.webp";
 import seq2 from "../images/seq-2.webp";
-import seq3 from "../images/seq-3.webp";
-
-import joy1 from "../images/joy-1.webp";
-import joy2 from "../images/joy-2.webp";
 
 import domb1 from "../images/dombivli-1.webp";
 import domb2 from "../images/dombivli-2.webp";
 import domb3 from "../images/dombivli-3.webp";
+
+import jain1 from "../images/jain-1.webp";
+import jain2 from "../images/jain-2.webp";
+import jain3 from "../images/jain-3.webp";
+
+import walk1 from "../images/walk-1.webp";
+import walk2 from "../images/walk-2.webp";
+import walk3 from "../images/walk-3.webp";
+
+import ecr1 from "../images/ecr-1.webp";
+import ecr2 from "../images/ecr-2.webp";
+import ecr3 from "../images/ecr-3.webp";
+import ecr4 from "../images/ecr-4.webp";
 
 const Page = () => {
   const [open, setOpen] = useState(false);
@@ -65,8 +61,8 @@ const Page = () => {
   const projects = [
     {
       id: 1,
-      title: "Ambey Valley",
-      cover: ambey1,
+      title: "Amby Valley",
+      cover: ambey2,
       gallery: [ambey1, ambey2, ambey3],
     },
     {
@@ -83,51 +79,45 @@ const Page = () => {
     },
     {
       id: 4,
-      title: "Dombivli Apartment",
-      cover: domb1,
+      title: "Bungalow at Dombivli",
+      cover: domb2,
       gallery: [domb1, domb2, domb3],
     },
     {
       id: 5,
-      title: "Joy Legend",
-      cover: joy1,
-      gallery: [joy1, joy2],
-    },
-    {
-      id: 6,
       title: "Nicmar",
       cover: nicmar1,
       gallery: [nicmar1, nicmar2, nicmar3, nicmar4],
     },
     {
+      id: 6,
+      title: "Sequoia",
+      cover: seq1,
+      gallery: [seq1, seq2],
+    },
+    {
       id: 7,
-      title: "Penthouse at Khar",
-      cover: pent1,
-      gallery: [pent1, pent2, pent3],
+      title: "Celebrity House at Khar",
+      cover: khar1,
+      gallery: [khar1, khar2],
     },
     {
       id: 8,
-      title: "Sequoia",
-      cover: seq1,
-      gallery: [seq1, seq2, seq3],
+      title: "Private Building at Khar",
+      cover: jain2,
+      gallery: [jain1, jain2, jain3],
     },
     {
       id: 9,
-      title: "Karjat",
-      cover: karjat1,
-      gallery: [karjat1, karjat2, karjat3],
+      title: "Residential Apartment at Walkeshwar",
+      cover: walk1,
+      gallery: [walk1, walk2, walk3],
     },
     {
       id: 10,
-      title: "Cartier",
-      cover: cartier1,
-      gallery: [cartier1, cartier2, cartier3],
-    },
-    {
-      id: 11,
-      title: "Celebrity House at Khar",
-      cover: khar1,
-      gallery: [khar1, khar2, khar3],
+      title: "Jyotika & Surya Bungalow in Chennai",
+      cover: ecr1,
+      gallery: [ecr1, ecr2, ecr3, ecr4],
     },
   ];
 
