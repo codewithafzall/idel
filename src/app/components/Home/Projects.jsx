@@ -9,17 +9,17 @@ import arrow from "../../images/arrow.svg";
 
 import Project1 from "../../images/project-1.webp";
 import Project2 from "../../images/project-2.webp";
-import Project3 from "../../images/project-3.webp";
-import Project4 from "../../images/project-4.webp";
+import Project3 from "../../images/nicmar-1.webp";
+import Project4 from "../../images/ecr-2.webp";
 import Project5 from "../../images/project-5.webp";
 import Project6 from "../../images/cartier-2.webp";
 
 const images = [
-    { src: Project1, title: "Bungalow by Ar. Soumya Raja at Aamby Valley" },
-    { src: Project2, title: "Residential Building at Bandra" },
+    { src: Project1, title: "Amby Valley" },
+    { src: Project2, title: "Del House" },
     { src: Project3, title: "NICMAR" },
     { src: Project5, title: "Dhanuka Bhawan" },
-    { src: Project6, title: "Cartier" },
+    { src: Project4, title: "Jyotika & Surya Bungalow" },
 ];
 
 export default function ProjectsSwiper() {

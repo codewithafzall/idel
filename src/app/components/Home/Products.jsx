@@ -70,7 +70,7 @@ const Products = () => {
                                     Sleek, unobtrusive profiles that maximise views and light. Built for
                                     modern, minimal architecture.
                                 </p>
-                                <Link href="/product#product-1">
+                                <Link href="/product#minimal">
                                     <button className="mt-6 border border-blue text-blue font-semibold px-6 py-3 rounded-xl transition">
                                         View the Product
                                     </button>
@@ -109,7 +109,7 @@ const Products = () => {
                                     Versatile and lightweight, ideal for everyday performance. Balancing
                                     strength with affordability.
                                 </p>
-                                <Link href="/product#product-2">
+                                <Link href="/product#geeta">
                                     <button className="mt-6 border border-blue text-blue font-semibold px-6 py-3 rounded-xl transition">
                                         View the Product
                                     </button>
@@ -149,7 +149,7 @@ const Products = () => {
                                     European-engineered, heavy-duty systems for long-span durability.
                                     Ideal for large-scale residential and commercial facades.
                                 </p>
-                                <Link href="/product#product-3">
+                                <Link href="/product#aluk">
                                     <button className="mt-6 border border-blue text-blue font-semibold px-6 py-3 rounded-xl transition">
                                         View the Product
                                     </button>

@@ -8,6 +8,7 @@ import call from "../images/call.png";
 import mail from "../images/mail.png";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
+import banner from "../images/contact-banner.webp";
 
 const page = () => {
 
@@ -138,8 +139,17 @@ const page = () => {
                 </div>
             )}
 
-            <div className="contact-hero pt-40 text-white">
-                <div className="container pb-32">
+            <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+                <Image
+                    src={banner}
+                    alt="Product Hero Background"
+                    fill
+                    priority
+                    className="object-cover"
+                    placeholder="blur"
+                />
+
+                <div className="container pt-44 pb-32 relative z-10">
                     <h2>Let’s Frame <br />What’s Next, Together.</h2>
                 </div>
             </div>

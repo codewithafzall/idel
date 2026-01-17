@@ -12,6 +12,7 @@ import "yet-another-react-lightbox/plugins/counter.css";
 /* Assets */
 import blueLine from "../images/blue-line.svg";
 import click from "../images/click.png";
+import banner from "../images/project-banner.webp";
 
 import ambey1 from "../images/aambey-1.webp";
 import ambey2 from "../images/aambey-2.webp";
@@ -129,10 +130,19 @@ const Page = () => {
 
   return (
     <main>
-      {/* Hero */}
-      <div className="project-hero pt-40 text-white">
-        <div className="container pb-32">
-          <h2>
+
+      <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+        <Image
+          src={banner}
+          alt="Product Hero Background"
+          fill
+          priority
+          className="object-cover"
+          placeholder="blur"
+        />
+
+        <div className="container pt-44 pb-32 relative z-10">
+           <h2>
             Precision in Every Pane. <br />
             Purpose in Every Project.
           </h2>

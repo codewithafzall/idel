@@ -16,6 +16,7 @@ import cda from '../images/cda.webp';
 import mission from '../images/mission.webp';
 import comma from '../images/comma.png';
 import location from '../images/location-icon.png';
+import banner from "../images/about-banner.webp";
 import Image from 'next/image';
 
 const page = () => {
@@ -77,9 +78,18 @@ const page = () => {
 
     return (
         <main>
-            <div className='about-hero text-white pt-40 sm:pt-0'>
-                <div className='container sm:pt-44 sm:pb-32'>
-                    <h2 className=''>Reimagining <br />Architectural Openings.</h2>
+            <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+                <Image
+                    src={banner}
+                    alt="Product Hero Background"
+                    fill
+                    priority
+                    className="object-cover"
+                    placeholder="blur"
+                />
+
+                <div className="container pt-44 pb-32 relative z-10">
+                     <h2 className=''>Reimagining <br />Architectural Openings.</h2>
                 </div>
             </div>
 

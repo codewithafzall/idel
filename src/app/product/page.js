@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import blueLine from "../images/blue-line.svg";
+import banner from "../images/product-banner.webp";
 import SC45 from "../images/SC45.png"
 import V45 from "../images/V45.png"
 import ClearView from "../images/ClearView.png"
@@ -13,6 +14,7 @@ import Form from "../components/Form";
 const products = [
     {
         id: 1,
+        name: "minimal",
         title: "Minimal Systems",
         description: "Our Slimline Systems offer sleek, ultra-slim aluminium profiles that maximize visibility and bring a modern, minimal look to any space. Designed for durability, smooth performance, and elegant aesthetics, they are ideal for premium homes and contemporary architecture.",
         categories: [
@@ -43,10 +45,11 @@ const products = [
     },
     {
         id: 2,
+        name: "geeta",
         title: "Geeta Series",
         description: "The Geeta Series offers strong, reliable aluminium profiles designed for long-lasting performance in residential and commercial spaces.",
         categories: [
-             {
+            {
                 name: "27mm Slim Geeta Series",
                 image: geeta27,
                 specs: [
@@ -82,6 +85,7 @@ const products = [
     },
     {
         id: 3,
+        name: "aluk",
         title: "Aluk Systems",
         description: "Placeholder description for Aluk Systems. Replace this text later.",
         categories: [
@@ -114,8 +118,17 @@ const page = () => {
     return (
         <main>
             {/* Hero */}
-            <div className="product-hero pt-40 sm:pt-0 text-white">
-                <div className="container pt-44 pb-32">
+            <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+                <Image
+                    src={banner}
+                    alt="Product Hero Background"
+                    fill
+                    priority
+                    className="object-cover"
+                    placeholder="blur"
+                />
+
+                <div className="container pt-44 pb-32 relative z-10">
                     <h2>Innovative Fenestration <br /> Solutions Built to Last</h2>
                 </div>
             </div>
@@ -131,7 +144,7 @@ const page = () => {
 
             {/* Products */}
             {products.map((product) => (
-                <div key={product.id} className="bg-blue rounded-2xl container mb-20 px-0!">
+                <div key={product.id} id={product.name} className="bg-blue rounded-2xl container mb-20 px-0! scroll-m-26">
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between py-10 px-6 lg:px-14 text-white gap-6">
                         <h2 className="font-normal!">{product.title}</h2>
                         <p className="lg:w-[45%]">{product.description}</p>

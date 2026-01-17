@@ -6,6 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import TransitionOverlay from "./components/TransitionOverlay";
+import PageTransition from "./components/PageTransition";
 
 const avenir = localFont({
   src: [
@@ -39,8 +41,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${avenir.variable} ${bricolage.variable}`}>
       <body>
         <Navbar />
-        {children}
-        <Footer/>
+        <TransitionOverlay />
+        <PageTransition>
+          {children}
+        </PageTransition>
+        <Footer />
       </body>
     </html>
   );

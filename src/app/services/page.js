@@ -11,6 +11,7 @@ import logo4 from "../images/runwal.webp"
 import logo5 from "../images/studio.webp"
 import logo6 from "../images/draw.webp"
 import logo7 from "../images/zyj.png";
+import banner from "../images/service-banner.webp"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Form from '../components/Form';
@@ -101,12 +102,18 @@ const page = () => {
     return (
         <main>
 
-            <div className='service-hero pt-40 sm:pt-0 text-white'>
-                <div className='container pt-44 pb-32'>
-                    <h2>
-                        Precision in Every Detail.  <br />
-                        Crafted for Performance.
-                    </h2>
+            <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+                <Image
+                    src={banner}
+                    alt="Product Hero Background"
+                    fill
+                    priority
+                    className="object-cover"
+                    placeholder="blur"
+                />
+
+                <div className="container pt-44 pb-32 relative z-10">
+                    <h2>Precision in Every Detail.  <br />Crafted for Performance.</h2>
                 </div>
             </div>
 

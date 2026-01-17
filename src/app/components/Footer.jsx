@@ -23,9 +23,9 @@ const Footer = () => {
                 <div className='hidden sm:flex flex-col sm:ml-10'>
                     <p>Products</p>
                     <ul className='space-y-6 mt-7'>
-                        <li><a href='/product#product-1'>MINIMAL SYSTEM</a></li>
-                        <li><a href='/product#product-3'>ALUK SERIES</a></li>
-                        <li><a href='/product#product-2'>GEETA SERIES</a></li>
+                        <li><a href='/product#minimal'>MINIMAL SYSTEM</a></li>
+                        <li><a href='/product#geeta'>GEETA SERIES</a></li>
+                        <li><a href='/product#aluk'>ALUK SERIES</a></li>
                     </ul>
                 </div>
                 <div className='sm:hidden flex gap-x-16'>
@@ -42,9 +42,9 @@ const Footer = () => {
                     <div className='flex flex-col sm:ml-10'>
                         <p>Products</p>
                         <ul className='space-y-6 mt-7'>
-                            <li><a href='/product#product-1'>MINIMAL SYSTEM</a></li>
-                            <li><a href='/product#product-3'>ALUK SERIES</a></li>
-                            <li><a href='/product#product-2'>GEETA SERIES</a></li>
+                            <li><a href='/product#minimal'>MINIMAL SYSTEM</a></li>
+                            <li><a href='/product#geeta'>GEETA SERIES</a></li>
+                            <li><a href='/product#aluk'>ALUK SERIES</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Footer = () => {
                 <div className='flex items-center gap-x-5 mt-3 sm:mt-0'>
                     <a href='https://instagram.com/idelindia/' target='_blank'><Image src={instagram} alt="instagram" /></a>
                 </div>
-                <small className='block mt-2 sm:mt-0'>Privacy Policy</small>
+                {/* <small className='block mt-2 sm:mt-0'>Privacy Policy</small> */}
                 <small className='block mt-2 sm:mt-0'>© 2026 idelIndia. All Rights Reserved.</small>
             </div>
         </footer>
