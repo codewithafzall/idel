@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import TransitionLink from "./TransitionLink"; // Import here
 import Logo from "../images/logo.png";
 
 const NAV_ITEMS = [
@@ -26,20 +25,21 @@ function NavLinks({ onNavigate, register, pathname }) {
             key={item.href}
             ref={(el) => !item.isCta && register(el, item.href)}
           >
-            <TransitionLink
+            <a
               href={item.href}
               onClick={onNavigate}
               className={
                 item.isCta
-                  ? `border-2 rounded-full px-3 py-2 transition-colors ${isActiveCta
-                    ? "bg-white text-black border-white"
-                    : "border-white text-white hover:bg-white hover:text-black"
-                  }`
+                  ? `border-2 rounded-full px-3 py-2 transition-colors ${
+                      isActiveCta
+                        ? "bg-white text-black border-white"
+                        : "border-white text-white hover:bg-white hover:text-black"
+                    }`
                   : "text-white hover:opacity-80 transition-opacity"
               }
             >
               {item.label}
-            </TransitionLink>
+            </a>
           </li>
         );
       })}
@@ -145,14 +145,14 @@ export default function Navbar() {
         <div className="py-7">
           <div className="container mx-auto flex items-center justify-between">
             {/* Logo */}
-            <TransitionLink href="/" className="shrink-0" onClick={() => setOpen(false)}>
+            <a href="/" className="shrink-0" onClick={() => setOpen(false)}>
               <Image src={Logo} alt="IDEL Logo" width={110} height={55} priority />
-            </TransitionLink>
+            </a>
 
             {/* Desktop */}
             <div className="relative hidden min-[851px]:block">
               <ul className="flex gap-x-6 uppercase items-center relative">
-                <NavLinks register={register} onNavigate={() => { }} pathname={pathname} />
+                <NavLinks register={register} onNavigate={() => {}} pathname={pathname} />
               </ul>
 
               <span
@@ -175,16 +175,19 @@ export default function Navbar() {
             >
               <span className="relative block w-6 h-5">
                 <span
-                  className={`absolute left-0 top-0 h-0.5 w-6 bg-white transition-transform ${open ? "translate-y-2 rotate-45" : ""
-                    }`}
+                  className={`absolute left-0 top-0 h-0.5 w-6 bg-white transition-transform ${
+                    open ? "translate-y-2 rotate-45" : ""
+                  }`}
                 />
                 <span
-                  className={`absolute left-0 top-2 h-0.5 w-6 bg-white transition-opacity ${open ? "opacity-0" : "opacity-100"
-                    }`}
+                  className={`absolute left-0 top-2 h-0.5 w-6 bg-white transition-opacity ${
+                    open ? "opacity-0" : "opacity-100"
+                  }`}
                 />
                 <span
-                  className={`absolute left-0 top-4 h-0.5 w-6 bg-white transition-transform ${open ? "-translate-y-2 -rotate-45" : ""
-                    }`}
+                  className={`absolute left-0 top-4 h-0.5 w-6 bg-white transition-transform ${
+                    open ? "-translate-y-2 -rotate-45" : ""
+                  }`}
                 />
               </span>
             </button>
@@ -198,7 +201,7 @@ export default function Navbar() {
                   <ul className="uppercase text-white flex flex-col gap-4">
                     <NavLinks
                       onNavigate={() => setOpen(false)}
-                      register={() => { }}
+                      register={() => {}}
                       pathname={pathname}
                     />
                   </ul>

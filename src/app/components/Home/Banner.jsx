@@ -2,7 +2,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,8 +50,7 @@ export default function Banner() {
             muted
             loop
             playsInline
-            preload="metadata"
-            poster="/banner-desktop-poster.webp"
+            preload="auto"
           />
         </div>
 
@@ -67,11 +65,9 @@ export default function Banner() {
             Experience next-generation aluminium systems, engineered for longevity,
             luxury, and unmatched performance.
           </p>
-           <Link href="/contact">
           <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
             Enquire Now
           </button>
-          </Link>
         </div>
       </section>
 
@@ -85,8 +81,7 @@ export default function Banner() {
             muted
             loop
             playsInline
-            preload="metadata"
-            poster="/banner-mobile-poster.webp"
+            preload="auto"
           />
         </div>
 
@@ -98,11 +93,9 @@ export default function Banner() {
             Experience next-generation aluminium systems, engineered for longevity,
             luxury, and unmatched performance.
           </p>
-          <Link href="/contact">
-          {/* <button className='rounded-lg bg-transparent border-2 border-white py-2 px-3 mt-3'>
-            ENQUIRE NOW
+          {/* <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-3">
+            Enquire Now
           </button> */}
-          </Link>
         </div>
       </section>
     </>
