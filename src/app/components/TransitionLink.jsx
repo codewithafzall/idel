@@ -15,7 +15,7 @@ export default function TransitionLink({ href, children, className, onClick, ...
     // Delay matches the overlay animation duration
     setTimeout(() => {
       router.push(href);
-    }, 600);
+    }, 300);
   };
 
   return (

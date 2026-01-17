@@ -91,7 +91,7 @@ export default function Banner() {
         </div>
 
         {/* Content */}
-        <div className="container absolute text-white top-30">
+        <div className="container absolute text-white top-35">
           <h1 className="uppercase">Where Design</h1>
           <h1 className="uppercase">Meets Precision</h1>
           <p className="leading-6 mt-2">
@@ -99,9 +99,9 @@ export default function Banner() {
             luxury, and unmatched performance.
           </p>
           <Link href="/contact">
-          <button className='rounded-lg bg-transparent border-2 border-white py-2 px-3 mt-3'>
+          {/* <button className='rounded-lg bg-transparent border-2 border-white py-2 px-3 mt-3'>
             ENQUIRE NOW
-          </button>
+          </button> */}
           </Link>
         </div>
       </section>
