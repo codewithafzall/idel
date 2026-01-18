@@ -50,7 +50,8 @@ export default function Banner() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
+            poster="/banner-desktop-poster.jpg"
           />
         </div>
 
@@ -81,7 +82,8 @@ export default function Banner() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
+            poster="/banner-mobile-poster.jpg"
           />
         </div>
 
@@ -93,9 +95,6 @@ export default function Banner() {
             Experience next-generation aluminium systems, engineered for longevity,
             luxury, and unmatched performance.
           </p>
-          {/* <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-3">
-            Enquire Now
-          </button> */}
         </div>
       </section>
     </>
