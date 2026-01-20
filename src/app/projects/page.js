@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 /* Lightbox */
@@ -49,6 +49,9 @@ import ecr2 from "../images/ecr-2.webp";
 import ecr3 from "../images/ecr-3.webp";
 import ecr4 from "../images/ecr-4.webp";
 
+import duplex1 from "../images/duplex-1.webp";
+import duplex2 from "../images/duplex-2.webp";
+
 const Page = () => {
   const [open, setOpen] = useState(false);
   const [slides, setSlides] = useState([]);
@@ -57,7 +60,7 @@ const Page = () => {
   const projects = [
     {
       id: 10,
-      title: "Jyotika & Surya Bungalow in Chennai",
+      title: "Jyothika & Suriya's Bungalow at Chennai",
       cover: ecr1,
       gallery: [ecr1, ecr2, ecr3, ecr4],
     },
@@ -77,7 +80,7 @@ const Page = () => {
       id: 4,
       title: "Bungalow at Dombivli",
       cover: domb2,
-      gallery: [domb1, domb2, domb3],
+      gallery: [domb3, domb2, domb1],
     },
     {
       id: 2,
@@ -88,8 +91,14 @@ const Page = () => {
     {
       id: 5,
       title: "NICMAR",
-      cover: nicmar1,
-      gallery: [nicmar1, nicmar2, nicmar3, nicmar4],
+      cover: nicmar2,
+      gallery: [
+        { image: nicmar2, caption: "VS1 Facade" },
+        { image: nicmar4, caption: "VS1 Facade" },
+        { image: nicmar3, caption: "VS1 Facade" },
+        { image: nicmar1, caption: "Curtain Wall Structure" }
+      ],
+      customCaptions: true,
     },
     {
       id: 6,
@@ -109,22 +118,60 @@ const Page = () => {
       cover: walk1,
       gallery: [walk1, walk2, walk3],
     },
+    {
+      id: 11,
+      title: "Duplex at IndiaBulls Skyforest",
+      cover: duplex1,
+      gallery: [duplex1, duplex2],
+    },
   ];
 
+  // Scroll to project on load if hash is present
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const projectId = hash.replace('#project-', '');
+      const element = document.getElementById(`project-${projectId}`);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+          // Add highlight effect
+          element.classList.add('highlight-project');
+          setTimeout(() => {
+            element.classList.remove('highlight-project');
+          }, 2000);
+        }, 100);
+      }
+    }
+  }, []);
+
   const openLightbox = (project) => {
-    setSlides(
-      project.gallery.map((img) => ({
-        src: img.src,
-        title: project.title,
-      }))
-    );
+    if (project.customCaptions) {
+      // For NICMAR or other projects with custom captions
+      setSlides(
+        project.gallery.map((item) => ({
+          src: item.image.src,
+          title: item.caption,
+        }))
+      );
+    } else {
+      // For regular projects
+      setSlides(
+        project.gallery.map((img) => ({
+          src: img.src,
+          title: project.title,
+        }))
+      );
+    }
     setIndex(0);
     setOpen(true);
   };
 
   return (
     <main>
-
       <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
         <Image
           src={banner}
@@ -156,7 +203,11 @@ const Page = () => {
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-7">
           {projects.map((project) => (
-            <div key={project.id}>
+            <div
+              key={project.id}
+              id={`project-${project.id}`}
+              className="transition-all duration-300"
+            >
               <div
                 onClick={() => openLightbox(project)}
                 className="relative group cursor-pointer aspect-9/10 overflow-hidden rounded-lg"

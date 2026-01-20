@@ -103,6 +103,14 @@ const Stories = () => {
                     </div>
                 ))}
             </div>
+
+            <div className="container relative">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1aiEPJZ4I5OaeYATX_nc00Ju7iviJDSw&hl=en&ehbc=2E312F" 
+                 className="w-full h-120 relative"
+                ></iframe>
+                <div className="absolute top-0 bg-sky h-20 w-full"></div>
+                <h2 className="absolute top-30 text-white left-8">Our Locations</h2>
+            </div>
         </section>
     );
 };

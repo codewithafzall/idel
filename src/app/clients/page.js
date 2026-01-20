@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import blueLine from "../images/blue-line.svg";
 import Image from 'next/image';
 import home from '../images/home.png'
@@ -10,7 +12,19 @@ import Duplex from '../images/Duplex.svg';
 import location from '../images/location.webp';
 import banner from "../images/clients-banner.webp";
 
-const page = () => {
+const Page = () => {
+    const router = useRouter();
+
+    const clientToProjectMap = {
+        "Jyothika & R.S. Suriya": 10,
+        "Mr. Karan Johar": 7,
+        "Mr. Jain": 8, 
+        "ZYJ Developers": 2, 
+        "Mr. Pramod Dhanuka": 1, 
+        "NICMAR": 5, 
+        "Mr. Taswala": 9, 
+        "Mr. Patil (Politician)": 4, 
+    };
 
     const clients = [
         { id: 1, type: "Showroom & Residence", name: "Tamannaah Bhatia", location: "Juhu & Versova, Mumbai" },
@@ -69,6 +83,13 @@ const page = () => {
 
     const typeIcons = { Building, Residence, Clinic, Bungalow, Duplex, };
 
+    const handleClientClick = (clientName) => {
+        const projectId = clientToProjectMap[clientName];
+        if (projectId) {
+            router.push(`/projects#project-${projectId}`);
+        }
+    };
+
     return (
         <main>
 
@@ -100,12 +121,34 @@ const page = () => {
 
                 <div className='container grid grid-cols-1 sm:grid-cols-3 place-items-center gap-3 sm:gap-6 mt-8 sm:mt-14'>
                     {clients.map((client) => {
+                        const hasProject = clientToProjectMap[client.name] !== undefined && clientToProjectMap[client.name] !== null;
+                        
                         return (
-                            <div key={client.id} className='bg-white rounded-xl border border-gray-300 flex flex-col justify-center w-80 sm:w-96 h-40'>
+                            <div 
+                                key={client.id} 
+                                className={`bg-white rounded-xl border border-gray-300 flex flex-col justify-center w-80 sm:w-96 h-40 transition-all duration-300 ${
+                                    hasProject 
+                                        ? 'cursor-pointer hover:shadow-lg hover:border-blue hover:scale-105' 
+                                        : 'cursor-default'
+                                }`}
+                                onClick={() => handleClientClick(client.name)}
+                            >
                                 <div className='flex flex-col ml-10 sm:ml-14'>
-                                    <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'><span><Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" /></span>{client.type}</p>
-                                    <p className='my-2.5'>Client: <span className='font-semibold'>{client.name}</span></p>
-                                    <small className='flex items-center text-[16px] text-gray-500 gap-x-2'><span><Image src={location} className='' alt="home icon" /></span>{client.location}</small>
+                                    <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'>
+                                        <span>
+                                            <Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" />
+                                        </span>
+                                        {client.type}
+                                    </p>
+                                    <p className='my-2.5'>
+                                        Client: <span className='font-semibold'>{client.name}</span>
+                                    </p>
+                                    <small className='flex items-center text-[16px] text-gray-500 gap-x-2'>
+                                        <span>
+                                            <Image src={location} className='' alt="home icon" />
+                                        </span>
+                                        {client.location}
+                                    </small>
                                 </div>
                             </div>
                         )
@@ -117,4 +160,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

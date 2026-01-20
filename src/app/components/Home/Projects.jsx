@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -8,27 +9,28 @@ import blueLine from "../../images/blue-line.svg";
 import arrow from "../../images/arrow.svg";
 
 import Project1 from "../../images/project-1.webp";
-import Project2 from "../../images/project-2.webp";
+import Project2 from "../../images/del-1.webp";
 import Project3 from "../../images/nicmar-1.webp";
 import Project4 from "../../images/ecr-2.webp";
-import Project5 from "../../images/project-5.webp";
-import Project6 from "../../images/cartier-2.webp";
+import Project5 from "../../images/dombivli-1.webp";
+import Project6 from "../../images/seq-1.webp";
 
 const images = [
-    { src: Project4, title: "Jyotika & Surya Bungalow" },
-    { src: Project1, title: "Amby Valley" },
-    { src: Project2, title: "Del House" },
-    { src: Project3, title: "NICMAR" },
-    { src: Project5, title: "Dhanuka Bhawan" },
+    { src: Project4, title: "Jyothika & Suriya's Bungalow at Chennai", projectId: 10 },
+    { src: Project1, title: "Mr. Pramod Dhanuka's Bungalow at Amby Valley", projectId: 1 },
+    { src: Project2, title: "Residential Building by ZYJ Developers", projectId: 2 },
+    { src: Project3, title: "NICMAR", projectId: 5 },
+    { src: Project5, title: "Bungalow at Dombivli", projectId: 4 },
+    { src: Project6, title: "Sequoia", projectId: 6 },
 ];
 
 export default function ProjectsSwiper() {
+    const router = useRouter();
     const [active, setActive] = useState(0);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
-    // ✅ widths moved to state
     const [activeWidth, setActiveWidth] = useState(50);
     const [inactiveWidth, setInactiveWidth] = useState(25);
     const [activeHeight, setActiveHeight] = useState(400);
@@ -36,7 +38,6 @@ export default function ProjectsSwiper() {
 
     const swiperRef = useRef(null);
 
-    // ✅ window logic AFTER hydration
     useEffect(() => {
         const updateWidths = () => {
             const width = window.innerWidth;
@@ -62,9 +63,18 @@ export default function ProjectsSwiper() {
         return () => window.removeEventListener("resize", updateWidths);
     }, []);
 
-    const handleSlideClick = (idx) => {
+    const handleSlideClick = (idx, projectId) => {
         if (isMobile) {
-            setActive(active === idx ? -1 : idx);
+            if (active === idx) {
+                // If already active, navigate to projects page
+                router.push(`/projects#project-${projectId}`);
+            } else {
+                // Otherwise, just expand
+                setActive(idx);
+            }
+        } else {
+            // On desktop, click navigates directly
+            router.push(`/projects#project-${projectId}`);
         }
     };
 
@@ -140,7 +150,7 @@ export default function ProjectsSwiper() {
                                     className="relative rounded-xl overflow-hidden cursor-pointer h-full"
                                     onMouseEnter={() => !isMobile && setActive(idx)}
                                     onMouseLeave={() => !isMobile && setActive(0)}
-                                    onClick={() => handleSlideClick(idx)}
+                                    onClick={() => handleSlideClick(idx, item.projectId)}
                                 >
                                     <div
                                         className={`w-full bg-black flex items-center justify-center ${
