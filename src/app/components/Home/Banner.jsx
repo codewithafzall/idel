@@ -41,21 +41,21 @@ export default function Banner() {
 
   return (
     <>
-      <section
-        ref={heroRef}
-        className="heroWrap hidden sm:block relative z-10 overflow-hidden"
+      <section 
+        ref={heroRef} 
+        className="heroWrap hidden sm:block relative z-10 overflow-hidden" 
         suppressHydrationWarning
       >
-        <div
+        <div 
           className="heroBg"
           style={{
-            backgroundImage: 'url(/banner-desktop-poster.jpg)',
+            backgroundImage: 'url(/banner-desktop-poster.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
           <video
-            className="heroVideo w-full h-full object-cover"
+            className="heroVideo"
             src="/banner-desktop.mp4"
             autoPlay
             muted
@@ -63,6 +63,13 @@ export default function Banner() {
             playsInline
             preload="metadata"
             poster="/banner-desktop-poster.jpg"
+            style={{ backgroundColor: 'transparent' }}
+            onLoadStart={(e) => {
+              e.target.style.opacity = '0';
+            }}
+            onLoadedData={(e) => {
+              e.target.style.opacity = '1';
+            }}
           />
         </div>
 
@@ -70,10 +77,10 @@ export default function Banner() {
         <div className="absolute inset-0 bg-black/10 pointer-events-none" />
 
         {/* Content */}
-        <div className="container relative text-white top-1/2 -translate-y-1/2 w-full">
+        <div className="container relative text-white top-1/2 -translate-y-1/2">
           <h1 className="uppercase">Where Design</h1>
           <h1 className="uppercase mt-2">Meets Precision</h1>
-          <p className="w-full sm:w-1/2 leading-6 mt-3">
+          <p className="w-1/2 leading-6 mt-3">
             Experience next-generation aluminium systems, engineered for longevity,
             luxury, and unmatched performance.
           </p>
@@ -85,10 +92,10 @@ export default function Banner() {
 
 
       <section className="hero block sm:hidden relative z-10 overflow-hidden">
-        <div
-          className="h-screen"
+        <div 
+          className="h-screen relative"
           style={{
-            backgroundImage: 'url(/banner-mobile-poster.jpg)',
+            backgroundImage: 'url(/banner-mobile-poster.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -102,11 +109,18 @@ export default function Banner() {
             playsInline
             preload="metadata"
             poster="/banner-mobile-poster.jpg"
+            style={{ backgroundColor: 'transparent' }}
+            onLoadStart={(e) => {
+              e.target.style.opacity = '0';
+            }}
+            onLoadedData={(e) => {
+              e.target.style.opacity = '1';
+            }}
           />
         </div>
 
         {/* Content */}
-        <div className="container absolute text-white top-35 px-4">
+        <div className="container absolute text-white top-35">
           <h1 className="uppercase">Where Design</h1>
           <h1 className="uppercase">Meets Precision</h1>
           <p className="leading-6 mt-2">
