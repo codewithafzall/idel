@@ -56,7 +56,7 @@ const Form = () => {
       body.append("submittedAt", new Date().toISOString());
 
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbxdxk5EkrH1vX9RYd5vZIGrqbmEol6ZpJjMKvZlS9tMXYx__7apW5qm7hxHl8UnIe5Bsw/exec",
+        "https://script.google.com/macros/s/AKfycbygzKcoJqKjI4-5mm4oEkAo_TKEfcX6ClDshK0uPImzMqnbHTCsgmpMub_uUH2BtpnAOQ/exec",
         {
           method: "POST",
           body,
@@ -184,7 +184,7 @@ const Form = () => {
 
               <input
                 type="text"
-                placeholder="Subject"
+                placeholder="Location"
                 value={form.subject}
                 onChange={(e) => updateField("subject", e.target.value)}
                 className="form-input"

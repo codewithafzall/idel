@@ -58,7 +58,7 @@ const Footer = () => {
                         </a>
                     </h3>
                     <p className='mt-7 mb-4'>Location</p>
-                    <small className='text-lg'>M/S Indecomal Exports LLP.<br />Ram House Plot no 4 <br /> Gaiwadi Industrial Estate, <br />Goregaon West, Mumbai 400104</small>
+                    <small className='text-lg'>M/s. Indecomal Exports LLP.<br />Ram House Plot no 4 <br /> Gaiwadi Industrial Estate, <br />Goregaon West, Mumbai 400104</small>
                     <p className='mt-6'>Email</p>
                     <p className="mt-2">
                         <a

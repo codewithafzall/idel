@@ -10,14 +10,14 @@ import arrow from "../../images/arrow.svg";
 
 import Project1 from "../../images/project-1.webp";
 import Project2 from "../../images/del-1.webp";
-import Project3 from "../../images/nicmar-1.webp";
+import Project3 from "../../images/nicmar-2.webp";
 import Project4 from "../../images/ecr-2.webp";
-import Project5 from "../../images/dombivli-1.webp";
+import Project5 from "../../images/dombivli-2.webp";
 import Project6 from "../../images/seq-1.webp";
 
 const images = [
     { src: Project4, title: "Jyothika & Suriya's Bungalow at Chennai", projectId: 10 },
-    { src: Project1, title: "Mr. Pramod Dhanuka's Bungalow at Amby Valley", projectId: 1 },
+    { src: Project1, title: "Mr. Pramod Dhanuka's Bungalow at Aamby Valley", projectId: 1 },
     { src: Project2, title: "Residential Building by ZYJ Developers", projectId: 2 },
     { src: Project3, title: "NICMAR", projectId: 5 },
     { src: Project5, title: "Bungalow at Dombivli", projectId: 4 },

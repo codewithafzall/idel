@@ -61,13 +61,13 @@ const Page = () => {
     {
       id: 10,
       title: "Jyothika & Suriya's Bungalow at Chennai",
-      cover: ecr1,
-      gallery: [ecr1, ecr2, ecr3, ecr4],
+      cover: ecr2,
+      gallery: [ecr2, ecr1, ecr3, ecr4],
     },
     {
       id: 1,
-      title: "Amby Valley",
-      cover: ambey2,
+      title: "Aamby Valley",
+      cover: ambey1,
       gallery: [ambey1, ambey2, ambey3],
     },
     {
@@ -84,7 +84,7 @@ const Page = () => {
     },
     {
       id: 2,
-      title: "Del House",
+      title: "Residential Building by ZYJ Developers",
       cover: del1,
       gallery: [del1, del2],
     },
@@ -194,7 +194,7 @@ const Page = () => {
       <div className="container py-14">
         <p className="uppercase flex mt-7 sm:mt-0 gap-x-4 font-bold text-blue items-center">
           <Image src={blueLine} alt="vector" />
-          Featured Products
+          Featured Projects
         </p>
 
         <h2 className="mt-4">

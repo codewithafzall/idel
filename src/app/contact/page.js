@@ -237,10 +237,10 @@ const page = () => {
                             </div>
                         </div>
 
-                        <label className="text-lg font-semibold mt-4 inline-block">Subject</label>
+                        <label className="text-lg font-semibold mt-4 inline-block">Location</label>
                         <input
                             type="text"
-                            placeholder="Subject"
+                            placeholder="Location"
                             className="contact-form-input"
                             value={form.subject}
                             onChange={(e) => updateField("subject", e.target.value)}
