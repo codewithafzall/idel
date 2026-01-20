@@ -17,24 +17,10 @@ const Testimonials = () => {
       image: stars,
     },
     {
-      id: 2,
-      name: "— Mr. Zafar Javeri | ZYJ Developers",
-      feedback:
-        "As developers of premium residential projects, we have been working with IDEL India and Mr. Kapil Jhunjhunwala for our window solutions. The windows supplied by IDEL consistently meet the highest standards of durability, finish, and performance. Mr. Jhunjhunwala’s personal involvement and commitment to timely delivery, along with his proactive problem-solving approach, have made him a trusted partner in our projects.",
-      image: stars,
-    },
-    {
       id: 3,
       name: "— Mr. Pramod Dhanuka | Aamby Valley",
       feedback:
         "I installed IDEL's Window Systems at my Aamby Valley villa in 2016. Now, almost 10 years and countless harsh monsoons later, they remain completely up-to-date, operating with consistent smoothness and convenience. Also have a 12-foot spider facade installed, which survived seriously intense storms without any issue. Their quality workmanship is second to none. Thanks IDEL",
-      image: stars,
-    },
-    {
-      id: 4,
-      name: "— Jayna Mehta, Mitesh Chauhan Udita Dalvi - Hemani | Design Story",
-      feedback:
-        "At Design Story, we believe in partnering with vendors who share our commitment to excellence and value trust. Over numerous projects, Idel Windows has consistently proved to be a dependable partner, delivering products of exceptional quality with professionalism and punctuality. They have become a trusted collaborator in bringing our visions to life. We look forward to many more successful projects built on this foundation of complete confidence and dependable service.",
       image: stars,
     },
     {
@@ -52,17 +38,31 @@ const Testimonials = () => {
       image: stars,
     },
     {
-      id: 7,
-      name: "— Samir Bhansali",
-      feedback:
-        "Good quality products at reasonable pricing. Kapil was extremely helpful in explaining the options and ensured smooth execution of the work. The after-sales service was also handled very well. Highly recommended for anyone looking for reliable fenestration solutions.",
-      image: stars,
-    },
-    {
       id: 8,
       name: "— Sumeer Kumar",
       feedback:
         "Extremely satisfied with the aluminium sliding windows installed by IDEL. Mr. Kapil and his team are technically very sound, adhere strictly to timelines, and deliver excellent workmanship. Would strongly recommend them for quality and professionalism.",
+      image: stars,
+    },
+    {
+      id: 7,
+      name: "— Ananyaa Banka",
+      feedback:
+        "They’re absolutely amazing with their work, precision is on point and i believe they’re the best at their job! best experience!",
+      image: stars,
+    },
+    {
+      id: 2,
+      name: "— Mr. Zafar Javeri | ZYJ Developers",
+      feedback:
+        "As developers of premium residential projects, we have been working with IDEL India and Mr. Kapil Jhunjhunwala for our window solutions. The windows supplied by IDEL consistently meet the highest standards of durability, finish, and performance. Mr. Jhunjhunwala’s personal involvement and commitment to timely delivery, along with his proactive problem-solving approach, have made him a trusted partner in our projects.",
+      image: stars,
+    },
+    {
+      id: 4,
+      name: "— Jayna Mehta, Mitesh Chauhan Udita Dalvi - Hemani | Design Story",
+      feedback:
+        "At Design Story, we believe in partnering with vendors who share our commitment to excellence and value trust. Over numerous projects, Idel Windows has consistently proved to be a dependable partner, delivering products of exceptional quality with professionalism and punctuality. They have become a trusted collaborator in bringing our visions to life. We look forward to many more successful projects built on this foundation of complete confidence and dependable service.",
       image: stars,
     },
   ];
