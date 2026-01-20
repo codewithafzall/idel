@@ -18,18 +18,13 @@ import ambey1 from "../images/aambey-1.webp";
 import ambey2 from "../images/aambey-2.webp";
 import ambey3 from "../images/aambey-3.webp";
 
-import del1 from "../images/dell-1.webp";
-import del2 from "../images/dell-2.webp";
-import del3 from "../images/dell-3.webp";
+import del1 from "../images/del-1.webp";
+import del2 from "../images/del-2.webp";
 
 import nicmar1 from "../images/nicmar-1.webp";
 import nicmar2 from "../images/nicmar-2.webp";
 import nicmar3 from "../images/nicmar-3.webp";
 import nicmar4 from "../images/nicmar-4.webp";
-
-import dhanuka1 from "../images/dhanuka-1.webp";
-import dhanuka2 from "../images/dhanuka-2.webp";
-import dhanuka3 from "../images/dhanuka-3.webp";
 
 import khar1 from "../images/khar-1.webp";
 import khar2 from "../images/khar-2.webp";
@@ -61,22 +56,22 @@ const Page = () => {
 
   const projects = [
     {
+      id: 10,
+      title: "Jyotika & Surya Bungalow in Chennai",
+      cover: ecr1,
+      gallery: [ecr1, ecr2, ecr3, ecr4],
+    },
+    {
       id: 1,
       title: "Amby Valley",
       cover: ambey2,
       gallery: [ambey1, ambey2, ambey3],
     },
     {
-      id: 2,
-      title: "Del House",
-      cover: del1,
-      gallery: [del1, del2, del3],
-    },
-    {
-      id: 3,
-      title: "Dhanuka Bhawan",
-      cover: dhanuka1,
-      gallery: [dhanuka1, dhanuka2, dhanuka3],
+      id: 7,
+      title: "Karan Johar's Apartment",
+      cover: khar1,
+      gallery: [khar1, khar2],
     },
     {
       id: 4,
@@ -85,8 +80,14 @@ const Page = () => {
       gallery: [domb1, domb2, domb3],
     },
     {
+      id: 2,
+      title: "Del House",
+      cover: del1,
+      gallery: [del1, del2],
+    },
+    {
       id: 5,
-      title: "Nicmar",
+      title: "NICMAR",
       cover: nicmar1,
       gallery: [nicmar1, nicmar2, nicmar3, nicmar4],
     },
@@ -95,12 +96,6 @@ const Page = () => {
       title: "Sequoia",
       cover: seq1,
       gallery: [seq1, seq2],
-    },
-    {
-      id: 7,
-      title: "Celebrity House at Khar",
-      cover: khar1,
-      gallery: [khar1, khar2],
     },
     {
       id: 8,
@@ -114,16 +109,15 @@ const Page = () => {
       cover: walk1,
       gallery: [walk1, walk2, walk3],
     },
-    {
-      id: 10,
-      title: "Jyotika & Surya Bungalow in Chennai",
-      cover: ecr1,
-      gallery: [ecr1, ecr2, ecr3, ecr4],
-    },
   ];
 
   const openLightbox = (project) => {
-    setSlides(project.gallery.map((img) => ({ src: img.src })));
+    setSlides(
+      project.gallery.map((img) => ({
+        src: img.src,
+        title: project.title,
+      }))
+    );
     setIndex(0);
     setOpen(true);
   };
@@ -142,7 +136,7 @@ const Page = () => {
         />
 
         <div className="container pt-44 pb-32 relative z-10">
-           <h2>
+          <h2>
             Precision in Every Pane. <br />
             Purpose in Every Project.
           </h2>
@@ -196,6 +190,24 @@ const Page = () => {
         plugins={[Counter]}
         styles={{
           container: { backgroundColor: "rgba(0,0,0,0.9)" },
+        }}
+        render={{
+          slideFooter: ({ slide }) => (
+            <div style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: '20px',
+              background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+              color: 'white',
+              textAlign: 'center',
+              fontSize: '18px',
+              fontWeight: '500',
+            }}>
+              {slide.title}
+            </div>
+          ),
         }}
       />
     </main>

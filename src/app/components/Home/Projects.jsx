@@ -15,11 +15,11 @@ import Project5 from "../../images/project-5.webp";
 import Project6 from "../../images/cartier-2.webp";
 
 const images = [
+    { src: Project4, title: "Jyotika & Surya Bungalow" },
     { src: Project1, title: "Amby Valley" },
     { src: Project2, title: "Del House" },
     { src: Project3, title: "NICMAR" },
     { src: Project5, title: "Dhanuka Bhawan" },
-    { src: Project4, title: "Jyotika & Surya Bungalow" },
 ];
 
 export default function ProjectsSwiper() {

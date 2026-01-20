@@ -41,10 +41,21 @@ export default function Banner() {
 
   return (
     <>
-      <section ref={heroRef} className="heroWrap hidden sm:block relative z-10" suppressHydrationWarning>
-        <div className="heroBg">
+      <section
+        ref={heroRef}
+        className="heroWrap hidden sm:block relative z-10 overflow-hidden"
+        suppressHydrationWarning
+      >
+        <div
+          className="heroBg"
+          style={{
+            backgroundImage: 'url(/banner-desktop-poster.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
           <video
-            className="heroVideo"
+            className="heroVideo w-full h-full object-cover"
             src="/banner-desktop.mp4"
             autoPlay
             muted
@@ -56,13 +67,13 @@ export default function Banner() {
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
 
         {/* Content */}
-        <div className="container relative text-white top-1/2 -translate-y-1/2">
+        <div className="container relative text-white top-1/2 -translate-y-1/2 w-full">
           <h1 className="uppercase">Where Design</h1>
           <h1 className="uppercase mt-2">Meets Precision</h1>
-          <p className="w-1/2 leading-6 mt-3">
+          <p className="w-full sm:w-1/2 leading-6 mt-3">
             Experience next-generation aluminium systems, engineered for longevity,
             luxury, and unmatched performance.
           </p>
@@ -73,8 +84,15 @@ export default function Banner() {
       </section>
 
 
-      <section className="hero block sm:hidden relative z-10">
-        <div className="h-screen">
+      <section className="hero block sm:hidden relative z-10 overflow-hidden">
+        <div
+          className="h-screen"
+          style={{
+            backgroundImage: 'url(/banner-mobile-poster.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
           <video
             className="h-screen object-cover w-full"
             src="/banner-mobile.mp4"
@@ -88,7 +106,7 @@ export default function Banner() {
         </div>
 
         {/* Content */}
-        <div className="container absolute text-white top-35">
+        <div className="container absolute text-white top-35 px-4">
           <h1 className="uppercase">Where Design</h1>
           <h1 className="uppercase">Meets Precision</h1>
           <p className="leading-6 mt-2">

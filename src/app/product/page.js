@@ -16,7 +16,7 @@ const products = [
         id: 1,
         name: "minimal",
         title: "Minimal Systems",
-        description: "Our Slimline Systems offer sleek, ultra-slim aluminium profiles that maximize visibility and bring a modern, minimal look to any space. Designed for durability, smooth performance, and elegant aesthetics, they are ideal for premium homes and contemporary architecture.",
+        description: "Our Thermal Break Minimal System delivers uninterrupted transparency by concealing shutters within the top and bottom tracks. The result is ultra‑slim sightlines, improved thermal insulation, and a truly clean, unobstructed view—without compromising on performance.",
         categories: [
             {
                 name: "Minimal System - ClearView LT",
@@ -47,7 +47,7 @@ const products = [
         id: 2,
         name: "geeta",
         title: "Geeta Series",
-        description: "The Geeta Series offers strong, reliable aluminium profiles designed for long-lasting performance in residential and commercial spaces.",
+        description: "The Geeta Series features robust aluminium systems engineered for dependable, long‑term performance. Designed for residential and commercial use, it offers multiple variants that balance structural strength, efficiency, and everyday versatility.",
         categories: [
             {
                 name: "27mm Slim Geeta Series",
@@ -87,7 +87,7 @@ const products = [
         id: 3,
         name: "aluk",
         title: "Aluk Systems",
-        description: "Placeholder description for Aluk Systems. Replace this text later.",
+        description: "The AluK Series combines European design intelligence with precision fabrication. Built for premium residential and commercial applications, these systems deliver superior performance, refined aesthetics, and reliable operation for demanding architectural environments.",
         categories: [
             {
                 name: "AluK - SC45",
@@ -147,7 +147,7 @@ const page = () => {
                 <div key={product.id} id={product.name} className="bg-blue rounded-2xl container mb-20 px-0! scroll-m-26">
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between py-10 px-6 lg:px-14 text-white gap-6">
                         <h2 className="font-normal!">{product.title}</h2>
-                        <p className="lg:w-[45%]">{product.description}</p>
+                        <p className="lg:w-1/2">{product.description}</p>
                     </div>
 
                     <div className="bg-sky rounded-2xl">

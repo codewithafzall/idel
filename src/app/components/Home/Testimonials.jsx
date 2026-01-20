@@ -32,7 +32,7 @@ const Testimonials = () => {
     },
     {
       id: 4,
-      name: "— Ms. Jayna Mehta | Design Story",
+      name: "— Jayna Mehta, Mitesh Chauhan Udita Dalvi - Hemani | Design Story",
       feedback:
         "At Design Story, we believe in partnering with vendors who share our commitment to excellence and value trust. Over numerous projects, Idel Windows has consistently proved to be a dependable partner, delivering products of exceptional quality with professionalism and punctuality. They have become a trusted collaborator in bringing our visions to life. We look forward to many more successful projects built on this foundation of complete confidence and dependable service.",
       image: stars,
@@ -53,7 +53,7 @@ const Testimonials = () => {
     },
     {
       id: 7,
-      name: "— Samir Bhansali | Local Guide",
+      name: "— Samir Bhansali",
       feedback:
         "Good quality products at reasonable pricing. Kapil was extremely helpful in explaining the options and ensured smooth execution of the work. The after-sales service was also handled very well. Highly recommended for anyone looking for reliable fenestration solutions.",
       image: stars,
@@ -108,10 +108,10 @@ const Testimonials = () => {
         >
           {testimonials.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="bg-white rounded-xl p-8 sm:my-10 flex flex-col items-start sm:h-74 lg:h-100">
-                <div className="mb-5">
+              <div className="bg-white rounded-xl p-8 sm:my-10 flex flex-col items-start ">
+                {/* <div className="mb-5">
                   <Image src={item.image} alt="stars" className="w-28" />
-                </div>
+                </div> */}
                 <p className="text-lg leading-7">{item.feedback}</p>
                 <p className="font-semibold mt-6">{item.name}</p>
               </div>
