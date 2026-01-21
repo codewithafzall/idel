@@ -89,7 +89,7 @@ export default function ProjectsSwiper() {
                         Our Projects
                     </p>
                     <h2 className="mt-3">
-                        Creating Engaging Stories <br /> That Attract Educate
+                       Framing Iconic Spaces <br /> Delivering Design With Purpose.
                     </h2>
                 </div>
 

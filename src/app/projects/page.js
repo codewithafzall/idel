@@ -276,7 +276,7 @@ const Page = () => {
         </p>
 
         <h2 className="mt-4">
-          Explore The Collection <br /> of Our Projects
+          Framing Every  <br /> Space With Precision.
         </h2>
 
         {/* Filter Buttons */}
