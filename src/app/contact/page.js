@@ -62,7 +62,7 @@ const page = () => {
             body.append("submittedAt", new Date().toISOString());
 
             const res = await fetch(
-                "https://script.google.com/macros/s/AKfycbyP6DPJymxnKw79xjvpPMOaP1blfANKRmlhBB_fL45J6muKd5tD8SyjL9bBfM6AltCVLA/exec",
+                "https://script.google.com/macros/s/AKfycbygzKcoJqKjI4-5mm4oEkAo_TKEfcX6ClDshK0uPImzMqnbHTCsgmpMub_uUH2BtpnAOQ/exec",
                 {
                     method: "POST",
                     body,
