@@ -18,12 +18,12 @@ const Page = () => {
     const clientToProjectMap = {
         "Jyothika & R.S. Suriya": 10,
         "Mr. Karan Johar": 7,
-        "Mr. Jain": 8, 
-        "ZYJ Developers": 2, 
-        "Mr. Pramod Dhanuka": 1, 
-        "NICMAR": 5, 
-        "Mr. Taswala": 9, 
-        "Mr. Patil (Politician)": 4, 
+        "Mr. Jain": 8,
+        "ZYJ Developers": 2,
+        "Mr. Pramod Dhanuka": 1,
+        "NICMAR": 5,
+        "Mr. Taswala": 9,
+        "Mr. Patil (Politician)": 4,
     };
 
     const clients = [
@@ -92,7 +92,6 @@ const Page = () => {
 
     return (
         <main>
-
             <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
                 <Image
                     src={banner}
@@ -122,18 +121,22 @@ const Page = () => {
                 <div className='container grid grid-cols-1 sm:grid-cols-3 place-items-center gap-3 sm:gap-6 mt-8 sm:mt-14'>
                     {clients.map((client) => {
                         const hasProject = clientToProjectMap[client.name] !== undefined && clientToProjectMap[client.name] !== null;
-                        
+
                         return (
-                            <div 
-                                key={client.id} 
-                                className={`bg-white rounded-xl border border-gray-300 flex flex-col justify-center w-80 sm:w-96 h-40 transition-all duration-300 ${
-                                    hasProject 
-                                        ? 'cursor-pointer hover:shadow-lg hover:border-blue hover:scale-105' 
-                                        : 'cursor-default'
-                                }`}
-                                onClick={() => handleClientClick(client.name)}
+                            <div
+                                key={client.id}
+                                className={`bg-white rounded-xl border border-gray-300 flex flex-col justify-between w-80 sm:w-96 h-auto pb-4 transition-all duration-300 ${hasProject
+                                        ? 'sm:cursor-pointer sm:hover:shadow-lg sm:hover:border-blue sm:hover:scale-105'
+                                        : ''
+                                    }`}
+                                onClick={(e) => {
+                                    // Only trigger click on desktop, not on mobile (mobile uses button)
+                                    if (window.innerWidth >= 640) {
+                                        handleClientClick(client.name);
+                                    }
+                                }}
                             >
-                                <div className='flex flex-col ml-10 sm:ml-14'>
+                                <div className='flex flex-col ml-10 sm:ml-14 mt-6'>
                                     <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'>
                                         <span>
                                             <Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" />
@@ -145,16 +148,25 @@ const Page = () => {
                                     </p>
                                     <small className='flex items-center text-[16px] text-gray-500 gap-x-2'>
                                         <span>
-                                            <Image src={location} className='' alt="home icon" />
+                                            <Image src={location} className='' alt="location icon" />
                                         </span>
                                         {client.location}
                                     </small>
                                 </div>
+
+                                {/* View More Button - Only visible on mobile if project exists */}
+                                {hasProject && (
+                                    <button
+                                        onClick={() => handleClientClick(client.name)}
+                                        className="sm:hidden mx-10 mt-4 bg-blue text-white px-4 py-2 rounded-lg text-sm font-semibold"
+                                    >
+                                        View Project →
+                                    </button>
+                                )}
                             </div>
                         )
                     })}
                 </div>
-
             </div>
         </main>
     )

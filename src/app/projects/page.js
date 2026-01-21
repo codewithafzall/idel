@@ -6,6 +6,7 @@ import Image from "next/image";
 /* Lightbox */
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
+import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 
@@ -52,10 +53,15 @@ import ecr4 from "../images/ecr-4.webp";
 import duplex1 from "../images/duplex-1.webp";
 import duplex2 from "../images/duplex-2.webp";
 
+import runwal1 from "../images/runwal-1.webp";
+import runwal2 from "../images/runwal-2.webp";
+
 const Page = () => {
   const [open, setOpen] = useState(false);
   const [slides, setSlides] = useState([]);
   const [index, setIndex] = useState(0);
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const projects = [
     {
@@ -63,30 +69,46 @@ const Page = () => {
       title: "Jyothika & Suriya's Bungalow at Chennai",
       cover: ecr2,
       gallery: [ecr2, ecr1, ecr3, ecr4],
+      category: "celebrity-homes",
     },
     {
       id: 1,
       title: "Aamby Valley",
       cover: ambey1,
       gallery: [ambey1, ambey2, ambey3],
+      category: "premium-bungalows",
     },
     {
       id: 7,
       title: "Karan Johar's Apartment",
       cover: khar1,
       gallery: [khar1, khar2],
+      category: "celebrity-homes",
+    },
+    {
+      id: 12,
+      title: "The Residence by Runwal Developers",
+      cover: runwal1,
+      gallery: [
+        { image: runwal1, caption: "Amenity Floor" },
+        { image: runwal2, caption: "Amenity Floor" },
+      ],
+      customCaptions: true,
+      category: "premium-buildings",
     },
     {
       id: 4,
       title: "Bungalow at Dombivli",
       cover: domb2,
       gallery: [domb3, domb2, domb1],
+      category: "premium-bungalows",
     },
     {
       id: 2,
       title: "Residential Building by ZYJ Developers",
       cover: del1,
       gallery: [del1, del2],
+      category: "premium-buildings",
     },
     {
       id: 5,
@@ -99,32 +121,71 @@ const Page = () => {
         { image: nicmar1, caption: "Curtain Wall Structure" }
       ],
       customCaptions: true,
+      category: "institutes",
     },
     {
       id: 6,
       title: "Sequoia",
       cover: seq1,
       gallery: [seq1, seq2],
+      category: "facades",
     },
     {
       id: 8,
       title: "Private Building at Khar",
       cover: jain2,
       gallery: [jain1, jain2, jain3],
+      category: "premium-buildings",
     },
     {
       id: 9,
       title: "Residential Apartment at Walkeshwar",
       cover: walk1,
       gallery: [walk1, walk2, walk3],
+      category: "premium-residences",
     },
     {
       id: 11,
       title: "Duplex at IndiaBulls Skyforest",
       cover: duplex1,
-      gallery: [duplex1, duplex2],
+      gallery: [
+        duplex1,
+        duplex2,
+        {
+          type: "video",
+          videoUrl: "/duplex-video.mp4",
+          poster: duplex1,
+          caption: "Project Walkthrough"
+        }
+      ],
+      hasVideo: true,
+      category: "premium-residences",
     },
   ];
+
+  const filterButtons = [
+    { id: "all", label: "All Projects" },
+    { id: "premium-bungalows", label: "Premium Bungalows" },
+    { id: "premium-residences", label: "Premium Residences" },
+    { id: "premium-buildings", label: "Premium Buildings" },
+    { id: "institutes", label: "Institutes" },
+    { id: "facades", label: "Facades" },
+    { id: "celebrity-homes", label: "Celebrity Homes" },
+  ];
+
+  const filteredProjects = activeFilter === "all"
+    ? projects
+    : projects.filter(project => project.category === activeFilter);
+
+  const handleFilterChange = (filterId) => {
+    if (filterId !== activeFilter) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActiveFilter(filterId);
+        setIsAnimating(false);
+      }, 300);
+    }
+  };
 
   // Scroll to project on load if hash is present
   useEffect(() => {
@@ -138,7 +199,6 @@ const Page = () => {
             behavior: 'smooth',
             block: 'center'
           });
-          // Add highlight effect
           element.classList.add('highlight-project');
           setTimeout(() => {
             element.classList.remove('highlight-project');
@@ -149,23 +209,37 @@ const Page = () => {
   }, []);
 
   const openLightbox = (project) => {
-    if (project.customCaptions) {
-      // For NICMAR or other projects with custom captions
-      setSlides(
-        project.gallery.map((item) => ({
+    const processedSlides = project.gallery.map((item) => {
+      if (item && item.type === "video") {
+        return {
+          type: "video",
+          width: 1920,
+          height: 1080,
+          sources: [
+            {
+              src: item.videoUrl,
+              type: "video/mp4",
+            },
+          ],
+          poster: typeof item.poster === 'string' ? item.poster : item.poster?.src,
+          title: item.caption || project.title,
+        };
+      }
+
+      if (item && item.image) {
+        return {
           src: item.image.src,
-          title: item.caption,
-        }))
-      );
-    } else {
-      // For regular projects
-      setSlides(
-        project.gallery.map((img) => ({
-          src: img.src,
-          title: project.title,
-        }))
-      );
-    }
+          title: item.caption || project.title,
+        };
+      }
+
+      return {
+        src: item.src,
+        title: project.title,
+      };
+    });
+
+    setSlides(processedSlides);
     setIndex(0);
     setOpen(true);
   };
@@ -201,12 +275,35 @@ const Page = () => {
           Explore The Collection <br /> of Our Projects
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-7">
-          {projects.map((project) => (
+        {/* Filter Buttons */}
+        <div className="mt-14 filter flex flex-wrap gap-3 justify-start items-center">
+          {filterButtons.map((button) => (
+            <button
+              key={button.id}
+              onClick={() => handleFilterChange(button.id)}
+              className={`text-sm lg:text-lg px-4 py-3 lg:px-5 lg:py-4 rounded transition-all duration-300 border ${activeFilter === button.id
+                  ? "bg-blue text-white border-blue shadow-lg"
+                  : "bg-transparent border-blue text-blue hover:bg-blue/10 hover:scale-105"
+                }`}
+            >
+              {button.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div
+          className={`mt-14 grid grid-cols-1 md:grid-cols-3 gap-7 transition-all duration-300 ${isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
+            }`}
+        >
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
               id={`project-${project.id}`}
               className="transition-all duration-300"
+              style={{
+                animation: isAnimating ? 'none' : `fadeInUp 0.5s ease-out ${idx * 0.1}s both`
+              }}
             >
               <div
                 onClick={() => openLightbox(project)}
@@ -230,6 +327,13 @@ const Page = () => {
             </div>
           ))}
         </div>
+
+        {/* No Results Message */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-20">
+            <p className="text-xl text-gray-500">No projects found in this category.</p>
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}
@@ -238,7 +342,7 @@ const Page = () => {
         close={() => setOpen(false)}
         slides={slides}
         index={index}
-        plugins={[Counter]}
+        plugins={[Counter, Video]}
         styles={{
           container: { backgroundColor: "rgba(0,0,0,0.9)" },
         }}

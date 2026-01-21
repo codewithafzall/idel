@@ -153,7 +153,15 @@ const page = () => {
                     <div className="bg-sky rounded-2xl">
                         {product.categories.map((category, index) => (
                             <div key={index} className={`flex flex-col lg:flex-row items-center justify-around py-14 gap-10 ${index === 0 ? "border-b-2 border-[#D8D8D8]" : ""} ${category.reverse ? "lg:flex-row-reverse" : ""}`}>
-                                <div className="w-full lg:w-[40%] px-6 lg:px-0">
+                                {/* Image - Always first on mobile, follows reverse logic on desktop */}
+                                <Image
+                                    src={category.image}
+                                    alt={category.name}
+                                    className="w-72 lg:w-90 order-1 lg:order-none"
+                                />
+
+                                {/* Details - Always second on mobile, follows normal flow on desktop */}
+                                <div className="w-full lg:w-[40%] px-6 lg:px-0 order-2 lg:order-none">
                                     <h3 className="text-3xl font-semibold">{category.name}</h3>
                                     <div className="flex flex-col gap-y-4 mt-7">
                                         {category.specs.map((spec, i) => (
@@ -164,8 +172,6 @@ const page = () => {
                                         ))}
                                     </div>
                                 </div>
-
-                                <Image src={category.image} alt={category.name} className="w-72 lg:w-90" />
                             </div>
                         ))}
                     </div>
