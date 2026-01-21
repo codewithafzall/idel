@@ -63,27 +63,28 @@ const Page = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // ✅ UPDATED: category is now an ARRAY so one project can belong to multiple categories
   const projects = [
     {
       id: 10,
       title: "Jyothika & Suriya's Bungalow at Chennai",
       cover: ecr2,
       gallery: [ecr2, ecr1, ecr3, ecr4],
-      category: "celebrity-homes",
+      category: ["celebrity-homes", "premium-bungalows"],
     },
     {
       id: 1,
       title: "Aamby Valley",
       cover: ambey1,
       gallery: [ambey1, ambey2, ambey3],
-      category: "premium-bungalows",
+      category: ["premium-bungalows"],
     },
     {
       id: 7,
       title: "Karan Johar's Apartment",
       cover: khar1,
       gallery: [khar1, khar2],
-      category: "celebrity-homes",
+      category: ["celebrity-homes", "premium-residences"],
     },
     {
       id: 12,
@@ -94,21 +95,21 @@ const Page = () => {
         { image: runwal2, caption: "Amenity Floor" },
       ],
       customCaptions: true,
-      category: "premium-buildings",
+      category: ["premium-residences"],
     },
     {
       id: 4,
       title: "Bungalow at Dombivli",
       cover: domb2,
       gallery: [domb3, domb2, domb1],
-      category: "premium-bungalows",
+      category: ["premium-bungalows"],
     },
     {
       id: 2,
       title: "Residential Building by ZYJ Developers",
       cover: del1,
       gallery: [del1, del2],
-      category: "premium-buildings",
+      category: ["premium-buildings"],
     },
     {
       id: 5,
@@ -118,31 +119,31 @@ const Page = () => {
         { image: nicmar2, caption: "VS1 Facade" },
         { image: nicmar4, caption: "VS1 Facade" },
         { image: nicmar3, caption: "VS1 Facade" },
-        { image: nicmar1, caption: "Curtain Wall Structure" }
+        { image: nicmar1, caption: "Curtain Wall Structure" },
       ],
       customCaptions: true,
-      category: "institutes",
+      category: ["institutes", "facades"],
     },
     {
       id: 6,
       title: "Sequoia",
       cover: seq1,
       gallery: [seq1, seq2],
-      category: "facades",
+      category: ["premium-buildings"],
     },
     {
       id: 8,
       title: "Private Building at Khar",
       cover: jain2,
       gallery: [jain1, jain2, jain3],
-      category: "premium-buildings",
+      category: ["premium-bungalows"],
     },
     {
       id: 9,
       title: "Residential Apartment at Walkeshwar",
       cover: walk1,
       gallery: [walk1, walk2, walk3],
-      category: "premium-residences",
+      category: ["premium-residences"],
     },
     {
       id: 11,
@@ -155,11 +156,11 @@ const Page = () => {
           type: "video",
           videoUrl: "/duplex-video.mp4",
           poster: duplex1,
-          caption: "Project Walkthrough"
-        }
+          caption: "Project Walkthrough",
+        },
       ],
       hasVideo: true,
-      category: "premium-residences",
+      category: ["premium-residences"],
     },
   ];
 
@@ -173,9 +174,11 @@ const Page = () => {
     { id: "celebrity-homes", label: "Celebrity Homes" },
   ];
 
-  const filteredProjects = activeFilter === "all"
-    ? projects
-    : projects.filter(project => project.category === activeFilter);
+  // ✅ UPDATED: use includes() because category is now an array
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((project) => project.category.includes(activeFilter));
 
   const handleFilterChange = (filterId) => {
     if (filterId !== activeFilter) {
@@ -191,17 +194,17 @@ const Page = () => {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      const projectId = hash.replace('#project-', '');
+      const projectId = hash.replace("#project-", "");
       const element = document.getElementById(`project-${projectId}`);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
+            behavior: "smooth",
+            block: "center",
           });
-          element.classList.add('highlight-project');
+          element.classList.add("highlight-project");
           setTimeout(() => {
-            element.classList.remove('highlight-project');
+            element.classList.remove("highlight-project");
           }, 2000);
         }, 100);
       }
@@ -221,7 +224,8 @@ const Page = () => {
               type: "video/mp4",
             },
           ],
-          poster: typeof item.poster === 'string' ? item.poster : item.poster?.src,
+          poster:
+            typeof item.poster === "string" ? item.poster : item.poster?.src,
           title: item.caption || project.title,
         };
       }
@@ -302,7 +306,9 @@ const Page = () => {
               id={`project-${project.id}`}
               className="transition-all duration-300"
               style={{
-                animation: isAnimating ? 'none' : `fadeInUp 0.5s ease-out ${idx * 0.1}s both`
+                animation: isAnimating
+                  ? "none"
+                  : `fadeInUp 0.5s ease-out ${idx * 0.1}s both`,
               }}
             >
               <div
@@ -331,7 +337,9 @@ const Page = () => {
         {/* No Results Message */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-xl text-gray-500">No projects found in this category.</p>
+            <p className="text-xl text-gray-500">
+              No projects found in this category.
+            </p>
           </div>
         )}
       </div>
@@ -348,18 +356,21 @@ const Page = () => {
         }}
         render={{
           slideFooter: ({ slide }) => (
-            <div style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              padding: '20px',
-              background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-              color: 'white',
-              textAlign: 'center',
-              fontSize: '18px',
-              fontWeight: '500',
-            }}>
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                padding: "20px",
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
+                color: "white",
+                textAlign: "center",
+                fontSize: "18px",
+                fontWeight: "500",
+              }}
+            >
               {slide.title}
             </div>
           ),

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -8,6 +8,8 @@ import blueLine from "../../images/blue-line.svg";
 import stars from "../../images/stars.png";
 
 const Testimonials = () => {
+  const swiperRef = useRef(null);
+
   const testimonials = [
     {
       id: 4,
@@ -89,42 +91,55 @@ const Testimonials = () => {
           </div>
 
           <p className="leading-7 mt-4 md:mt-0 text-right hidden sm:block">
-            Real feedback from architects, developers,<br /> and homeowners who trust IDEL for their<br /> premium aluminium system needs.
+            Real feedback from architects, developers,
+            <br /> and homeowners who trust IDEL for their
+            <br /> premium aluminium system needs.
           </p>
           <p className="leading-7 mt-4 md:mt-0 sm:hidden">
-            Real feedback from architects, developers,<br /> and homeowners who trust IDEL for their<br /> premium aluminium system needs.
+            Real feedback from architects, developers,
+            <br /> and homeowners who trust IDEL for their
+            <br /> premium aluminium system needs.
           </p>
         </div>
 
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
+        {/* ✅ Wrapper to control pause on hover + touch */}
+        <div
           className="mt-7 sm:mt-12"
-          modules={[Pagination, Autoplay]}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 1 },
-            1024: { slidesPerView: 2 },
-          }}
+          onMouseEnter={() => swiperRef.current?.autoplay?.stop()} // Desktop hover pause
+          onMouseLeave={() => swiperRef.current?.autoplay?.start()} // Desktop hover resume
+          onTouchStart={() => swiperRef.current?.autoplay?.stop()} // Mobile touch pause
+          onTouchEnd={() => swiperRef.current?.autoplay?.start()} // Mobile touch resume
         >
-          {testimonials.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="bg-white rounded-xl p-8 sm:my-10 flex flex-col items-start ">
-                {/* <div className="mb-5">
-                  <Image src={item.image} alt="stars" className="w-28" />
-                </div> */}
-                <p className="text-lg leading-7">{item.feedback}</p>
-                <p className="font-semibold mt-6">{item.name}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            slidesPerView={3}
+            spaceBetween={30}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true, // ✅ Desktop hover pause (works automatically too)
+            }}
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 1 },
+              1024: { slidesPerView: 2 },
+            }}
+          >
+            {testimonials.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="bg-white rounded-xl p-8 sm:my-10 flex flex-col items-start">
+                  <p className="text-lg leading-7">{item.feedback}</p>
+                  <p className="font-semibold mt-6">{item.name}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );
