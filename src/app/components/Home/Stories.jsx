@@ -35,7 +35,7 @@ const Stories = () => {
             </div>
 
             {/* 📱 MOBILE — SWIPER WITH TAP */}
-            <div className="block lg:hidden mt-7 container">
+            <div className="block md:hidden mt-7 container">
                 <Swiper
                     spaceBetween={16}
                     slidesPerView={1.15}
@@ -83,7 +83,7 @@ const Stories = () => {
             </div>
 
             {/* 🖥 DESKTOP — GRID WITH HOVER */}
-            <div className="container hidden lg:grid grid-cols-4 place-items-center-safe gap-x-4 gap-y-7 mt-7">
+            <div className="container hidden md:grid grid-cols-4 place-items-center-safe gap-x-4 gap-y-7 mt-7">
                 {stories.map((story) => (
                     <div
                         key={story.id}
