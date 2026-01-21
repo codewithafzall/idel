@@ -171,7 +171,7 @@ const Page = () => {
     { id: "premium-buildings", label: "Premium Buildings" },
     { id: "institutes", label: "Institutes" },
     { id: "facades", label: "Facades" },
-    { id: "celebrity-homes", label: "Celebrity Homes" },
+    // { id: "celebrity-homes", label: "Celebrity Homes" },
   ];
 
   // ✅ UPDATED: use includes() because category is now an array
@@ -280,7 +280,7 @@ const Page = () => {
         </h2>
 
         {/* Filter Buttons */}
-        <div className="mt-14 filter flex flex-wrap gap-3 justify-start items-center">
+        <div className="mt-14 filter flex flex-wrap gap-3 justify-start lg:justify-between items-center">
           {filterButtons.map((button) => (
             <button
               key={button.id}
