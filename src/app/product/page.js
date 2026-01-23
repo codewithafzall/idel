@@ -10,6 +10,7 @@ import geeta27 from "../images/27mm.png"
 import geeta35 from "../images/35mm.png"
 import geeta40 from "../images/40mm.png"
 import Form from "../components/Form";
+import { PageWrapper } from "../components/PageWrapper";
 
 const products = [
     {
@@ -116,6 +117,7 @@ const products = [
 
 const page = () => {
     return (
+        <PageWrapper>
         <main>
             {/* Hero */}
             <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
@@ -180,6 +182,7 @@ const page = () => {
 
             <Form />
         </main>
+        </PageWrapper>
     );
 };
 

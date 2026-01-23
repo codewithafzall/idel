@@ -18,6 +18,7 @@ import comma from '../images/comma.png';
 import location from '../images/location-icon.png';
 import banner from "../images/about-banner.webp";
 import Image from 'next/image';
+import { PageWrapper } from '../components/PageWrapper';
 
 const page = () => {
 
@@ -77,6 +78,7 @@ const page = () => {
 
 
     return (
+        <PageWrapper>
         <main>
             <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
                 <Image
@@ -277,6 +279,7 @@ const page = () => {
             </div>
 
         </main>
+        </PageWrapper>
     )
 }
 

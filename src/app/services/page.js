@@ -15,6 +15,7 @@ import banner from "../images/service-banner.webp"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Form from '../components/Form';
+import { PageWrapper } from '../components/PageWrapper';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,6 +101,7 @@ const page = () => {
 
 
     return (
+        <PageWrapper>
         <main>
 
             <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
@@ -205,6 +207,7 @@ const page = () => {
             </div>
             <Form />
         </main>
+        </PageWrapper>
     );
 };
 

@@ -55,6 +55,7 @@ import duplex2 from "../images/duplex-2.webp";
 
 import runwal1 from "../images/runwal-1.webp";
 import runwal2 from "../images/runwal-2.webp";
+import { PageWrapper } from "../components/PageWrapper";
 
 const Page = () => {
   const [open, setOpen] = useState(false);
@@ -249,6 +250,7 @@ const Page = () => {
   };
 
   return (
+    <PageWrapper>
     <main>
       <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
         <Image
@@ -377,6 +379,7 @@ const Page = () => {
         }}
       />
     </main>
+    </PageWrapper>
   );
 };
 

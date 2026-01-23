@@ -9,6 +9,7 @@ import mail from "../images/mail.png";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 import banner from "../images/contact-banner.webp";
+import { PageWrapper } from "../components/PageWrapper";
 
 const page = () => {
 
@@ -101,6 +102,7 @@ const page = () => {
     };
 
     return (
+        <PageWrapper>
         <main>
 
             {modal.open && modal.type === "success" && width > 0 && height > 0 && (
@@ -272,6 +274,7 @@ const page = () => {
                 </div>
             </div>
         </main>
+        </PageWrapper>
     );
 };
 

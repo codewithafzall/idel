@@ -11,6 +11,7 @@ import Bungalow from '../images/Bungalow.svg';
 import Duplex from '../images/Duplex.svg';
 import location from '../images/location.webp';
 import banner from "../images/clients-banner.webp";
+import { PageWrapper } from '../components/PageWrapper';
 
 const Page = () => {
     const router = useRouter();
@@ -90,6 +91,7 @@ const Page = () => {
     };
 
     return (
+        <PageWrapper>
         <main>
             <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
                 <Image
@@ -168,6 +170,7 @@ const Page = () => {
                 </div>
             </div>
         </main>
+        </PageWrapper>
     )
 }
 
