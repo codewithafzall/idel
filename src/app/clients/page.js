@@ -18,7 +18,6 @@ const Page = () => {
     const clientToProjectMap = {
         "Jyothika & R.S. Suriya": 10,
         "Mr. Karan Johar": 7,
-        "Mr. Jain": 8,
         "ZYJ Developers": 2,
         "Mr. Pramod Dhanuka": 1,
         "NICMAR": 5,

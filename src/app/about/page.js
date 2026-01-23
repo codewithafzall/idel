@@ -233,11 +233,11 @@ const page = () => {
                     <Image src={kapil} alt='Kapil Owner of Idel India' className='sm:w-[35%]' />
                     <div className='text-white p-6 sm:p-0 sm:ml-[10%]'>
                         <small className='text-lg'>Meet the Founder</small>
-                        <h3 className='my-7 text-3xl hidden sm:block'><span className='block mb-4'><Image src={comma} alt="comma" /></span>We don't just close gaps<br /> in walls. We open new<br /> possibilities in design.</h3>
+                        <h3 className='my-7 text-3xl hidden sm:block'><span className=''>"</span>We don't just close gaps<br /> in walls. We open new<br /> possibilities in design<span className=''>"</span></h3>
                         <h3 className='my-7 text-3xl sm:hidden'><span className='block mb-4'><Image src={comma} alt="comma" /></span>We don't just close gaps in walls. We open new possibilities in design.</h3>
                         <h3 className='uppercase text-xl'>Mr. Kapil Jhunjhunwala</h3>
                         <small className='text-sm mt-2'>Founder, IDEL</small>
-                        <small className='block pr-10 mt-3 text-sm'>An engineer at heart and a problem-solver by instinct, Mr. Kapil brings a unique perspective to every project. With over a decade of hands-on experience and deep domain knowledge, he has built IDEL into a trusted name — delivering large-scale, precision installations while staying personally involved in key design and execution challenges.
+                        <small className='block pr-10 mt-3 text-sm'>An engineer at heart and a problem-solver by instinct, Mr. Kapil brings a unique perspective to every project. With over a decade of hands-on experience and deep domain knowledge, he has built IDEL into a trusted name delivering large-scale, precision installations while staying personally involved in key design and execution challenges.
                             His approach is grounded in collaboration, innovation, and uncompromising quality, values that define IDEL’s growing portfolio.
                         </small>
                     </div>

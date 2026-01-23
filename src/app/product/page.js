@@ -25,8 +25,8 @@ const products = [
                     { label: "Interlock Face Width", value: "15 mm" },
                     { label: "Glass Thickness", value: "8mm -32mm" },
                     { label: "Max. Shutter Height", value: "3.66 Mtrs / 12 Ft." },
-                    { label: "Max. Shutter Load", value: "800 kgs" },
-                    { label: "Wind Resistance", value: "1.5 KPa" },
+                    { label: "Max. Shutter Load", value: "600 kgs" },
+                    { label: "Wind Resistance", value: "2.5 KPa" },
                 ],
             },
             {
@@ -157,11 +157,11 @@ const page = () => {
                                 <Image
                                     src={category.image}
                                     alt={category.name}
-                                    className="w-72 lg:w-90 order-1 lg:order-none"
+                                    className="w-72 lg:w-90 order-1 lg:order-0"
                                 />
 
                                 {/* Details - Always second on mobile, follows normal flow on desktop */}
-                                <div className="w-full lg:w-[40%] px-6 lg:px-0 order-2 lg:order-none">
+                                <div className="w-full lg:w-[40%] px-6 lg:px-0 order-2 lg:order-0">
                                     <h3 className="text-3xl font-semibold">{category.name}</h3>
                                     <div className="flex flex-col gap-y-4 mt-7">
                                         {category.specs.map((spec, i) => (
