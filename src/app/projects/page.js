@@ -26,6 +26,7 @@ import nicmar1 from "../images/nicmar-1.webp";
 import nicmar2 from "../images/nicmar-2.webp";
 import nicmar3 from "../images/nicmar-3.webp";
 import nicmar4 from "../images/nicmar-4.webp";
+import nicmar5 from "../images/nicmar-5.webp";
 
 import khar1 from "../images/khar-1.webp";
 import khar2 from "../images/khar-2.webp";
@@ -36,9 +37,9 @@ import seq2 from "../images/seq-2.webp";
 import domb1 from "../images/dombivli-1.webp";
 import domb2 from "../images/dombivli-2.webp";
 import domb3 from "../images/dombivli-3.webp";
+import domb4 from "../images/dombivli-4.webp";
 
 import jain1 from "../images/jain-1.webp";
-import jain2 from "../images/jain-2.webp";
 import jain3 from "../images/jain-3.webp";
 
 import walk1 from "../images/walk-1.webp";
@@ -55,6 +56,41 @@ import duplex2 from "../images/duplex-2.webp";
 
 import runwal1 from "../images/runwal-1.webp";
 import runwal2 from "../images/runwal-2.webp";
+
+import devang1 from "../images/devang-1.webp";
+import devang3 from "../images/devang-3.webp";
+import devang4 from "../images/devang-4.webp";
+
+import cartier1 from "../images/cartier-1.webp";
+
+import gandhi1 from "../images/gandhi-1.webp";
+
+import mulk1 from "../images/mulk-1.webp";
+import mulk2 from "../images/mulk-2.webp";
+
+import ambani1 from "../images/ambani-1.webp";
+import ambani2 from "../images/ambani-2.webp";
+
+import khemka1 from "../images/khemka-1.webp";
+
+import jainpt1 from "../images/jain-pt-1.webp";
+import jainpt2 from "../images/jain-pt-2.webp";
+
+import balwas1 from "../images/balwas-1.webp";
+import balwas2 from "../images/balwas-2.webp";
+
+import c1 from "../images/c-1.webp";
+import c2 from "../images/c-2.webp";
+
+import smita1 from "../images/smita-1.webp";
+
+import shri1 from "../images/shri-1.webp";
+import shri2 from "../images/shri-2.webp";
+import shri3 from "../images/shri-3.webp";
+import shri4 from "../images/shri-4.webp";
+import shri5 from "../images/shri-5.webp";
+
+
 import { PageWrapper } from "../components/PageWrapper";
 
 const Page = () => {
@@ -100,9 +136,9 @@ const Page = () => {
     },
     {
       id: 4,
-      title: "Bungalow at Dombivli",
+      title: "Mr. Patil's Bungalow",
       cover: domb2,
-      gallery: [domb3, domb2, domb1],
+      gallery: [domb3, domb2, domb4, domb1],
       category: ["premium-bungalows"],
     },
     {
@@ -114,13 +150,14 @@ const Page = () => {
     },
     {
       id: 5,
-      title: "NICMAR",
+      title: "NICMAR University",
       cover: nicmar2,
       gallery: [
         { image: nicmar2, caption: "VS1 Facade" },
         { image: nicmar4, caption: "VS1 Facade" },
         { image: nicmar3, caption: "VS1 Facade" },
         { image: nicmar1, caption: "Curtain Wall Structure" },
+        { image: nicmar5, caption: "Curtain Wall Structure" },
       ],
       customCaptions: true,
       category: ["institutes", "facades"],
@@ -134,9 +171,9 @@ const Page = () => {
     },
     {
       id: 8,
-      title: "Private Building at Khar",
-      cover: jain2,
-      gallery: [jain1, jain2, jain3],
+      title: "Jain House",
+      cover: jain1,
+      gallery: [jain1, jain3],
       category: ["premium-bungalows"],
     },
     {
@@ -163,6 +200,104 @@ const Page = () => {
       hasVideo: true,
       category: ["premium-residences"],
     },
+    {
+      id: 15,
+      title: "Cartier Building",
+      cover: cartier1,
+      gallery: [cartier1],
+      category: ["premium-buildings"],
+    },
+    {
+      id: 16,
+      title: "Mrs. Gandhi's Residence",
+      cover: gandhi1,
+      gallery: [gandhi1],
+      category: ["premium-residences"],
+    },
+    {
+      id: 17,
+      title: "Hotel Mulk",
+      cover: mulk1,
+      gallery: [mulk1, mulk2],
+      category: ["hospitality"],
+    },
+    {
+      id: 18,
+      title: "Kokilaben Dhirubhai Ambani Hospital",
+      cover: ambani1,
+      gallery: [ambani1, ambani2],
+      category: ["institutes"],
+    },
+    {
+      id: 13,
+      title: "Mr. Devang Parikh's Bungalow",
+      cover: devang1,
+      gallery: [
+        devang1,
+        {
+          type: "video",
+          videoUrl: "/devang-video.mp4",
+          poster: devang1,
+          caption: "Project Walkthrough",
+        },
+        devang3,
+        devang4
+      ],
+      hasVideo: true,
+      category: ["premium-bungalows"],
+    },
+    {
+      id: 19,
+      title: "Mr. Khemka's Residence",
+      cover: khemka1,
+      gallery: [khemka1],
+      category: ["premium-residences"],
+    },
+    {
+      id: 20,
+      title: "Mr. Jain's Penthouse",
+      cover: jainpt1,
+      gallery: [jainpt1, jainpt2],
+      category: ["premium-residences"],
+    },
+    {
+      id: 21,
+      title: "Mr. Balwa's Bungalow",
+      cover: balwas1,
+      gallery: [balwas1, balwas2],
+      category: ["premium-bungalows"],
+    },
+    {
+      id: 14,
+      title: "C House by the Sea",
+      cover: c1,
+      gallery: [
+        c1,
+        c2,
+        {
+          type: "video",
+          videoUrl: "/sea-video.mp4",
+          poster: devang1,
+          caption: "Project Walkthrough",
+        },
+      ],
+      hasVideo: true,
+      category: ["premium-bungalows"],
+    },
+    {
+      id: 22,
+      title: "Mrs. Smita Bansal's Residence",
+      cover: smita1,
+      gallery: [smita1],
+      category: ["premium-residences"],
+    },
+    {
+      id: 23,
+      title: "Dr. Shrivastava's Bungalow",
+      cover: shri1,
+      gallery: [shri1, shri2, shri3, shri4, shri5],
+      category: ["premium-bungalows"],
+    },
   ];
 
   const filterButtons = [
@@ -172,6 +307,7 @@ const Page = () => {
     { id: "premium-buildings", label: "Premium Buildings" },
     { id: "institutes", label: "Institutes" },
     { id: "facades", label: "Facades" },
+    { id: "hospitality", label: "Hospitality" },
     // { id: "celebrity-homes", label: "Celebrity Homes" },
   ];
 
@@ -251,134 +387,134 @@ const Page = () => {
 
   return (
     <PageWrapper>
-    <main>
-      <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
-        <Image
-          src={banner}
-          alt="Product Hero Background"
-          fill
-          priority
-          className="object-cover"
-          placeholder="blur"
-        />
+      <main>
+        <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+          <Image
+            src={banner}
+            alt="Product Hero Background"
+            fill
+            priority
+            className="object-cover"
+            placeholder="blur"
+          />
 
-        <div className="container pt-44 pb-32 relative z-10">
-          <h2>
-            Precision in Every Pane. <br />
-            Purpose in Every Project.
-          </h2>
+          <div className="container pt-44 pb-32 relative z-10">
+            <h2>
+              Precision in Every Pane. <br />
+              Purpose in Every Project.
+            </h2>
+          </div>
         </div>
-      </div>
 
-      {/* Projects */}
-      <div className="container py-14">
-        <p className="uppercase flex mt-7 sm:mt-0 gap-x-4 font-bold text-blue items-center">
-          <Image src={blueLine} alt="vector" />
-          Featured Projects
-        </p>
+        {/* Projects */}
+        <div className="container py-14">
+          <p className="uppercase flex mt-7 sm:mt-0 gap-x-4 font-bold text-blue items-center">
+            <Image src={blueLine} alt="vector" />
+            Featured Projects
+          </p>
 
-        <h2 className="mt-4">
-          Framing Every  <br /> Space With Precision.
-        </h2>
+          <h2 className="mt-4">
+            Framing Every  <br /> Space With Precision.
+          </h2>
 
-        {/* Filter Buttons */}
-        <div className="mt-14 filter flex flex-wrap gap-3 justify-start lg:justify-between items-center">
-          {filterButtons.map((button) => (
-            <button
-              key={button.id}
-              onClick={() => handleFilterChange(button.id)}
-              className={`text-sm lg:text-lg px-4 py-3 lg:px-5 lg:py-4 rounded transition-all duration-300 border ${activeFilter === button.id
+          {/* Filter Buttons */}
+          <div className="mt-14 filter flex flex-wrap gap-3 justify-start lg:justify-between items-center">
+            {filterButtons.map((button) => (
+              <button
+                key={button.id}
+                onClick={() => handleFilterChange(button.id)}
+                className={`text-sm lg:text-lg px-4 py-3 lg:px-5 lg:py-4 rounded transition-all duration-300 border ${activeFilter === button.id
                   ? "bg-blue text-white border-blue shadow-lg"
                   : "bg-transparent border-blue text-blue hover:bg-blue/10 hover:scale-105"
-                }`}
-            >
-              {button.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div
-          className={`mt-14 grid grid-cols-1 md:grid-cols-3 gap-7 transition-all duration-300 ${isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
-            }`}
-        >
-          {filteredProjects.map((project, idx) => (
-            <div
-              key={project.id}
-              id={`project-${project.id}`}
-              className="transition-all duration-300"
-              style={{
-                animation: isAnimating
-                  ? "none"
-                  : `fadeInUp 0.5s ease-out ${idx * 0.1}s both`,
-              }}
-            >
-              <div
-                onClick={() => openLightbox(project)}
-                className="relative group cursor-pointer aspect-9/10 overflow-hidden rounded-lg"
+                  }`}
               >
-                <Image
-                  src={project.cover}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                {button.label}
+              </button>
+            ))}
+          </div>
 
-                <Image
-                  src={click}
-                  alt="click"
-                  className="absolute bottom-3 right-3 w-8 h-8 sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-14 sm:h-14 sm:opacity-0 sm:group-hover:opacity-100 sm:transition-all sm:duration-300"
-                />
+          {/* Projects Grid */}
+          <div
+            className={`mt-14 grid grid-cols-1 md:grid-cols-3 gap-7 transition-all duration-300 ${isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              }`}
+          >
+            {filteredProjects.map((project, idx) => (
+              <div
+                key={project.id}
+                id={`project-${project.id}`}
+                className="transition-all duration-300"
+                style={{
+                  animation: isAnimating
+                    ? "none"
+                    : `fadeInUp 0.5s ease-out ${idx * 0.1}s both`,
+                }}
+              >
+                <div
+                  onClick={() => openLightbox(project)}
+                  className="relative group cursor-pointer aspect-9/10 overflow-hidden rounded-lg"
+                >
+                  <Image
+                    src={project.cover}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+
+                  <Image
+                    src={click}
+                    alt="click"
+                    className="absolute bottom-3 right-3 w-8 h-8 sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-14 sm:h-14 sm:opacity-0 sm:group-hover:opacity-100 sm:transition-all sm:duration-300"
+                  />
+                </div>
+
+                <p className="mt-3">{project.title}</p>
               </div>
+            ))}
+          </div>
 
-              <p className="mt-3">{project.title}</p>
+          {/* No Results Message */}
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-xl text-gray-500">
+                No projects found in this category.
+              </p>
             </div>
-          ))}
+          )}
         </div>
 
-        {/* No Results Message */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-xl text-gray-500">
-              No projects found in this category.
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Lightbox */}
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={slides}
-        index={index}
-        plugins={[Counter, Video]}
-        styles={{
-          container: { backgroundColor: "rgba(0,0,0,0.9)" },
-        }}
-        render={{
-          slideFooter: ({ slide }) => (
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                padding: "20px",
-                background:
-                  "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
-                color: "white",
-                textAlign: "center",
-                fontSize: "18px",
-                fontWeight: "500",
-              }}
-            >
-              {slide.title}
-            </div>
-          ),
-        }}
-      />
-    </main>
+        {/* Lightbox */}
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          slides={slides}
+          index={index}
+          plugins={[Counter, Video]}
+          styles={{
+            container: { backgroundColor: "rgba(0,0,0,0.9)" },
+          }}
+          render={{
+            slideFooter: ({ slide }) => (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  padding: "20px",
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
+                  color: "white",
+                  textAlign: "center",
+                  fontSize: "18px",
+                  fontWeight: "500",
+                }}
+              >
+                {slide.title}
+              </div>
+            ),
+          }}
+        />
+      </main>
     </PageWrapper>
   );
 };
