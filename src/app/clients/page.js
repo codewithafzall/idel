@@ -25,11 +25,11 @@ const Page = () => {
         "Mr. Taswala": 9,
         "Mr. Patil (Politician)": 4,
         "Mr. Devang Parikh": 13,
-        "Mr. Gandhi": 16,
+        "Mrs. Gandhi": 16,
         "Dr. Shrivastava": 23,
         "Kokilaben Dhirubhai Ambani Hospital": 18,
         "Runwal Developers": 12,
-        "Mr. Jain (Khar)": 8,
+        "Mr. Jain": 8,
         "Mr. Bhansali": 11,
         "Mr. Dhairya": 11,
         "Mr. Suri": 17,
@@ -63,7 +63,7 @@ const Page = () => {
         { id: 20, type: "Duplex", name: "Mr. Bhansali", location: "Lower Parel, Mumbai" },
         { id: 21, type: "Duplex", name: "Mr. Dhairya", location: "Lower Parel, Mumbai" },
         { id: 22, type: "Residence", name: "Mr. Sunil Gavaskar", location: "Prabhadevi, Mumbai" },
-        { id: 23, type: "Building", name: "NICMAR", location: "Balewadi, Pune" },
+        { id: 23, type: "Building", name: "NICMAR University", location: "Balewadi, Pune" },
         { id: 24, type: "Duplex", name: "Mr. Niraj Joshi", location: "Lower Parel, Mumbai" },
         { id: 25, type: "Duplex", name: "Mr. Aagam", location: "Lower Parel, Mumbai" },
         { id: 26, type: "Triplex", name: "Mr. Adarsh Hegde", location: "Bandra, Mumbai" },
@@ -96,6 +96,7 @@ const Page = () => {
         { id: 53, type: "Residence", name: "Mr. Khemka", location: "Juhu, Mumbai" },
         { id: 54, type: "Bungalow", name: "Mr. Balwa", location: "Bandra, Mumbai" },
         { id: 55, type: "Residence", name: "Mrs. Smita Bansal", location: "Juhu, Mumbai" },
+        { id: 56, type: "Residence", name: "Mrs. Gandhi", location: "Churchgate, Mumbai" },
     ];
 
     const typeIcons = { Building, Residence, Clinic, Bungalow, Duplex, };
