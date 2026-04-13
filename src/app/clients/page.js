@@ -19,11 +19,25 @@ const Page = () => {
     const clientToProjectMap = {
         "Jyothika & R.S. Suriya": 10,
         "Mr. Karan Johar": 7,
-        "ZYJ Developers": 2,
+        "ZYJ Developers": 6,
         "Mr. Pramod Dhanuka": 1,
         "NICMAR": 5,
         "Mr. Taswala": 9,
         "Mr. Patil (Politician)": 4,
+        "Mr. Devang Parikh": 13,
+        "Mr. Gandhi": 16,
+        "Dr. Shrivastava": 23,
+        "Kokilaben Dhirubhai Ambani Hospital": 18,
+        "Runwal Developers": 12,
+        "Mr. Jain (Khar)": 8,
+        "Mr. Bhansali": 11,
+        "Mr. Dhairya": 11,
+        "Mr. Suri": 17,
+        "Mr. Khemka": 19,
+        "Mr. Dinesh Jain": 20,
+        "Mr. Balwa": 21,
+        "Mrs. Savitri Choudhary": 14,
+        "Mrs. Smita Bansal": 22,
     };
 
     const clients = [
@@ -78,7 +92,10 @@ const Page = () => {
         { id: 49, type: "Residence", name: "Mr. Anand Mehta", location: "Malabar Hill, Mumbai" },
         { id: 50, type: "Residence", name: "Ar. Sonal Iyer", location: "Juhu, Mumbai" },
         { id: 51, type: "Residence", name: "Mr. Mody", location: "Santacruz, Mumbai" },
-        { id: 52, type: "Bungalow", name: "Mr. Atul Parikh", location: "Ghatkopar, Mumbai" }
+        { id: 52, type: "Bungalow", name: "Mr. Atul Parikh", location: "Ghatkopar, Mumbai" },
+        { id: 53, type: "Residence", name: "Mr. Khemka", location: "" },
+        { id: 54, type: "Bungalow", name: "Mr. Balwa", location: "" },
+        { id: 55, type: "Residence", name: "Mrs. Smita Bansal", location: "" },
     ];
 
     const typeIcons = { Building, Residence, Clinic, Bungalow, Duplex, };
@@ -92,84 +109,84 @@ const Page = () => {
 
     return (
         <PageWrapper>
-        <main>
-            <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
-                <Image
-                    src={banner}
-                    alt="Product Hero Background"
-                    fill
-                    priority
-                    className="object-cover"
-                    placeholder="blur"
-                />
+            <main>
+                <div className="pt-40 sm:pt-0 text-white relative overflow-hidden h-88 sm:h-auto">
+                    <Image
+                        src={banner}
+                        alt="Product Hero Background"
+                        fill
+                        priority
+                        className="object-cover"
+                        placeholder="blur"
+                    />
 
-                <div className="container pt-44 pb-32 relative z-10">
-                    <h2>Our Work.  <br />Their Trust.</h2>
+                    <div className="container pt-44 pb-32 relative z-10">
+                        <h2>Our Work.  <br />Their Trust.</h2>
+                    </div>
                 </div>
-            </div>
 
-            <div className='py-14 bg-sky'>
-                <p className='uppercase flex gap-x-4 font-bold text-blue items-center justify-center'>
-                    <span>
-                        <Image src={blueLine} alt='vector' />
-                    </span>
-                    Our Clients
-                </p>
-                <h2 className='text-center mt-4'>
-                    Trusted Nationwide
-                </h2>
+                <div className='py-14 bg-sky'>
+                    <p className='uppercase flex gap-x-4 font-bold text-blue items-center justify-center'>
+                        <span>
+                            <Image src={blueLine} alt='vector' />
+                        </span>
+                        Our Clients
+                    </p>
+                    <h2 className='text-center mt-4'>
+                        Trusted Nationwide
+                    </h2>
 
-                <div className='container grid grid-cols-1 sm:grid-cols-3 place-items-center gap-3 sm:gap-6 mt-8 sm:mt-14'>
-                    {clients.map((client) => {
-                        const hasProject = clientToProjectMap[client.name] !== undefined && clientToProjectMap[client.name] !== null;
+                    <div className='container grid grid-cols-1 sm:grid-cols-3 place-items-center gap-3 sm:gap-6 mt-8 sm:mt-14'>
+                        {clients.map((client) => {
+                            const hasProject = clientToProjectMap[client.name] !== undefined && clientToProjectMap[client.name] !== null;
 
-                        return (
-                            <div
-                                key={client.id}
-                                className={`bg-white rounded-xl border border-gray-300 flex flex-col justify-between w-80 sm:w-96 h-auto pb-4 transition-all duration-300 ${hasProject
+                            return (
+                                <div
+                                    key={client.id}
+                                    className={`bg-white rounded-xl border border-gray-300 flex flex-col justify-between w-80 sm:w-96 h-auto pb-4 transition-all duration-300 ${hasProject
                                         ? 'sm:cursor-pointer sm:hover:shadow-lg sm:hover:border-blue sm:hover:scale-105'
                                         : ''
-                                    }`}
-                                onClick={(e) => {
-                                    // Only trigger click on desktop, not on mobile (mobile uses button)
-                                    if (window.innerWidth >= 640) {
-                                        handleClientClick(client.name);
-                                    }
-                                }}
-                            >
-                                <div className='flex flex-col ml-10 sm:ml-14 mt-6'>
-                                    <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'>
-                                        <span>
-                                            <Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" />
-                                        </span>
-                                        {client.type}
-                                    </p>
-                                    <p className='my-2.5'>
-                                        Client: <span className='font-semibold'>{client.name}</span>
-                                    </p>
-                                    <small className='flex items-center text-[16px] text-gray-500 gap-x-2'>
-                                        <span>
-                                            <Image src={location} className='' alt="location icon" />
-                                        </span>
-                                        {client.location}
-                                    </small>
-                                </div>
+                                        }`}
+                                    onClick={(e) => {
+                                        // Only trigger click on desktop, not on mobile (mobile uses button)
+                                        if (window.innerWidth >= 640) {
+                                            handleClientClick(client.name);
+                                        }
+                                    }}
+                                >
+                                    <div className='flex flex-col ml-10 sm:ml-14 mt-6'>
+                                        <p className='font-semibold flex items-center gap-x-2 text-blue space-x-4'>
+                                            <span>
+                                                <Image src={typeIcons[client.type] || home} className='w-5 h-5' alt="home icon" />
+                                            </span>
+                                            {client.type}
+                                        </p>
+                                        <p className='my-2.5'>
+                                            Client: <span className='font-semibold'>{client.name}</span>
+                                        </p>
+                                        <small className='flex items-center text-[16px] text-gray-500 gap-x-2'>
+                                            <span>
+                                                <Image src={location} className='' alt="location icon" />
+                                            </span>
+                                            {client.location}
+                                        </small>
+                                    </div>
 
-                                {/* View More Button - Only visible on mobile if project exists */}
-                                {hasProject && (
-                                    <button
-                                        onClick={() => handleClientClick(client.name)}
-                                        className="sm:hidden mx-10 mt-4 bg-blue text-white px-4 py-2 rounded-lg text-sm font-semibold"
-                                    >
-                                        View Project →
-                                    </button>
-                                )}
-                            </div>
-                        )
-                    })}
+                                    {/* View More Button - Only visible on mobile if project exists */}
+                                    {hasProject && (
+                                        <button
+                                            onClick={() => handleClientClick(client.name)}
+                                            className="sm:hidden mx-10 mt-4 bg-blue text-white px-4 py-2 rounded-lg text-sm font-semibold"
+                                        >
+                                            View Project →
+                                        </button>
+                                    )}
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
         </PageWrapper>
     )
 }

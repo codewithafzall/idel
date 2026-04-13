@@ -53,6 +53,7 @@ import ecr4 from "../images/ecr-4.webp";
 
 import duplex1 from "../images/duplex-1.webp";
 import duplex2 from "../images/duplex-2.webp";
+import duplexCover from "../images/duplex-cover.webp";
 
 import runwal1 from "../images/runwal-1.webp";
 import runwal2 from "../images/runwal-2.webp";
@@ -60,6 +61,7 @@ import runwal2 from "../images/runwal-2.webp";
 import devang1 from "../images/devang-1.webp";
 import devang3 from "../images/devang-3.webp";
 import devang4 from "../images/devang-4.webp";
+import devangCover from "../images/devang-cover.webp";
 
 import cartier1 from "../images/cartier-1.webp";
 
@@ -81,6 +83,7 @@ import balwas2 from "../images/balwas-2.webp";
 
 import c1 from "../images/c-1.webp";
 import c2 from "../images/c-2.webp";
+import cCover from "../images/c-cover.webp";
 
 import smita1 from "../images/smita-1.webp";
 
@@ -100,7 +103,7 @@ const Page = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // ✅ UPDATED: category is now an ARRAY so one project can belong to multiple categories
+  
   const projects = [
     {
       id: 10,
@@ -193,7 +196,7 @@ const Page = () => {
         {
           type: "video",
           videoUrl: "/duplex-video.mp4",
-          poster: duplex1,
+          poster: duplexCover,
           caption: "Project Walkthrough",
         },
       ],
@@ -237,7 +240,7 @@ const Page = () => {
         {
           type: "video",
           videoUrl: "/devang-video.mp4",
-          poster: devang1,
+          poster: devangCover,
           caption: "Project Walkthrough",
         },
         devang3,
@@ -277,7 +280,7 @@ const Page = () => {
         {
           type: "video",
           videoUrl: "/sea-video.mp4",
-          poster: devang1,
+          poster: cCover,
           caption: "Project Walkthrough",
         },
       ],
