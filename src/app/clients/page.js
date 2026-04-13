@@ -93,9 +93,9 @@ const Page = () => {
         { id: 50, type: "Residence", name: "Ar. Sonal Iyer", location: "Juhu, Mumbai" },
         { id: 51, type: "Residence", name: "Mr. Mody", location: "Santacruz, Mumbai" },
         { id: 52, type: "Bungalow", name: "Mr. Atul Parikh", location: "Ghatkopar, Mumbai" },
-        { id: 53, type: "Residence", name: "Mr. Khemka", location: "" },
-        { id: 54, type: "Bungalow", name: "Mr. Balwa", location: "" },
-        { id: 55, type: "Residence", name: "Mrs. Smita Bansal", location: "" },
+        { id: 53, type: "Residence", name: "Mr. Khemka", location: "Juhu, Mumbai" },
+        { id: 54, type: "Bungalow", name: "Mr. Balwa", location: "Bandra, Mumbai" },
+        { id: 55, type: "Residence", name: "Mrs. Smita Bansal", location: "Juhu, Mumbai" },
     ];
 
     const typeIcons = { Building, Residence, Clinic, Bungalow, Duplex, };
