@@ -12,16 +12,19 @@ import { PageWrapper } from './components/PageWrapper'
 const page = () => {
   return (
     <PageWrapper>
-    <main>
-       <Banner/>
-       <Products/>
-       <Stories/>
-       <Achievement/>
-       <Process/>
-       <ProjectsSwiper/>
-       <Testimonials/>
-       <Form/>
-    </main>
+      <main>
+        <Banner />
+        <Products />
+        <Stories />
+        <section className='container py-10'>
+          <iframe className='rounded-2xl' src="https://my.atlist.com/map/67713080-f4e4-41ee-b1bd-7ffc9b26c43d?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" allowfullscreen id="atlist-embed"></iframe>
+        </section>
+        <Achievement />
+        <Process />
+        <ProjectsSwiper />
+        <Testimonials />
+        <Form />
+      </main>
     </PageWrapper>
   )
 }

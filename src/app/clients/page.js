@@ -26,7 +26,6 @@ const Page = () => {
         "Mr. Patil (Politician)": 4,
         "Mr. Devang Parikh": 13,
         "Mrs. Gandhi": 16,
-        "Dr. Shrivastava": 23,
         "Kokilaben Dhirubhai Ambani Hospital": 18,
         "Runwal Developers": 12,
         "Mr. Rakesh Jain": 8,
@@ -38,6 +37,7 @@ const Page = () => {
         "Mr. Balwa": 21,
         "Mrs. Savitri Choudhary": 14,
         "Mrs. Smita Bansal": 22,
+        "Mr. Vidit Jhunjhunwala": 3,
     };
 
     const clients = [
@@ -79,7 +79,6 @@ const Page = () => {
         { id: 36, type: "Residence", name: "Mr. Parikh", location: "Malabar Hill, Mumbai" },
         { id: 37, type: "Residence", name: "Mr. Jain", location: "Parel, Mumbai" },
         { id: 38, type: "Bungalow", name: "BD & P Hotels", location: "Bandra, Mumbai" },
-        { id: 39, type: "Bungalow", name: "Dr. Shrivastava", location: "Goa" },
         { id: 40, type: "Bungalow", name: "Mr. Abhin Alimchandani", location: "Lonavala" },
         { id: 41, type: "Building", name: "Harshail Builders", location: "Vile Parle, Mumbai" },
         { id: 42, type: "Residence", name: "Mr. Naresh Jain", location: "Tardeo, Mumbai" },

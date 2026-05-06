@@ -80,6 +80,11 @@ import jainpt2 from "../images/jain-pt-2.webp";
 
 import balwas1 from "../images/balwas-1.webp";
 import balwas2 from "../images/balwas-2.webp";
+import balwas3 from "../images/balwas-3.webp";
+import balwas4 from "../images/balwas-4.webp";
+import balwas5 from "../images/balwas-5.webp";
+import balwas6 from "../images/balwas-6.webp";
+import balwas7 from "../images/balwas-7.webp";
 
 import c1 from "../images/c-1.webp";
 import c2 from "../images/c-2.webp";
@@ -87,11 +92,9 @@ import cCover from "../images/c-cover.webp";
 
 import smita1 from "../images/smita-1.webp";
 
-import shri1 from "../images/shri-1.webp";
-import shri2 from "../images/shri-2.webp";
-import shri3 from "../images/shri-3.webp";
-import shri4 from "../images/shri-4.webp";
-import shri5 from "../images/shri-5.webp";
+import vidit1 from "../images/vidit-1.webp";
+import vidit2 from "../images/vidit-2.webp"; 
+import vidit3 from "../images/vidit-3.webp"; 
 
 
 import { PageWrapper } from "../components/PageWrapper";
@@ -295,11 +298,11 @@ const Page = () => {
       category: ["premium-residences"],
     },
     {
-      id: 23,
-      title: "Dr. Shrivastava's Bungalow",
-      cover: shri1,
-      gallery: [shri1, shri2, shri3, shri4, shri5],
-      category: ["premium-bungalows"],
+      id: 3,
+      title: "Mr. Vidit Jhunjhunwala Apartment",
+      cover: vidit1,
+      gallery: [vidit1, vidit2, vidit3],
+      category: ["premium-residences"],
     },
   ];
 
