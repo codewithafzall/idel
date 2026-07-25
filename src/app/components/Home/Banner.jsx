@@ -85,7 +85,7 @@ export default function Banner() {
             luxury, and unmatched performance.
           </p>
           <button className="bg-[#29367D] rounded-lg uppercase px-9 py-3 mt-6">
-            Enquire Now
+            <a href='/contact'>Enquire Now</a>
           </button>
         </div>
       </section>

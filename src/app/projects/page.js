@@ -96,6 +96,24 @@ import vidit1 from "../images/vidit-1.webp";
 import vidit2 from "../images/vidit-2.webp"; 
 import vidit3 from "../images/vidit-3.webp"; 
 
+import sewani1 from "../images/sewani-1.webp";
+import sewani2 from "../images/sewani-2.webp";
+
+import tressoro1 from "../images/tressoro-1.webp";
+import tressoro2 from "../images/tressoro-2.webp";
+import tressoro3 from "../images/tressoro-3.webp";
+import tressoro4 from "../images/tressoro-4.webp";
+
+import indigo1 from "../images/indigo-1.webp";
+import indigo2 from "../images/indigo-2.webp";
+import indigo3 from "../images/indigo-3.webp";
+
+import shri1 from "../images/shri-1.webp";
+import shri2 from "../images/shri-2.webp";
+import shri3 from "../images/shri-3.webp";
+import shri4 from "../images/shri-4.webp";
+import shri5 from "../images/shri-5.webp";
+
 
 import { PageWrapper } from "../components/PageWrapper";
 
@@ -304,6 +322,34 @@ const Page = () => {
       gallery: [vidit1, vidit2, vidit3],
       category: ["premium-residences"],
     },
+    {
+      id: 23,
+      title: "Mr. Sewani's Residence",
+      cover: sewani1,
+      gallery: [sewani1, sewani2],
+      category: ["premium-residences"],
+    },
+    {
+      id: 24,
+      title: "Tressoro at Colaba",
+      cover: tressoro1,
+      gallery: [tressoro1, tressoro2, tressoro3, tressoro4],
+      category: ["stores-offices"],
+    },
+    {
+      id: 25,
+      title: "Indigo Jewellery",
+      cover: indigo1,
+      gallery: [indigo1, indigo2, indigo3],
+      category: ["stores-offices"],
+    },
+    {
+      id: 26,
+      title: "Dr. Srivastava's Bungalow",
+      cover: shri1,
+      gallery: [shri1, shri2, shri3, shri4, shri5],
+      category: ["premium-bungalows"],
+    },
   ];
 
   const filterButtons = [
@@ -311,13 +357,13 @@ const Page = () => {
     { id: "premium-bungalows", label: "Premium Bungalows" },
     { id: "premium-residences", label: "Premium Residences" },
     { id: "premium-buildings", label: "Premium Buildings" },
+    { id: "stores-offices", label: "Stores & Offices" },
     { id: "institutes", label: "Institutes" },
     { id: "facades", label: "Facades" },
     { id: "hospitality", label: "Hospitality" },
     // { id: "celebrity-homes", label: "Celebrity Homes" },
   ];
 
-  // ✅ UPDATED: use includes() because category is now an array
   const filteredProjects =
     activeFilter === "all"
       ? projects
