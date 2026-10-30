@@ -6,14 +6,11 @@ import Image from "next/image";
 import visit from "../images/maps.png";
 import call from "../images/call.png";
 import mail from "../images/mail.png";
-import { useWindowSize } from "react-use";
-import Confetti from "react-confetti";
 import banner from "../images/contact-banner.webp";
 import { PageWrapper } from "../components/PageWrapper";
+import { goToThankYou } from "../lib/lead";
 
 const page = () => {
-
-    const { width, height } = useWindowSize();
 
     const [form, setForm] = useState({
         fullName: "",
@@ -76,19 +73,8 @@ const page = () => {
                 throw new Error(data.error || "Submission failed");
             }
 
-            setForm({
-                fullName: "",
-                email: "",
-                phone: "",
-                subject: "",
-                message: "",
-            });
-
-            setModal({
-                open: true,
-                type: "success",
-                message: "Thanks! Your message has been submitted successfully.",
-            });
+            // Keep the button in "Sending..." state while the thank-you page loads
+            goToThankYou("/contact");
 
         } catch (err) {
             setModal({
@@ -96,7 +82,6 @@ const page = () => {
                 type: "error",
                 message: err.message || "Something went wrong. Please try again.",
             });
-        } finally {
             setLoading(false);
         }
     };
@@ -104,22 +89,6 @@ const page = () => {
     return (
         <PageWrapper>
         <main>
-
-            {modal.open && modal.type === "success" && width > 0 && height > 0 && (
-                <Confetti
-                    width={width}
-                    height={height}
-                    numberOfPieces={300}
-                    gravity={0.25}
-                    recycle={false}
-                    style={{
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        zIndex: 60,
-                    }}
-                />
-            )}
 
             {/* MODAL */}
             {modal.open && (

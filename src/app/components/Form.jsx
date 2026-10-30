@@ -2,13 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Confetti from "react-confetti";
-import { useWindowSize } from "react-use";
 import FormImage from "../../../src/app/images/form-img.webp";
+import { goToThankYou } from "../lib/lead";
 
 const Form = () => {
-  const { width, height } = useWindowSize();
-
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -69,19 +66,8 @@ const Form = () => {
         throw new Error(data.error || "Submission failed");
       }
 
-      setForm({
-        fullName: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-
-      setModal({
-        open: true,
-        type: "success",
-        message: "Thanks! Your message has been submitted successfully.",
-      });
+      // Keep the button in "Sending..." state while the thank-you page loads
+      goToThankYou(window.location.pathname);
 
     } catch (err) {
       setModal({
@@ -89,30 +75,12 @@ const Form = () => {
         type: "error",
         message: err.message || "Something went wrong. Please try again.",
       });
-    } finally {
       setLoading(false);
     }
   };
 
   return (
     <>
-      {/* CONFETTI */}
-      {modal.open && modal.type === "success" && width > 0 && height > 0 && (
-        <Confetti
-          width={width}
-          height={height}
-          numberOfPieces={300}
-          gravity={0.25}
-          recycle={false}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            zIndex: 60,
-          }}
-        />
-      )}
-
       {/* MODAL */}
       {modal.open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
